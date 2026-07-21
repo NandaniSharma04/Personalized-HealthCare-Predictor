@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
   Activity, Brain, ShieldCheck, UserPlus, ClipboardList,
-  Sparkles, HeartPulse, Stethoscope, TrendingUp,
+  Sparkles, HeartPulse, Stethoscope, TrendingUp, Search, X,
 } from "lucide-react";
 import api from "../api/axios";
 import { useAuth } from "../context/AuthContext";
@@ -37,25 +37,44 @@ function PulseDivider() {
 
 export default function Home() {
   const { user } = useAuth();
-  const [form, setForm] = useState({
-    fever: 0, cough: 0, fatigue: 0, breathing: 0,
-    age: 30, gender: 0, bloodPressure: 1, cholesterol: 1,
-  });
+  const [allSymptoms, setAllSymptoms] = useState([]);
+  const [selected, setSelected] = useState([]);
+  const [query, setQuery] = useState("");
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  function toggle(field) {
-    setForm({ ...form, [field]: form[field] ? 0 : 1 });
+  useEffect(() => {
+    api.get("/api/symptoms").then((res) => setAllSymptoms(res.data.symptoms || []));
+  }, []);
+
+  const suggestions = useMemo(() => {
+    if (!query.trim()) return [];
+    const q = query.toLowerCase();
+    return allSymptoms
+      .filter((s) => !selected.includes(s) && s.toLowerCase().includes(q))
+      .slice(0, 8);
+  }, [query, allSymptoms, selected]);
+
+  function addSymptom(s) {
+    setSelected([...selected, s]);
+    setQuery("");
+  }
+  function removeSymptom(s) {
+    setSelected(selected.filter((x) => x !== s));
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
     setError("");
     setResult(null);
+    if (selected.length === 0) {
+      setError("Select at least one symptom.");
+      return;
+    }
     setLoading(true);
     try {
-      const res = await api.post("/predict", form);
+      const res = await api.post("/predict", { symptoms: selected });
       setResult(res.data);
     } catch (err) {
       if (err.response?.status === 401) {
@@ -72,15 +91,6 @@ export default function Home() {
     <div>
       {/* ---------------- HERO ---------------- */}
       <section className="hero-stage">
-        <video
-          className="hero-video-bg"
-          src="/videos/heartbeat.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
-        <div className="hero-overlay" />
         <div className="hero">
         <motion.div initial="hidden" animate="show" variants={fadeUp}>
           <span className="eyebrow">
@@ -192,35 +202,50 @@ export default function Home() {
         >
           <form className="checker-form" onSubmit={handleSubmit}>
             <h3>Symptom checker</h3>
-            <p>Takes about 20 seconds.</p>
+            <p>Search and add every symptom that applies — {allSymptoms.length || "230"} tracked conditions.</p>
 
-            <span className="field-label">Symptoms</span>
+            <span className="field-label">Search symptoms</span>
+            <div className="symptom-search">
+              <Search size={17} className="symptom-search-icon" />
+              <input
+                type="text"
+                placeholder="e.g. chest pain, fatigue, dizziness..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+              />
+              {suggestions.length > 0 && (
+                <div className="symptom-suggestions">
+                  {suggestions.map((s) => (
+                    <button type="button" key={s} onClick={() => addSymptom(s)}>
+                      {s}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <span className="field-label" style={{ marginTop: 20 }}>
+              Selected ({selected.length})
+            </span>
             <div className="symptom-grid">
-              {["fever", "cough", "fatigue", "breathing"].map((s) => (
+              {selected.length === 0 && (
+                <span style={{ color: "var(--ink-faint)", fontSize: "0.88rem" }}>
+                  Nothing selected yet — search above to add symptoms.
+                </span>
+              )}
+              {selected.map((s) => (
                 <button
                   type="button"
                   key={s}
-                  className={form[s] ? "symptom active" : "symptom"}
-                  onClick={() => toggle(s)}
+                  className="symptom active"
+                  onClick={() => removeSymptom(s)}
                 >
-                  {s}
+                  {s} <X size={13} style={{ marginLeft: 4 }} />
                 </button>
               ))}
             </div>
 
-            <span className="field-label">Age</span>
-            <div className="age-row">
-              <input
-                type="number"
-                min="1"
-                max="120"
-                value={form.age}
-                onChange={(e) => setForm({ ...form, age: e.target.value })}
-              />
-              <span style={{ color: "var(--ink-faint)", fontSize: "0.85rem" }}>years old</span>
-            </div>
-
-            <button type="submit" disabled={loading}>
+            <button type="submit" disabled={loading} style={{ marginTop: 10 }}>
               {loading ? "Analyzing..." : user ? "Get prediction" : "Log in to get a prediction"}
             </button>
 
@@ -247,14 +272,29 @@ export default function Home() {
                   <span>{result.confidence}% confidence</span>
                   <span className={`risk-badge risk-${result.risk}`}>{result.risk} risk</span>
                 </div>
+                <p style={{ color: "var(--ink-soft)", fontSize: "0.92rem", lineHeight: 1.6 }}>
+                  {result.description}
+                </p>
                 <div className="result-block">
-                  <h4>Suggested medicines</h4>
-                  <ul>{result.medicines.map((m, i) => <li key={i}>{m}</li>)}</ul>
+                  <h4>Precautions</h4>
+                  <ul>{result.precautions.map((m, i) => <li key={i}>{m}</li>)}</ul>
                 </div>
                 <div className="result-block">
-                  <h4>Advice</h4>
-                  <ul>{result.advice.map((a, i) => <li key={i}>{a}</li>)}</ul>
+                  <h4>Suggested medications</h4>
+                  <ul>{result.medications.map((a, i) => <li key={i}>{a}</li>)}</ul>
                 </div>
+                {result.diet?.length > 0 && (
+                  <div className="result-block">
+                    <h4>Diet</h4>
+                    <ul>{result.diet.map((d, i) => <li key={i}>{d}</li>)}</ul>
+                  </div>
+                )}
+                {result.workout?.length > 0 && (
+                  <div className="result-block">
+                    <h4>Recommended activity</h4>
+                    <ul>{result.workout.map((w, i) => <li key={i}>{w}</li>)}</ul>
+                  </div>
+                )}
               </div>
             )}
           </div>

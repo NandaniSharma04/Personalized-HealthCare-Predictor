@@ -22,7 +22,7 @@ export default function Dashboard() {
       ) : (
         <div className="history-list">
           {history.map((h) => (
-            <div className="history-card" key={h.id}>
+            <div className="history-card glass" key={h.id}>
               <h3>{h.predicted_disease}</h3>
               <p>Confidence: {h.confidence}% · Risk: {h.risk_level}</p>
               <p className="history-date">{new Date(h.created_at).toLocaleString()}</p>

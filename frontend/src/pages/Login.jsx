@@ -25,7 +25,7 @@ export default function Login() {
 
   return (
     <div className="auth-page">
-      <form className="auth-card" onSubmit={handleSubmit}>
+      <form className="auth-card glass" onSubmit={handleSubmit}>
         <h1>Welcome back</h1>
         {error && <p className="auth-error">{error}</p>}
 

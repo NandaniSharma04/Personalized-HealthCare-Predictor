@@ -4,8 +4,8 @@
 # ============================================================================
 
 import os
+import json
 import traceback
-import pickle
 import numpy as np
 import pandas as pd
 import joblib
@@ -77,31 +77,38 @@ limiter.limit("10 per minute")(auth_bp)
 # ----------------------------------------------------------------------------
 print("Loading models...")
 best_model = None
-label_encoder = None
+SYMPTOM_LIST = []
+DISEASE_INFO = {}
+
 try:
     best_model = joblib.load("ml/best_model.pkl")
-    print("Model loaded")
+    print(f"Model loaded ({len(best_model.classes_)} diseases)")
 except Exception as e:
     print("Failed to load best_model.pkl:", e)
     traceback.print_exc()
 
 try:
-    with open("ml/disease_encoder.pkl", "rb") as f:
-        label_encoder = pickle.load(f)
-    print("Label encoder loaded")
+    with open("ml/symptom_list.json") as f:
+        SYMPTOM_LIST = json.load(f)
+    print(f"Symptom list loaded ({len(SYMPTOM_LIST)} symptoms)")
 except Exception as e:
-    print("Failed to load disease_encoder.pkl:", e)
-    traceback.print_exc()
+    print("Failed to load symptom_list.json:", e)
 
 try:
-    with open("ml/medicine_database.pkl", "rb") as f:
-        MEDICINE_DB = pickle.load(f)
-except Exception:
-    MEDICINE_DB = {}
+    with open("ml/disease_info.json") as f:
+        DISEASE_INFO = json.load(f)
+    print(f"Disease info loaded ({len(DISEASE_INFO)} diseases)")
+except Exception as e:
+    print("Failed to load disease_info.json:", e)
 
-# Keep your existing COMPLETE_MEDICINE_DB dictionary here (copy it in from
-# your original app.py -- omitted here for brevity, nothing about it changes).
-from medicine_data import COMPLETE_MEDICINE_DB  # noqa: E402
+
+# ----------------------------------------------------------------------------
+# SYMPTOMS -- React's checker fetches this to build the searchable list
+# ----------------------------------------------------------------------------
+@app.route("/api/symptoms", methods=["GET"])
+def get_symptoms():
+    return jsonify({"symptoms": SYMPTOM_LIST}), 200
+
 
 # ----------------------------------------------------------------------------
 # HISTORY -- React's Dashboard page fetches this
@@ -125,73 +132,64 @@ def health_check():
     return jsonify({
         "status": "healthy",
         "model_loaded": best_model is not None,
-        "encoder_loaded": label_encoder is not None,
+        "symptom_count": len(SYMPTOM_LIST),
+        "disease_count": len(DISEASE_INFO),
         "db_connected": True,
     })
 
 
 # ----------------------------------------------------------------------------
 # PREDICT -- now requires login and saves to history
+# Expects: { "symptoms": ["fever", "cough", ...] }  (keys must match /api/symptoms)
 # ----------------------------------------------------------------------------
 @app.route("/predict", methods=["POST"])
 @login_required
 def predict():
     try:
         data = request.get_json()
-        if not data:
-            return jsonify({"success": False, "error": "No data provided"}), 400
+        if not data or "symptoms" not in data:
+            return jsonify({"success": False, "error": "No symptoms provided"}), 400
 
-        fever = int(data.get("fever", 0))
-        cough = int(data.get("cough", 0))
-        fatigue = int(data.get("fatigue", 0))
-        difficulty_breathing = int(data.get("breathing", 0))
-        age = int(data.get("age", 30))
-        gender = int(data.get("gender", 0))
-        blood_pressure = int(data.get("bloodPressure", 1))
-        cholesterol = int(data.get("cholesterol", 1))
+        selected = set(data.get("symptoms", []))
+        if not selected:
+            return jsonify({"success": False, "error": "Select at least one symptom"}), 400
 
-        if best_model is None or label_encoder is None:
+        if best_model is None:
             return jsonify({"success": False, "error": "Model not loaded"}), 500
 
-        input_df = pd.DataFrame({
-            "fever": [fever], "cough": [cough], "fatigue": [fatigue],
-            "difficulty_breathing": [difficulty_breathing], "age": [age],
-            "gender": ["male" if gender == 1 else "female"],
-            "blood_pressure": [blood_pressure], "cholesterol_level": [cholesterol],
-        })
-        input_df["age_scaled"] = input_df["age"]
-        input_df["bp_scaled"] = input_df["blood_pressure"]
-        input_df["chol_scaled"] = input_df["cholesterol_level"]
-        input_df["outcome_variable"] = 0
-        input_df["risk_level"] = 0
+        # Build the 0/1 feature vector in the exact column order the model expects
+        row = {s: (1 if s in selected else 0) for s in SYMPTOM_LIST}
+        input_df = pd.DataFrame([row])[SYMPTOM_LIST]
 
-        prediction = best_model.predict(input_df)[0]
         probabilities = best_model.predict_proba(input_df)[0]
-        predicted_disease = label_encoder.classes_[prediction]
-        confidence = float(probabilities[prediction] * 100)
+        top_idx = int(np.argmax(probabilities))
+        predicted_disease = best_model.classes_[top_idx]
+        confidence = float(probabilities[top_idx] * 100)
 
-        symptom_count = fever + cough + fatigue + difficulty_breathing
-        if symptom_count >= 3 and (age > 60 or blood_pressure == 2):
+        # Risk heuristic: how confident the model is + how many symptoms were given
+        if confidence >= 40 and len(selected) >= 4:
             risk_level = "high"
-        elif symptom_count >= 2:
+        elif confidence >= 20 or len(selected) >= 2:
             risk_level = "medium"
         else:
             risk_level = "low"
 
-        treatment = COMPLETE_MEDICINE_DB.get(predicted_disease, {
-            "medicines": ["Consult a doctor for specific treatment"],
-            "advice": ["Schedule an appointment with a healthcare provider"],
-        })
+        info = DISEASE_INFO.get(predicted_disease, {})
+        description = info.get("description", "No description available for this condition.")
+        precautions = info.get("precautions", ["Consult a doctor for guidance."])
+        medications = info.get("medications", ["Consult a doctor for specific medication."])
+        diet = info.get("diet", [])
+        workout = info.get("workout", [])
 
         # Save to this user's history -- this is the "personalized" part.
         record = PredictionHistory(
             user_id=current_user.id,
-            symptoms_input=data,
+            symptoms_input=list(selected),
             predicted_disease=predicted_disease,
             confidence=round(confidence, 2),
             risk_level=risk_level,
-            medicines=treatment.get("medicines", []),
-            advice=treatment.get("advice", []),
+            medicines=medications,
+            advice=precautions,
         )
         db.session.add(record)
         db.session.commit()
@@ -201,8 +199,11 @@ def predict():
             "disease": predicted_disease,
             "confidence": round(confidence, 2),
             "risk": risk_level,
-            "medicines": treatment.get("medicines", []),
-            "advice": treatment.get("advice", []),
+            "description": description,
+            "precautions": precautions,
+            "medications": medications,
+            "diet": diet,
+            "workout": workout,
         }), 200
 
     except Exception as e:

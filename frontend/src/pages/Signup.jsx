@@ -25,7 +25,7 @@ export default function Signup() {
 
   return (
     <div className="auth-page">
-      <form className="auth-card" onSubmit={handleSubmit}>
+      <form className="auth-card glass" onSubmit={handleSubmit}>
         <h1>Create your account</h1>
         {error && <p className="auth-error">{error}</p>}
 
