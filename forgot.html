@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HealthAI - Reset Password</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="auth.css">
+
+</head>
+
+<body>
+
+<!-- Animated Background -->
+
+<canvas id="dnaCanvas"></canvas>
+
+<div class="overlay"></div>
+
+<div class="glow glow1"></div>
+
+<div class="glow glow2"></div>
+
+<!-- Header -->
+
+<header>
+
+<nav>
+
+<div class="logo">
+
+<i class="fa-solid fa-dna"></i>
+
+<span>HealthAI</span>
+
+</div>
+
+<a href="login.html" class="back-btn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back
+
+</a>
+
+</nav>
+
+</header>
+
+<!-- Reset Password -->
+
+<section class="logout-section">
+
+<div class="logout-card">
+
+<h1>Reset Password</h1>
+
+<p>Enter your registered email and create a new password.</p>
+
+<form id="forgotForm">
+
+<div class="input-box">
+
+<i class="fa-solid fa-envelope"></i>
+
+<input
+type="email"
+id="email"
+placeholder="Email Address"
+required>
+
+</div>
+
+<div class="input-box">
+
+<i class="fa-solid fa-lock"></i>
+
+<input
+type="password"
+id="newPassword"
+placeholder="New Password"
+required>
+
+</div>
+
+<button type="submit">
+
+Reset Password
+
+</button>
+
+<div class="divider">
+
+OR
+
+</div>
+
+<a href="login.html" class="signup-btn">
+
+Back to Login
+
+</a>
+
+</form>
+
+</div>
+
+</section>
+
+<script src="js/dna.js"></script>
+
+<script src="js/forgot.js"></script>
+
+</body>
+
+</html>
