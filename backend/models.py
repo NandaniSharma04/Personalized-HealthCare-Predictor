@@ -19,7 +19,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(120), unique=True, nullable=False, index=True)
     password_hash = db.Column(db.String(255), nullable=False)
     role = db.Column(db.String(20), nullable=False, default="user")  # user | admin | analyst
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    created_at = db.Column(db.DateTime, default=datetime.now)
 
     # failed-login tracking (basic brute-force protection)
     failed_attempts = db.Column(db.Integer, default=0)
@@ -38,7 +38,7 @@ class User(db.Model, UserMixin):
         return check_password_hash(self.password_hash, raw_password)
 
     def is_locked(self):
-        return self.locked_until is not None and self.locked_until > datetime.utcnow()
+        return self.locked_until is not None and self.locked_until > datetime.now()
 
     def to_dict(self):
         return {
@@ -63,7 +63,7 @@ class PredictionHistory(db.Model):
     medicines = db.Column(db.JSON, nullable=True)
     advice = db.Column(db.JSON, nullable=True)
 
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    created_at = db.Column(db.DateTime, default=datetime.now)
 
     def to_dict(self):
         return {

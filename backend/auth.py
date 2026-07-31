@@ -88,7 +88,7 @@ def login():
         return jsonify(generic_error), 401
 
     if user.is_locked():
-        minutes_left = int((user.locked_until - datetime.utcnow()).total_seconds() // 60) + 1
+        minutes_left = int((user.locked_until - datetime.now()).total_seconds() // 60) + 1
         return jsonify({
             "success": False,
             "error": f"Account temporarily locked due to too many failed attempts. Try again in {minutes_left} minute(s)."
@@ -97,7 +97,7 @@ def login():
     if not user.check_password(password):
         user.failed_attempts = (user.failed_attempts or 0) + 1
         if user.failed_attempts >= MAX_FAILED_ATTEMPTS:
-            user.locked_until = datetime.utcnow() + timedelta(minutes=LOCKOUT_MINUTES)
+            user.locked_until = datetime.now() + timedelta(minutes=LOCKOUT_MINUTES)
             user.failed_attempts = 0
         db.session.commit()
         return jsonify(generic_error), 401

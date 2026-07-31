@@ -1,12 +1,7 @@
 {
-  "panic disorder": {
+  "Panic disorder": {
+    "disease": "Panic disorder",
     "description": "Panic disorder is a mental health condition marked by sudden, unexpected panic attacks\u2014intense periods of fear or discomfort\u2014often accompanied by physical symptoms like chest pain, rapid heartbeat, shortness of breath, or dizziness.",
-    "precautions": [
-      "Practice deep breathing",
-      "Avoid caffeine",
-      "Follow therapy plan",
-      "Seek support from loved ones"
-    ],
     "medications": [
       "SSRIs (e.g., Sertraline, Fluoxetine)",
       "Benzodiazepines (e.g., Clonazepam, Alprazolam)",
@@ -14,13 +9,13 @@
       "Beta-blockers",
       "Cognitive Behavioral Therapy (CBT)"
     ],
-    "diet": [
-      "Magnesium-rich foods (spinach, pumpkin seeds, almonds)",
-      "Omega-3 fatty acids (salmon, flaxseeds, walnuts)",
-      "Complex carbs (oats, quinoa)",
-      "Green tea (L-theanine)",
-      "Limit caffeine and sugar"
+    "precautions": [
+      "Practice deep breathing",
+      "Avoid caffeine",
+      "Follow therapy plan",
+      "Seek support from loved ones"
     ],
+    "diet": [],
     "workout": [
       "Deep breathing exercises: Calm your mind by focusing on slow, deep breaths",
       "Yoga: Combines breathing and movement for relaxation",
@@ -28,20 +23,21 @@
       "Regular aerobic exercise: Boosts mood and reduces stress"
     ]
   },
-  "vaginitis": {
+  "Vaginitis": {
+    "disease": "Vaginitis",
     "description": "Vaginitis is inflammation of the vaginal tissue, typically caused by infections (bacterial, fungal, or parasitic), hormonal imbalances, or irritants, resulting in discharge, itching, pain, or burning during urination.",
-    "precautions": [
-      "Wear breathable cotton underwear",
-      "Avoid douching",
-      "Maintain genital hygiene",
-      "Avoid scented hygiene products"
-    ],
     "medications": [
       "Metronidazole",
       "Clindamycin",
       "Fluconazole",
       "Hydrocortisone cream",
       "Probiotic supplements"
+    ],
+    "precautions": [
+      "Wear breathable cotton underwear",
+      "Avoid douching",
+      "Maintain genital hygiene",
+      "Avoid scented hygiene products"
     ],
     "diet": [
       "Probiotics (yogurt, kefir, sauerkraut)",
@@ -57,14 +53,9 @@
       "Maintain hygiene: Prevent infections"
     ]
   },
-  "problem during pregnancy": {
+  "Problem during pregnancy": {
+    "disease": "Problem during pregnancy",
     "description": "Problems during pregnancy refer to medical complications such as gestational diabetes, preeclampsia, or fetal growth restriction that can affect the health of the mother or baby during gestation.",
-    "precautions": [
-      "Attend regular prenatal visits",
-      "Avoid alcohol and smoking",
-      "Eat a balanced diet",
-      "Get adequate rest"
-    ],
     "medications": [
       "Prenatal vitamins",
       "Iron supplements",
@@ -72,13 +63,13 @@
       "Insulin (for gestational diabetes)",
       "Folic acid"
     ],
-    "diet": [
-      "Prenatal vitamins (consult doctor)",
-      "Iron-rich foods (red meat, lentils, spinach)",
-      "Folate-rich foods (leafy greens, fortified cereals)",
-      "Calcium and Vitamin D (milk, cheese, fortified plant milk)",
-      "Avoid raw fish, deli meats, unpasteurized dairy"
+    "precautions": [
+      "Attend regular prenatal visits",
+      "Avoid alcohol and smoking",
+      "Eat a balanced diet",
+      "Get adequate rest"
     ],
+    "diet": [],
     "workout": [
       "Prenatal yoga: Gentle stretches safe for pregnancy",
       "Walking: Keeps you active and healthy",
@@ -86,14 +77,9 @@
       "Kegel exercises: Support pelvic health"
     ]
   },
-  "acute pancreatitis": {
+  "Acute pancreatitis": {
+    "disease": "Acute pancreatitis",
     "description": "Acute pancreatitis is a sudden inflammation of the pancreas that causes severe abdominal pain, nausea, vomiting, and elevated pancreatic enzymes, often due to gallstones or alcohol use.",
-    "precautions": [
-      "Avoid alcohol",
-      "Eat a low-fat diet",
-      "Stay hydrated",
-      "Follow doctor's advice strictly"
-    ],
     "medications": [
       "IV fluids",
       "Pain relievers (e.g., Morphine)",
@@ -101,13 +87,13 @@
       "Enzyme replacement therapy",
       "Fasting/NPO"
     ],
-    "diet": [
-      "Low-fat foods (boiled vegetables, lean chicken breast)",
-      "Small frequent meals",
-      "Broths and clear liquids (chicken broth, vegetable broth)",
-      "Avoid alcohol and caffeine",
-      "Lean proteins (tofu, white fish)"
+    "precautions": [
+      "Avoid alcohol",
+      "Eat a low-fat diet",
+      "Stay hydrated",
+      "Follow doctor's advice strictly"
     ],
+    "diet": [],
     "workout": [
       "Avoid heavy lifting: Prevent strain on pancreas",
       "Gentle stretching: Maintain flexibility",
@@ -115,20 +101,21 @@
       "Breathing exercises: Reduce stress and pain"
     ]
   },
-  "asthma": {
+  "Asthma": {
+    "disease": "Asthma",
     "description": "Asthma is a chronic inflammatory disease of the airways causing recurrent wheezing, breathlessness, chest tightness, and coughing, often triggered by allergens, exercise, or cold air.",
-    "precautions": [
-      "Avoid known triggers",
-      "Use inhaler as prescribed",
-      "Monitor peak flow",
-      "Keep emergency inhaler handy"
-    ],
     "medications": [
       "Inhaled corticosteroids (e.g., Fluticasone)",
       "Beta-agonists (e.g., Albuterol)",
       "Leukotriene modifiers (e.g., Montelukast)",
       "Anticholinergics (e.g., Ipratropium)",
       "Omalizumab"
+    ],
+    "precautions": [
+      "Avoid known triggers",
+      "Use inhaler as prescribed",
+      "Monitor peak flow",
+      "Keep emergency inhaler handy"
     ],
     "diet": [
       "Anti-inflammatory foods (blueberries, kale, turmeric)",
@@ -144,14 +131,9 @@
       "Avoid strenuous workouts during flare-ups: Prevent attacks"
     ]
   },
-  "infectious gastroenteritis": {
+  "Infectious gastroenteritis": {
+    "disease": "Infectious gastroenteritis",
     "description": "Infectious gastroenteritis is an intestinal infection caused by viruses, bacteria, or parasites, leading to symptoms like diarrhea, vomiting, abdominal cramps, and fever.",
-    "precautions": [
-      "Wash hands frequently",
-      "Avoid sharing utensils",
-      "Drink clean water",
-      "Avoid street food"
-    ],
     "medications": [
       "Oral rehydration salts (ORS)",
       "Antibiotics (e.g., Ciprofloxacin, if bacterial)",
@@ -159,13 +141,13 @@
       "Probiotics",
       "Loperamide (if appropriate)"
     ],
-    "diet": [
-      "Oral rehydration solution (ORS)",
-      "BRAT diet (bananas, rice, applesauce, toast)",
-      "Clear soups (chicken soup)",
-      "Avoid dairy and greasy foods",
-      "Probiotics (yogurt, kefir)"
+    "precautions": [
+      "Wash hands frequently",
+      "Avoid sharing utensils",
+      "Drink clean water",
+      "Avoid street food"
     ],
+    "diet": [],
     "workout": [
       "Rest: Allow the body to recover",
       "Gentle walking: Only after symptoms improve",
@@ -173,14 +155,9 @@
       "Avoid strenuous exercise: Prevent worsening dehydration"
     ]
   },
-  "acute sinusitis": {
+  "Acute sinusitis": {
+    "disease": "Acute sinusitis",
     "description": "Acute sinusitis is a temporary inflammation or infection of the sinuses, usually following a cold, causing nasal congestion, facial pain, pressure, and headache.",
-    "precautions": [
-      "Use nasal saline spray",
-      "Stay hydrated",
-      "Avoid allergens",
-      "Use warm compresses"
-    ],
     "medications": [
       "Saline nasal spray",
       "Decongestants (e.g., Pseudoephedrine)",
@@ -188,13 +165,13 @@
       "Antibiotics (if bacterial)",
       "Acetaminophen for pain"
     ],
-    "diet": [
-      "Spicy foods (hot peppers, horseradish)",
-      "Hydration (water, herbal teas)",
-      "Vitamin C-rich foods (oranges, strawberries)",
-      "Warm teas (ginger, chamomile)",
-      "Avoid processed sugars"
+    "precautions": [
+      "Use nasal saline spray",
+      "Stay hydrated",
+      "Avoid allergens",
+      "Use warm compresses"
     ],
+    "diet": [],
     "workout": [
       "Nasal breathing exercises: Help open airways",
       "Gentle yoga: Promotes drainage",
@@ -202,14 +179,9 @@
       "Avoid cold-weather workouts: Prevent sinus aggravation"
     ]
   },
-  "cornea infection": {
+  "Cornea infection": {
+    "disease": "Cornea infection",
     "description": "Cornea infection (keratitis) is an infection of the transparent front part of the eye, usually caused by bacteria, fungi, or viruses, leading to eye pain, redness, blurred vision, and light sensitivity.",
-    "precautions": [
-      "Avoid touching eyes",
-      "Use prescribed eye drops",
-      "Wear sunglasses",
-      "Don\u2019t share towels or cosmetics"
-    ],
     "medications": [
       "Antibiotic eye drops (e.g., Ciprofloxacin)",
       "Antiviral eye drops (e.g., Ganciclovir)",
@@ -217,13 +189,13 @@
       "Lubricant eye drops",
       "Steroids (in selected cases)"
     ],
-    "diet": [
-      "Vitamin A-rich foods (carrots, sweet potatoes, spinach)",
-      "Zinc-rich foods (pumpkin seeds, beef)",
-      "Hydration (water)",
-      "Avoid alcohol and smoking",
-      "Omega-3-rich foods (flaxseed, salmon)"
+    "precautions": [
+      "Avoid touching eyes",
+      "Use prescribed eye drops",
+      "Wear sunglasses",
+      "Don\u2019t share towels or cosmetics"
     ],
+    "diet": [],
     "workout": [
       "Rest the eyes: Avoid screen-heavy workouts",
       "Gentle walking: Safe and non-straining",
@@ -231,14 +203,9 @@
       "Avoid swimming: Prevent waterborne pathogens"
     ]
   },
-  "marijuana abuse": {
+  "Marijuana abuse": {
+    "disease": "Marijuana abuse",
     "description": "Marijuana abuse refers to the excessive or harmful use of cannabis, which can lead to cognitive impairment, altered judgment, addiction, and long-term mental health issues.",
-    "precautions": [
-      "Avoid peer pressure",
-      "Seek counseling",
-      "Build healthy habits",
-      "Avoid triggering environments"
-    ],
     "medications": [
       "Behavioral therapy",
       "CBT",
@@ -246,13 +213,13 @@
       "No FDA-approved medications",
       "Support groups (e.g., NA)"
     ],
-    "diet": [
-      "Hydration (water, herbal teas)",
-      "Omega-3s for brain health (walnuts, flaxseeds)",
-      "Foods rich in B vitamins (eggs, poultry, leafy greens)",
-      "Antioxidant-rich foods (berries, nuts)",
-      "Limit processed foods"
+    "precautions": [
+      "Avoid peer pressure",
+      "Seek counseling",
+      "Build healthy habits",
+      "Avoid triggering environments"
     ],
+    "diet": [],
     "workout": [
       "Cardio workouts: Boost dopamine and mood",
       "Yoga: Improve focus and reduce cravings",
@@ -260,20 +227,21 @@
       "Group activities: Enhance social motivation and discipline"
     ]
   },
-  "bursitis": {
+  "Bursitis": {
+    "disease": "Bursitis",
     "description": "Bursitis is inflammation of the bursae\u2014small fluid-filled sacs that cushion bones and joints\u2014causing joint pain, swelling, and limited movement, often from repetitive motion or pressure.",
-    "precautions": [
-      "Rest the affected joint",
-      "Apply ice packs",
-      "Use joint support",
-      "Avoid repetitive strain"
-    ],
     "medications": [
       "NSAIDs (e.g., Ibuprofen)",
       "Corticosteroid injections",
       "Ice packs",
       "Physical therapy",
       "Antibiotics (if septic bursitis)"
+    ],
+    "precautions": [
+      "Rest the affected joint",
+      "Apply ice packs",
+      "Use joint support",
+      "Avoid repetitive strain"
     ],
     "diet": [
       "Anti-inflammatory foods (turmeric, ginger, berries)",
@@ -289,14 +257,9 @@
       "Avoid pressure on joints: Use proper form and padding"
     ]
   },
-  "actinic keratosis": {
+  "Actinic keratosis": {
+    "disease": "Actinic keratosis",
     "description": "Actinic keratosis is a rough, scaly patch on the skin caused by prolonged sun exposure, and is considered a precancerous condition that can develop into squamous cell carcinoma.",
-    "precautions": [
-      "Avoid sun exposure",
-      "Use broad-spectrum sunscreen",
-      "Wear protective clothing",
-      "See dermatologist regularly"
-    ],
     "medications": [
       "Topical 5-fluorouracil",
       "Imiquimod cream",
@@ -304,13 +267,13 @@
       "Cryotherapy",
       "Photodynamic therapy"
     ],
-    "diet": [
-      "Antioxidant-rich foods (berries, spinach, nuts)",
-      "Vitamin E-rich foods (almonds, sunflower seeds)",
-      "Omega-3 fatty acids (salmon, flaxseeds)",
-      "Green tea",
-      "Avoid excessive sun exposure"
+    "precautions": [
+      "Avoid sun exposure",
+      "Use broad-spectrum sunscreen",
+      "Wear protective clothing",
+      "See dermatologist regularly"
     ],
+    "diet": [],
     "workout": [
       "Indoor workouts: Avoid sun exposure",
       "Gentle stretching: Maintain skin comfort",
@@ -318,7 +281,8 @@
       "Walking in shaded areas: If outdoor movement needed"
     ]
   },
-  "chronic obstructive pulmonary disease (copd)": {
+  "Chronic obstructive pulmonary disease (COPD)": {
+    "disease": "Chronic obstructive pulmonary disease (COPD)",
     "description": "COPD is a group of progressive lung diseases, including emphysema and chronic bronchitis, characterized by airflow limitation, coughing, wheezing, and shortness of breath.",
     "medications": [
       "Bronchodilators (e.g., Salbutamol)",
@@ -327,13 +291,8 @@
       "Oxygen therapy",
       "Antibiotics during exacerbations"
     ],
-    "diet": [
-      "Anti-inflammatory foods (turmeric, ginger, berries)",
-      "Omega-3 fatty acids (wild salmon, walnuts)",
-      "High-protein foods (chicken, beans)",
-      "Vitamin C-rich foods (oranges, broccoli)",
-      "Hydration"
-    ],
+    "precautions": [],
+    "diet": [],
     "workout": [
       "Pursed-lip breathing: Improve oxygen use",
       "Walking: Build endurance safely",
@@ -341,20 +300,21 @@
       "Pulmonary rehabilitation exercises: Doctor-guided regimens"
     ]
   },
-  "spondylosis": {
+  "Spondylosis": {
+    "disease": "Spondylosis",
     "description": "Spondylosis is a degenerative condition affecting the spine due to aging, resulting in stiffness, pain, and reduced mobility due to wear and tear on spinal discs and joints.",
-    "precautions": [
-      "Maintain good posture",
-      "Exercise regularly",
-      "Use ergonomic chairs",
-      "Avoid lifting heavy weights"
-    ],
     "medications": [
       "NSAIDs (e.g., Naproxen)",
       "Muscle relaxants",
       "Physical therapy",
       "Epidural steroid injections",
       "Surgery in severe cases"
+    ],
+    "precautions": [
+      "Maintain good posture",
+      "Exercise regularly",
+      "Use ergonomic chairs",
+      "Avoid lifting heavy weights"
     ],
     "diet": [
       "Calcium-rich foods (milk, cheese, fortified plant milk)",
@@ -370,14 +330,9 @@
       "Avoid high-impact sports: Prevent joint stress"
     ]
   },
-  "injury to the arm": {
+  "Injury to the arm": {
+    "disease": "Injury to the arm",
     "description": "Injury to the arm refers to damage to muscles, bones, ligaments, or skin in the arm area from trauma, leading to pain, swelling, bruising, or limited movement.",
-    "precautions": [
-      "Immobilize the arm",
-      "Apply cold compress",
-      "Elevate the arm",
-      "Seek medical care if swelling"
-    ],
     "medications": [
       "Pain relievers (e.g., Acetaminophen)",
       "Cold compress",
@@ -385,13 +340,13 @@
       "Antibiotics (if open wound)",
       "Physical therapy"
     ],
-    "diet": [
-      "Protein-rich foods (chicken, eggs, legumes)",
-      "Vitamin C-rich foods (citrus fruits, strawberries)",
-      "Zinc sources (beef, pumpkin seeds)",
-      "Hydration",
-      "Anti-inflammatory foods (turmeric, ginger)"
+    "precautions": [
+      "Immobilize the arm",
+      "Apply cold compress",
+      "Elevate the arm",
+      "Seek medical care if swelling"
     ],
+    "diet": [],
     "workout": [
       "Physical therapy: Guided recovery exercises",
       "Range-of-motion drills: Regain flexibility",
@@ -399,14 +354,9 @@
       "Avoid overuse: Prioritize rest and pacing"
     ]
   },
-  "complex regional pain syndrome": {
+  "Complex regional pain syndrome": {
+    "disease": "Complex regional pain syndrome",
     "description": "Complex regional pain syndrome (CRPS) is a chronic pain condition usually affecting a limb after injury, with symptoms including burning pain, swelling, and sensitivity to touch.",
-    "precautions": [
-      "Follow physical therapy",
-      "Manage stress",
-      "Take prescribed medication",
-      "Avoid injury to the affected limb"
-    ],
     "medications": [
       "Gabapentin",
       "Amitriptyline",
@@ -414,13 +364,13 @@
       "Corticosteroids",
       "Nerve blocks"
     ],
-    "diet": [
-      "Anti-inflammatory foods (turmeric, berries, leafy greens)",
-      "Omega-3 fatty acids (salmon, walnuts)",
-      "Magnesium-rich foods (spinach, almonds)",
-      "Vitamin D-rich foods (fortified milk, egg yolks)",
-      "Avoid processed sugars and alcohol"
+    "precautions": [
+      "Follow physical therapy",
+      "Manage stress",
+      "Take prescribed medication",
+      "Avoid injury to the affected limb"
     ],
+    "diet": [],
     "workout": [
       "Gentle stretching: Prevent contractures",
       "Desensitization exercises: Rebuild nerve tolerance",
@@ -428,14 +378,9 @@
       "Aqua therapy: Low-pain water exercises"
     ]
   },
-  "injury to the trunk": {
+  "Injury to the trunk": {
+    "disease": "Injury to the trunk",
     "description": "Injury to the trunk includes trauma to the chest, abdomen, or back areas, possibly involving internal organs, muscles, or bones, and can range from minor bruises to serious internal damage.",
-    "precautions": [
-      "Apply ice or heat",
-      "Rest adequately",
-      "Use support belts if advised",
-      "Avoid strenuous activity"
-    ],
     "medications": [
       "Pain relievers (e.g., Ibuprofen)",
       "Ice/heat therapy",
@@ -443,13 +388,13 @@
       "Wound care (if external)",
       "Physiotherapy"
     ],
-    "diet": [
-      "High-protein foods (tofu, lean meats)",
-      "Vitamin C-rich foods (bell peppers, kiwi)",
-      "Zinc sources (shellfish, nuts)",
-      "Hydration",
-      "Anti-inflammatory spices (ginger, turmeric)"
+    "precautions": [
+      "Apply ice or heat",
+      "Rest adequately",
+      "Use support belts if advised",
+      "Avoid strenuous activity"
     ],
+    "diet": [],
     "workout": [
       "Core stability workouts: Strengthen abdomen/back",
       "Breathing exercises: Ease pain and tension",
@@ -457,20 +402,21 @@
       "Avoid twisting movements: Reduce risk of re-injury"
     ]
   },
-  "vulvodynia": {
+  "Vulvodynia": {
+    "disease": "Vulvodynia",
     "description": "Vulvodynia is chronic pain or discomfort around the opening of the vagina (vulva) with no identifiable cause, often described as burning, stinging, or irritation.",
-    "precautions": [
-      "Wear loose cotton clothing",
-      "Avoid scented products",
-      "Use prescribed creams",
-      "Manage stress levels"
-    ],
     "medications": [
       "Topical Lidocaine",
       "Tricyclic antidepressants (e.g., Amitriptyline)",
       "Gabapentin",
       "Physical therapy",
       "Cognitive behavioral therapy"
+    ],
+    "precautions": [
+      "Wear loose cotton clothing",
+      "Avoid scented products",
+      "Use prescribed creams",
+      "Manage stress levels"
     ],
     "diet": [
       "Anti-inflammatory foods (blueberries, leafy greens)",
@@ -486,20 +432,21 @@
       "Avoid bike riding: Prevent pressure on sensitive area"
     ]
   },
-  "concussion": {
+  "Concussion": {
+    "disease": "Concussion",
     "description": "A concussion is a mild traumatic brain injury caused by a blow to the head or body, resulting in temporary loss of brain function, such as confusion, memory loss, or dizziness.",
-    "precautions": [
-      "Rest and avoid screens",
-      "Avoid physical activity",
-      "Monitor symptoms",
-      "Follow up with neurologist"
-    ],
     "medications": [
       "Rest",
       "Acetaminophen (avoid NSAIDs early)",
       "Cognitive rest",
       "Hydration",
       "Gradual return to activities"
+    ],
+    "precautions": [
+      "Rest and avoid screens",
+      "Avoid physical activity",
+      "Monitor symptoms",
+      "Follow up with neurologist"
     ],
     "diet": [
       "Omega-3 fatty acids (chia seeds, salmon)",
@@ -515,20 +462,21 @@
       "Avoid screens and bright lights: Limit visual strain"
     ]
   },
-  "hypoglycemia": {
+  "Hypoglycemia": {
+    "disease": "Hypoglycemia",
     "description": "Hypoglycemia is a condition characterized by abnormally low blood sugar levels, often causing shakiness, sweating, confusion, irritability, or fainting, common in diabetics on insulin.",
-    "precautions": [
-      "Eat small frequent meals",
-      "Carry glucose tablets",
-      "Avoid skipping meals",
-      "Monitor blood sugar levels"
-    ],
     "medications": [
       "Glucose tablets",
       "Juice or sugary snacks",
       "Glucagon injection (emergency)",
       "Adjust insulin or diabetes medication",
       "Frequent meals"
+    ],
+    "precautions": [
+      "Eat small frequent meals",
+      "Carry glucose tablets",
+      "Avoid skipping meals",
+      "Monitor blood sugar levels"
     ],
     "diet": [
       "Complex carbohydrates (whole grains, legumes)",
@@ -544,14 +492,9 @@
       "Frequent breaks: Monitor sugar levels during activity"
     ]
   },
-  "hiatal hernia": {
+  "Hiatal hernia": {
+    "disease": "Hiatal hernia",
     "description": "A hiatal hernia occurs when the upper part of the stomach pushes through the diaphragm into the chest cavity, often causing symptoms like heartburn, reflux, and chest pain.",
-    "precautions": [
-      "Eat small frequent meals",
-      "Avoid lying down after eating",
-      "Avoid spicy food",
-      "Maintain healthy weight"
-    ],
     "medications": [
       "Antacids",
       "Proton Pump Inhibitors (e.g., Omeprazole)",
@@ -559,13 +502,13 @@
       "Prokinetic agents",
       "Surgery (in severe cases)"
     ],
-    "diet": [
-      "Small, frequent meals",
-      "Avoid spicy foods and caffeine",
-      "High-fiber foods (oats, vegetables)",
-      "Lean proteins (chicken, fish)",
-      "Avoid fatty and fried foods"
+    "precautions": [
+      "Eat small frequent meals",
+      "Avoid lying down after eating",
+      "Avoid spicy food",
+      "Maintain healthy weight"
     ],
+    "diet": [],
     "workout": [
       "Avoid crunches: Prevent abdominal pressure",
       "Gentle walking or cycling: Support digestion",
@@ -573,20 +516,21 @@
       "Upright posture: During and after exercise"
     ]
   },
-  "allergy": {
+  "Allergy": {
+    "disease": "Allergy",
     "description": "An allergy is an overreaction of the immune system to substances like pollen, food, or medications, causing symptoms like sneezing, itching, rash, or anaphylaxis.",
-    "precautions": [
-      "Apply calamine",
-      "Cover area with bandage",
-      "Use ice to compress itching",
-      "Avoid known allergens"
-    ],
     "medications": [
       "Antihistamines (e.g., Loratadine)",
       "Decongestants (e.g., Pseudoephedrine)",
       "Epinephrine auto-injectors",
       "Corticosteroids",
       "Immunotherapy (allergy shots)"
+    ],
+    "precautions": [
+      "Apply calamine",
+      "Cover area with bandage",
+      "Use ice to compress itching",
+      "Avoid known allergens"
     ],
     "diet": [
       "Elimination diet (avoid allergen foods)",
@@ -602,14 +546,9 @@
       "Avoid exercising in high pollution: Protect respiratory health"
     ]
   },
-  "acute bronchospasm": {
+  "Acute bronchospasm": {
+    "disease": "Acute bronchospasm",
     "description": "Acute bronchospasm is a sudden constriction of the muscles in the walls of the bronchioles, often triggered by asthma or allergens, causing wheezing and difficulty breathing.",
-    "precautions": [
-      "Avoid cold air",
-      "Use bronchodilator inhaler",
-      "Avoid allergens",
-      "Monitor breathing patterns"
-    ],
     "medications": [
       "Short-acting beta-agonists (e.g., Albuterol)",
       "Anticholinergics",
@@ -617,13 +556,13 @@
       "Oxygen therapy",
       "Magnesium sulfate (in severe cases)"
     ],
-    "diet": [
-      "Anti-inflammatory foods (ginger, turmeric)",
-      "Omega-3 fatty acids (wild salmon, chia seeds)",
-      "Vitamin C-rich foods (citrus fruits)",
-      "Hydration",
-      "Avoid dairy if mucus increases"
+    "precautions": [
+      "Avoid cold air",
+      "Use bronchodilator inhaler",
+      "Avoid allergens",
+      "Monitor breathing patterns"
     ],
+    "diet": [],
     "workout": [
       "Rest until stable: Avoid exertion during flare-ups",
       "Breathing exercises: Strengthen respiratory muscles",
@@ -631,14 +570,9 @@
       "Indoor walking: In controlled environments"
     ]
   },
-  "degenerative disc disease": {
+  "Degenerative disc disease": {
+    "disease": "Degenerative disc disease",
     "description": "Degenerative disc disease is a condition where spinal discs break down over time, leading to back pain, reduced flexibility, and sometimes nerve compression.",
-    "precautions": [
-      "Maintain healthy weight",
-      "Avoid lifting heavy items",
-      "Engage in back exercises",
-      "Use lumbar support"
-    ],
     "medications": [
       "NSAIDs",
       "Physical therapy",
@@ -646,13 +580,13 @@
       "Steroid injections",
       "Surgery (e.g., spinal fusion in advanced cases)"
     ],
-    "diet": [
-      "Calcium-rich foods (milk, cheese)",
-      "Vitamin D-rich foods (fatty fish, egg yolk)",
-      "Anti-inflammatory foods (berries, leafy greens)",
-      "Magnesium sources (pumpkin seeds, almonds)",
-      "Protein-rich foods (chicken, legumes)"
+    "precautions": [
+      "Maintain healthy weight",
+      "Avoid lifting heavy items",
+      "Engage in back exercises",
+      "Use lumbar support"
     ],
+    "diet": [],
     "workout": [
       "Back stretches: Increase flexibility",
       "Core strengthening: Reduce spinal pressure",
@@ -660,14 +594,9 @@
       "Avoid heavy lifting: Prevent worsening symptoms"
     ]
   },
-  "pain after an operation": {
+  "Pain after an operation": {
+    "disease": "Pain after an operation",
     "description": "Pain after an operation (postoperative pain) is discomfort or soreness at the surgical site, which may be due to tissue injury, inflammation, or healing processes.",
-    "precautions": [
-      "Take pain meds as prescribed",
-      "Avoid physical strain",
-      "Keep surgical area clean",
-      "Attend follow-up appointments"
-    ],
     "medications": [
       "Acetaminophen",
       "Opioids (e.g., Morphine, Tramadol)",
@@ -675,13 +604,13 @@
       "Local anesthetics",
       "Nerve blocks"
     ],
-    "diet": [
-      "High-protein foods (eggs, fish)",
-      "Vitamin C-rich foods (kiwi, strawberries)",
-      "Zinc-rich foods (beef, nuts)",
-      "Anti-inflammatory foods (turmeric, ginger)",
-      "Hydration"
+    "precautions": [
+      "Take pain meds as prescribed",
+      "Avoid physical strain",
+      "Keep surgical area clean",
+      "Attend follow-up appointments"
     ],
+    "diet": [],
     "workout": [
       "Guided physiotherapy: Safe recovery progression",
       "Deep breathing: Prevent lung complications post-surgery",
@@ -689,14 +618,9 @@
       "Avoid high-intensity activity: Allow full healing"
     ]
   },
-  "injury to the leg": {
+  "Injury to the leg": {
+    "disease": "Injury to the leg",
     "description": "Injury to the leg includes trauma to any part of the leg such as the thigh, knee, shin, or ankle, potentially involving muscles, bones, or ligaments.",
-    "precautions": [
-      "Elevate the leg",
-      "Apply ice packs",
-      "Avoid putting weight",
-      "Use crutches if advised"
-    ],
     "medications": [
       "Pain relievers",
       "Compression bandages",
@@ -704,13 +628,13 @@
       "Physical therapy",
       "Antibiotics (if open wound)"
     ],
-    "diet": [
-      "Protein-rich foods (lean meats, beans)",
-      "Vitamin C-rich foods (oranges, strawberries)",
-      "Zinc-rich foods (shellfish, pumpkin seeds)",
-      "Anti-inflammatory spices (ginger, turmeric)",
-      "Hydration"
+    "precautions": [
+      "Elevate the leg",
+      "Apply ice packs",
+      "Avoid putting weight",
+      "Use crutches if advised"
     ],
+    "diet": [],
     "workout": [
       "Non-weight-bearing exercises: Like swimming or seated stretches",
       "Range-of-motion: Prevent stiffness",
@@ -718,20 +642,21 @@
       "Balance exercises: Reduce fall risk later"
     ]
   },
-  "gout": {
+  "Gout": {
+    "disease": "Gout",
     "description": "Gout is a form of inflammatory arthritis caused by buildup of uric acid crystals in joints, leading to sudden, severe pain, redness, and swelling, often in the big toe.",
-    "precautions": [
-      "Avoid purine-rich food",
-      "Stay hydrated",
-      "Limit alcohol intake",
-      "Take medication as prescribed"
-    ],
     "medications": [
       "Colchicine",
       "NSAIDs (e.g., Indomethacin)",
       "Allopurinol",
       "Febuxostat",
       "Corticosteroids"
+    ],
+    "precautions": [
+      "Avoid purine-rich food",
+      "Stay hydrated",
+      "Limit alcohol intake",
+      "Take medication as prescribed"
     ],
     "diet": [
       "Low-purine foods (vegetables, whole grains)",
@@ -747,14 +672,9 @@
       "Stretching: Reduce stiffness in affected areas"
     ]
   },
-  "otitis media": {
+  "Otitis media": {
+    "disease": "Otitis media",
     "description": "Otitis media is a middle ear infection that commonly affects children, causing ear pain, fever, irritability, and sometimes fluid discharge from the ear.",
-    "precautions": [
-      "Avoid water entering ears",
-      "Take antibiotics as prescribed",
-      "Use warm compress",
-      "Follow up with ENT specialist"
-    ],
     "medications": [
       "Amoxicillin",
       "Cefdinir",
@@ -762,13 +682,13 @@
       "Decongestants",
       "Tympanostomy (if recurrent)"
     ],
-    "diet": [
-      "Hydrating fluids (water, herbal teas)",
-      "Vitamin C-rich foods (citrus fruits)",
-      "Probiotics (yogurt, kefir)",
-      "Avoid dairy if it increases mucus",
-      "Anti-inflammatory foods (ginger, turmeric)"
+    "precautions": [
+      "Avoid water entering ears",
+      "Take antibiotics as prescribed",
+      "Use warm compress",
+      "Follow up with ENT specialist"
     ],
+    "diet": [],
     "workout": [
       "Rest: Especially during acute phase",
       "Avoid swimming: Prevent water exposure to ears",
@@ -776,14 +696,9 @@
       "Neck stretches: Relieve ear canal pressure"
     ]
   },
-  "acute kidney injury": {
+  "Acute kidney injury": {
+    "disease": "Acute kidney injury",
     "description": "Acute kidney injury (AKI) is a sudden loss of kidney function due to illness, injury, or toxins, leading to buildup of waste products in the blood.",
-    "precautions": [
-      "Avoid NSAIDs",
-      "Stay hydrated",
-      "Monitor fluid intake",
-      "Follow renal diet plan"
-    ],
     "medications": [
       "IV fluids",
       "Diuretics (e.g., Furosemide)",
@@ -791,13 +706,13 @@
       "Discontinue nephrotoxic drugs",
       "Dialysis (if severe)"
     ],
-    "diet": [
-      "Low-protein diet (consult doctor)",
-      "Limit sodium (avoid processed foods)",
-      "Potassium regulation (bananas, potatoes \u2013 based on medical advice)",
-      "Hydration monitoring",
-      "Avoid high-phosphorus foods (dairy, nuts)"
+    "precautions": [
+      "Avoid NSAIDs",
+      "Stay hydrated",
+      "Monitor fluid intake",
+      "Follow renal diet plan"
     ],
+    "diet": [],
     "workout": [
       "Gentle activity: Like walking during recovery",
       "Avoid dehydration: Prioritize fluids with workouts",
@@ -805,14 +720,9 @@
       "Workouts under supervision: Monitor vital signs"
     ]
   },
-  "threatened pregnancy": {
+  "Threatened pregnancy": {
+    "disease": "Threatened pregnancy",
     "description": "A threatened pregnancy refers to early pregnancy complications, such as vaginal bleeding or cramping, that may suggest a risk of miscarriage but with a still viable fetus.",
-    "precautions": [
-      "Take prescribed medications",
-      "Avoid stress and lifting heavy items",
-      "Get regular checkups",
-      "Rest as recommended"
-    ],
     "medications": [
       "Progesterone supplements",
       "Folic acid",
@@ -820,13 +730,13 @@
       "IV fluids (if dehydrated)",
       "Close monitoring with ultrasound"
     ],
-    "diet": [
-      "Folic acid-rich foods (leafy greens, beans)",
-      "Iron-rich foods (red meat, lentils)",
-      "Hydration",
-      "Balanced diet with protein (chicken, fish)",
-      "Avoid alcohol, caffeine, and high-mercury fish"
+    "precautions": [
+      "Take prescribed medications",
+      "Avoid stress and lifting heavy items",
+      "Get regular checkups",
+      "Rest as recommended"
     ],
+    "diet": [],
     "workout": [
       "Modified bed rest: Based on doctor's advice",
       "Breathing exercises: Reduce anxiety",
@@ -834,14 +744,9 @@
       "Avoid high-impact workouts: Prevent complications"
     ]
   },
-  "gum disease": {
+  "Gum disease": {
+    "disease": "Gum disease",
     "description": "Gum disease (periodontal disease) is an infection and inflammation of the gums and surrounding tissues, often caused by poor oral hygiene, leading to bleeding, receding gums, and tooth loss.",
-    "precautions": [
-      "Maintain oral hygiene",
-      "Floss daily",
-      "Avoid smoking",
-      "Visit dentist regularly"
-    ],
     "medications": [
       "Antibacterial mouthwash (e.g., Chlorhexidine)",
       "Scaling and root planing",
@@ -849,13 +754,13 @@
       "Fluoride toothpaste",
       "Surgical interventions (if severe)"
     ],
-    "diet": [
-      "Vitamin C-rich foods (citrus fruits, strawberries)",
-      "Calcium-rich foods (milk, yogurt)",
-      "Green tea",
-      "Avoid sugary and sticky foods",
-      "Omega-3 fatty acids (walnuts, flaxseeds)"
+    "precautions": [
+      "Maintain oral hygiene",
+      "Floss daily",
+      "Avoid smoking",
+      "Visit dentist regularly"
     ],
+    "diet": [],
     "workout": [
       "Oral hygiene focus: Brush and floss regularly",
       "Avoid sugary sports drinks: Prevent bacterial growth",
@@ -863,14 +768,9 @@
       "No specific physical activity restriction: Follow general wellness plan"
     ]
   },
-  "gastrointestinal hemorrhage": {
+  "Gastrointestinal hemorrhage": {
+    "disease": "Gastrointestinal hemorrhage",
     "description": "Gastrointestinal hemorrhage is bleeding that occurs anywhere along the digestive tract, often presenting as vomiting blood or black, tarry stools, and can be caused by ulcers, varices, or cancer.",
-    "precautions": [
-      "Avoid NSAIDs",
-      "Eat a soft bland diet",
-      "Limit alcohol",
-      "Follow up with GI specialist"
-    ],
     "medications": [
       "IV proton pump inhibitors (e.g., Pantoprazole)",
       "Endoscopic hemostasis",
@@ -878,13 +778,13 @@
       "Octreotide (for variceal bleeding)",
       "Antibiotics (e.g., Ceftriaxone) if cirrhosis present"
     ],
-    "diet": [
-      "Avoid spicy and acidic foods",
-      "Bland diet (bananas, rice, applesauce)",
-      "Hydration",
-      "Iron-rich foods post bleeding (spinach, beans)",
-      "Avoid alcohol and NSAIDs"
+    "precautions": [
+      "Avoid NSAIDs",
+      "Eat a soft bland diet",
+      "Limit alcohol",
+      "Follow up with GI specialist"
     ],
+    "diet": [],
     "workout": [
       "Rest: Avoid strenuous activity during active bleeding",
       "Breathing exercises: Manage stress on the digestive system",
@@ -892,20 +792,21 @@
       "Avoid abdominal strain: Prevent re-bleeding"
     ]
   },
-  "anxiety": {
+  "Anxiety": {
+    "disease": "Anxiety",
     "description": "Anxiety is a mental health condition characterized by excessive worry, nervousness, or fear that interferes with daily activities, often accompanied by physical symptoms like restlessness, sweating, or rapid heartbeat.",
-    "precautions": [
-      "Practice relaxation techniques",
-      "Avoid stimulants like caffeine",
-      "Maintain regular sleep",
-      "Seek counseling if needed"
-    ],
     "medications": [
       "SSRIs (e.g., Escitalopram)",
       "SNRIs (e.g., Duloxetine)",
       "Benzodiazepines (short-term use)",
       "Buspirone",
       "Cognitive Behavioral Therapy (CBT)"
+    ],
+    "precautions": [
+      "Practice relaxation techniques",
+      "Avoid stimulants like caffeine",
+      "Maintain regular sleep",
+      "Seek counseling if needed"
     ],
     "diet": [
       "Magnesium-rich foods (nuts, seeds)",
@@ -921,14 +822,9 @@
       "Tai chi: Improve mental and emotional balance"
     ]
   },
-  "conjunctivitis due to allergy": {
+  "Conjunctivitis due to allergy": {
+    "disease": "Conjunctivitis due to allergy",
     "description": "Allergic conjunctivitis is inflammation of the conjunctiva (eye lining) caused by allergens like pollen or dust, leading to red, itchy, watery eyes without infectious discharge.",
-    "precautions": [
-      "Avoid rubbing eyes",
-      "Use antihistamine drops",
-      "Keep environment clean",
-      "Avoid known allergens"
-    ],
     "medications": [
       "Antihistamine eye drops (e.g., Olopatadine)",
       "Mast cell stabilizers (e.g., Ketotifen)",
@@ -936,13 +832,13 @@
       "Oral antihistamines",
       "Cold compress"
     ],
-    "diet": [
-      "Antihistamine-rich foods (quercetin in apples, onions)",
-      "Omega-3 fatty acids (salmon, flaxseeds)",
-      "Vitamin C-rich foods (citrus)",
-      "Hydration",
-      "Avoid allergens"
+    "precautions": [
+      "Avoid rubbing eyes",
+      "Use antihistamine drops",
+      "Keep environment clean",
+      "Avoid known allergens"
     ],
+    "diet": [],
     "workout": [
       "Indoor exercises: Avoid allergens like pollen",
       "Gentle yoga: Avoid face touching",
@@ -950,14 +846,9 @@
       "Avoid swimming: Prevent eye irritation"
     ]
   },
-  "drug reaction": {
+  "Drug reaction": {
+    "disease": "Drug reaction",
     "description": "A drug reaction is an adverse response to a medication, ranging from mild rashes or stomach upset to severe allergic responses like Stevens-Johnson syndrome or anaphylaxis.",
-    "precautions": [
-      "Stop the drug immediately",
-      "Consult a doctor",
-      "Use antihistamines if prescribed",
-      "Monitor for worsening symptoms"
-    ],
     "medications": [
       "Discontinuation of offending drug",
       "Antihistamines (e.g., Diphenhydramine)",
@@ -965,13 +856,13 @@
       "Epinephrine (for anaphylaxis)",
       "IV fluids and supportive care"
     ],
-    "diet": [
-      "Balanced diet with antioxidants (berries, leafy greens)",
-      "Hydration",
-      "Avoid processed and allergenic foods",
-      "Vitamin C and E-rich foods (nuts, seeds, citrus)",
-      "Consult doctor for specific restrictions"
+    "precautions": [
+      "Stop the drug immediately",
+      "Consult a doctor",
+      "Use antihistamines if prescribed",
+      "Monitor for worsening symptoms"
     ],
+    "diet": [],
     "workout": [
       "Rest: While recovering from adverse reactions",
       "Low-intensity movement: Once stabilized",
@@ -979,14 +870,9 @@
       "Avoid sun exposure: If on photosensitive medications"
     ]
   },
-  "macular degeneration": {
+  "Macular degeneration": {
+    "disease": "Macular degeneration",
     "description": "Macular degeneration is an eye disorder that damages the macula, the part of the retina responsible for central vision, leading to blurred or loss of central vision, typically in older adults.",
-    "precautions": [
-      "Wear sunglasses",
-      "Eat leafy greens",
-      "Avoid smoking",
-      "Regular eye checkups"
-    ],
     "medications": [
       "Anti-VEGF injections (e.g., Ranibizumab, Aflibercept)",
       "AREDS2 vitamin supplements",
@@ -994,13 +880,13 @@
       "Laser therapy (rarely)",
       "Low vision aids"
     ],
-    "diet": [
-      "Vitamin A-rich foods (carrots, sweet potatoes)",
-      "Lutein and zeaxanthin foods (spinach, kale)",
-      "Omega-3 fatty acids (fish, walnuts)",
-      "Zinc-rich foods (pumpkin seeds, beef)",
-      "Antioxidant-rich foods (blueberries, citrus)"
+    "precautions": [
+      "Wear sunglasses",
+      "Eat leafy greens",
+      "Avoid smoking",
+      "Regular eye checkups"
     ],
+    "diet": [],
     "workout": [
       "Balance training: Prevent falls due to vision changes",
       "Walking: Improves circulation and eye health",
@@ -1008,20 +894,21 @@
       "Avoid fast-paced movements: Prevent injuries"
     ]
   },
-  "pneumonia": {
+  "Pneumonia": {
+    "disease": "Pneumonia",
     "description": "Pneumonia is an infection of the lungs caused by bacteria, viruses, or fungi, resulting in cough, fever, chest pain, and difficulty breathing due to inflammation and fluid in the lungs.",
-    "precautions": [
-      "Take full course of antibiotics",
-      "Avoid smoking",
-      "Rest adequately",
-      "Stay hydrated"
-    ],
     "medications": [
       "Antibiotics (e.g., Azithromycin, Ceftriaxone)",
       "Antivirals (e.g., Oseltamivir if viral)",
       "Expectorants",
       "Fever reducers (e.g., Acetaminophen)",
       "Oxygen therapy if needed"
+    ],
+    "precautions": [
+      "Take full course of antibiotics",
+      "Avoid smoking",
+      "Rest adequately",
+      "Stay hydrated"
     ],
     "diet": [
       "Hydrating fluids (water, herbal teas)",
@@ -1037,14 +924,9 @@
       "Gradual reintroduction to physical activity: To build endurance"
     ]
   },
-  "vaginal cyst": {
+  "Vaginal cyst": {
+    "disease": "Vaginal cyst",
     "description": "A vaginal cyst is a fluid-filled sac that forms along the vaginal wall, often benign and asymptomatic, but can sometimes cause discomfort or pain if enlarged or infected.",
-    "precautions": [
-      "Maintain genital hygiene",
-      "Avoid tight clothing",
-      "Do warm sitz baths",
-      "Follow doctor\u2019s advice"
-    ],
     "medications": [
       "Warm compress",
       "Sitz bath",
@@ -1052,13 +934,13 @@
       "Surgical drainage (if large or recurrent)",
       "Analgesics for pain"
     ],
-    "diet": [
-      "Probiotics (yogurt, kefir)",
-      "Anti-inflammatory foods (berries, leafy greens)",
-      "Hydration",
-      "Avoid irritants and processed foods",
-      "Omega-3 fatty acids (salmon, flaxseeds)"
+    "precautions": [
+      "Maintain genital hygiene",
+      "Avoid tight clothing",
+      "Do warm sitz baths",
+      "Follow doctor\u2019s advice"
     ],
+    "diet": [],
     "workout": [
       "Pelvic floor exercises: Support area and reduce discomfort",
       "Avoid high-impact sports: Prevent irritation",
@@ -1066,14 +948,9 @@
       "Breathing exercises: Promote general relaxation"
     ]
   },
-  "carpal tunnel syndrome": {
+  "Carpal tunnel syndrome": {
+    "disease": "Carpal tunnel syndrome",
     "description": "Carpal tunnel syndrome is a condition caused by compression of the median nerve in the wrist, leading to numbness, tingling, and weakness in the hand and fingers.",
-    "precautions": [
-      "Take frequent hand breaks",
-      "Use wrist splints",
-      "Avoid repetitive motions",
-      "Do stretching exercises"
-    ],
     "medications": [
       "Wrist splint",
       "NSAIDs",
@@ -1081,13 +958,13 @@
       "Gabapentin (if nerve pain)",
       "Surgical decompression (if severe)"
     ],
-    "diet": [
-      "Anti-inflammatory foods (turmeric, ginger)",
-      "Omega-3 fatty acids (chia seeds, salmon)",
-      "Magnesium-rich foods (spinach, almonds)",
-      "Vitamin B6-rich foods (bananas, poultry)",
-      "Avoid excess caffeine and sugar"
+    "precautions": [
+      "Take frequent hand breaks",
+      "Use wrist splints",
+      "Avoid repetitive motions",
+      "Do stretching exercises"
     ],
+    "diet": [],
     "workout": [
       "Wrist stretching: Relieve nerve pressure",
       "Hand-strengthening exercises: Use putty or bands",
@@ -1095,14 +972,9 @@
       "Yoga: Helps with posture and nerve health"
     ]
   },
-  "nose disorder": {
+  "Nose disorder": {
+    "disease": "Nose disorder",
     "description": "Nose disorders include structural or inflammatory issues such as deviated septum, nasal polyps, or rhinitis, causing congestion, breathing difficulty, or nosebleeds.",
-    "precautions": [
-      "Avoid nose picking",
-      "Keep nasal passages moist",
-      "Use saline sprays",
-      "Avoid irritants and allergens"
-    ],
     "medications": [
       "Nasal decongestants (e.g., Oxymetazoline)",
       "Antihistamines",
@@ -1110,13 +982,13 @@
       "Intranasal corticosteroids",
       "Antibiotics (if bacterial infection)"
     ],
-    "diet": [
-      "Hydration",
-      "Vitamin C-rich foods (citrus, strawberries)",
-      "Zinc-rich foods (meat, seeds)",
-      "Avoid allergens and irritants",
-      "Warm fluids and anti-inflammatory foods (ginger, honey)"
+    "precautions": [
+      "Avoid nose picking",
+      "Keep nasal passages moist",
+      "Use saline sprays",
+      "Avoid irritants and allergens"
     ],
+    "diet": [],
     "workout": [
       "Breathing techniques: Nasal breathing focus",
       "Indoor cycling: Low impact on facial pressure",
@@ -1124,14 +996,9 @@
       "Gentle cardio: Avoid dry, dusty air"
     ]
   },
-  "dental caries": {
+  "Dental caries": {
+    "disease": "Dental caries",
     "description": "Dental caries (tooth decay) is the destruction of tooth enamel due to acids produced by bacteria feeding on sugars, leading to cavities, tooth pain, and infection if untreated.",
-    "precautions": [
-      "Brush twice daily",
-      "Limit sugar intake",
-      "Visit dentist regularly",
-      "Floss daily"
-    ],
     "medications": [
       "Fluoride toothpaste or gel",
       "Dental fillings",
@@ -1139,13 +1006,13 @@
       "Analgesics for pain",
       "Root canal therapy (if advanced)"
     ],
-    "diet": [
-      "Calcium-rich foods (milk, cheese)",
-      "Vitamin D-rich foods (fatty fish, fortified cereals)",
-      "Limit sugary and sticky foods",
-      "Crunchy fruits and vegetables (apples, carrots)",
-      "Green tea"
+    "precautions": [
+      "Brush twice daily",
+      "Limit sugar intake",
+      "Visit dentist regularly",
+      "Floss daily"
     ],
+    "diet": [],
     "workout": [
       "Hydration focus: Water during exercise to reduce acid",
       "Avoid sugary drinks: During workouts",
@@ -1153,14 +1020,9 @@
       "No intense jaw activities: Prevent further damage"
     ]
   },
-  "hypertensive heart disease": {
+  "Hypertensive heart disease": {
+    "disease": "Hypertensive heart disease",
     "description": "Hypertensive heart disease includes conditions caused by chronic high blood pressure, such as heart failure, thickened heart muscle, or coronary artery disease.",
-    "precautions": [
-      "Reduce salt intake",
-      "Monitor blood pressure",
-      "Exercise regularly",
-      "Take antihypertensive medication"
-    ],
     "medications": [
       "ACE inhibitors (e.g., Lisinopril)",
       "Beta-blockers (e.g., Metoprolol)",
@@ -1168,13 +1030,13 @@
       "Calcium channel blockers (e.g., Amlodipine)",
       "Lifestyle modification"
     ],
-    "diet": [
-      "Low-sodium diet (avoid processed foods)",
-      "Potassium-rich foods (bananas, sweet potatoes)",
-      "Omega-3 fatty acids (salmon, walnuts)",
-      "Whole grains (brown rice, oats)",
-      "Limit saturated fats (butter, fatty meats)"
+    "precautions": [
+      "Reduce salt intake",
+      "Monitor blood pressure",
+      "Exercise regularly",
+      "Take antihypertensive medication"
     ],
+    "diet": [],
     "workout": [
       "Walking: Low-impact and heart-friendly",
       "Swimming: Great cardiovascular activity",
@@ -1182,14 +1044,9 @@
       "Avoid heavy lifting: Prevent blood pressure surges"
     ]
   },
-  "seasonal allergies (hay fever)": {
+  "Seasonal allergies (hay fever)": {
+    "disease": "Seasonal allergies (hay fever)",
     "description": "Seasonal allergies, or hay fever, are allergic reactions to airborne allergens like pollen, causing sneezing, nasal congestion, itchy eyes, and throat irritation, often during specific seasons.",
-    "precautions": [
-      "Keep windows closed during high pollen",
-      "Shower after being outdoors",
-      "Use air purifier",
-      "Take antihistamines"
-    ],
     "medications": [
       "Oral antihistamines (e.g., Cetirizine)",
       "Intranasal corticosteroids (e.g., Fluticasone)",
@@ -1197,13 +1054,13 @@
       "Nasal saline rinses",
       "Allergy immunotherapy"
     ],
-    "diet": [
-      "Quercetin-rich foods (onions, apples)",
-      "Vitamin C-rich foods (citrus fruits)",
-      "Omega-3 fatty acids (flaxseeds, fish)",
-      "Probiotics (yogurt, kimchi)",
-      "Avoid allergens"
+    "precautions": [
+      "Keep windows closed during high pollen",
+      "Shower after being outdoors",
+      "Use air purifier",
+      "Take antihistamines"
     ],
+    "diet": [],
     "workout": [
       "Indoor workouts: Avoid pollen exposure",
       "Yoga: Manage immune and stress response",
@@ -1211,14 +1068,9 @@
       "Wear a mask outdoors: If walking outside"
     ]
   },
-  "fungal infection of the hair": {
+  "Fungal infection of the hair": {
+    "disease": "Fungal infection of the hair",
     "description": "Fungal infection of the hair, or tinea capitis, is a scalp infection caused by dermatophyte fungi, resulting in scaly patches, hair loss, and sometimes black dots or swelling.",
-    "precautions": [
-      "Keep scalp dry and clean",
-      "Avoid sharing personal items",
-      "Use antifungal shampoo",
-      "Maintain proper hygiene"
-    ],
     "medications": [
       "Griseofulvin (oral)",
       "Terbinafine (oral)",
@@ -1226,13 +1078,13 @@
       "Selenium sulfide shampoo",
       "Itraconazole"
     ],
-    "diet": [
-      "Antifungal foods (garlic, coconut oil)",
-      "Probiotics (yogurt, kefir)",
-      "Vitamin E-rich foods (nuts, seeds)",
-      "Zinc-rich foods (beef, pumpkin seeds)",
-      "Avoid sugar and processed foods"
+    "precautions": [
+      "Keep scalp dry and clean",
+      "Avoid sharing personal items",
+      "Use antifungal shampoo",
+      "Maintain proper hygiene"
     ],
+    "diet": [],
     "workout": [
       "Avoid shared gym equipment: Prevent spread",
       "Indoor yoga: No sweat-heavy environments",
@@ -1240,14 +1092,9 @@
       "Low-sweat activities: Reduce moisture"
     ]
   },
-  "rectal disorder": {
+  "Rectal disorder": {
+    "disease": "Rectal disorder",
     "description": "Rectal disorders include conditions affecting the rectum such as hemorrhoids, fissures, or prolapse, often causing pain, bleeding, or difficulty during bowel movements.",
-    "precautions": [
-      "Eat a high-fiber diet",
-      "Drink plenty of water",
-      "Avoid straining during bowel movements",
-      "Use sitz baths"
-    ],
     "medications": [
       "Hydrocortisone suppositories",
       "Laxatives (e.g., Lactulose)",
@@ -1255,13 +1102,13 @@
       "Sitz baths",
       "Surgical intervention (e.g., hemorrhoidectomy if needed)"
     ],
-    "diet": [
-      "High-fiber foods (whole grains, fruits, vegetables)",
-      "Hydration",
-      "Avoid spicy and processed foods",
-      "Probiotics (yogurt, sauerkraut)",
-      "Limit caffeine and alcohol"
+    "precautions": [
+      "Eat a high-fiber diet",
+      "Drink plenty of water",
+      "Avoid straining during bowel movements",
+      "Use sitz baths"
     ],
+    "diet": [],
     "workout": [
       "Walking: Supports digestion and circulation",
       "Pelvic floor exercises: Strengthen rectal support",
@@ -1269,20 +1116,21 @@
       "Gentle yoga: Focus on posture and breathing"
     ]
   },
-  "stye": {
+  "Stye": {
+    "disease": "Stye",
     "description": "A stye is a red, painful lump near the edge of the eyelid caused by a bacterial infection of an oil gland, often resolving on its own or with warm compresses.",
-    "precautions": [
-      "Apply warm compress",
-      "Avoid touching or squeezing",
-      "Maintain eyelid hygiene",
-      "Discontinue eye makeup temporarily"
-    ],
     "medications": [
       "Warm compresses",
       "Topical antibiotic ointment (e.g., Erythromycin)",
       "Oral antibiotics (if spreading)",
       "Pain relievers",
       "Incision and drainage (if abscess forms)"
+    ],
+    "precautions": [
+      "Apply warm compress",
+      "Avoid touching or squeezing",
+      "Maintain eyelid hygiene",
+      "Discontinue eye makeup temporarily"
     ],
     "diet": [
       "Vitamin A-rich foods (carrots, sweet potatoes)",
@@ -1298,14 +1146,9 @@
       "Avoid hot yoga: May worsen swelling"
     ]
   },
-  "heart attack": {
+  "Heart attack": {
+    "disease": "Heart attack",
     "description": "A heart attack (myocardial infarction) occurs when blood flow to part of the heart is blocked, leading to chest pain, shortness of breath, nausea, and potentially life-threatening damage to heart muscle.",
-    "precautions": [
-      "Take prescribed medication",
-      "Avoid stress",
-      "Eat heart-healthy diet",
-      "Monitor cholesterol and BP"
-    ],
     "medications": [
       "Aspirin",
       "Nitroglycerin",
@@ -1313,13 +1156,13 @@
       "ACE inhibitors",
       "Thrombolytics or PCI (percutaneous coronary intervention)"
     ],
-    "diet": [
-      "Low-sodium diet (vegetables, fresh fruits)",
-      "Omega-3 fatty acids (salmon, flaxseeds)",
-      "Whole grains (brown rice, oats)",
-      "Lean proteins (chicken, beans)",
-      "Limit saturated and trans fats (processed foods, fried foods)"
+    "precautions": [
+      "Take prescribed medication",
+      "Avoid stress",
+      "Eat heart-healthy diet",
+      "Monitor cholesterol and BP"
     ],
+    "diet": [],
     "workout": [
       "Cardiac rehabilitation: Doctor-supervised program",
       "Walking: Most recommended early-stage workout",
@@ -1327,14 +1170,9 @@
       "Avoid high-intensity training: Until medically cleared"
     ]
   },
-  "obstructive sleep apnea (osa)": {
+  "Obstructive sleep apnea (OSA)": {
+    "disease": "Obstructive sleep apnea (OSA)",
     "description": "OSA is a sleep disorder where the throat muscles intermittently relax and block the airway, causing repeated pauses in breathing during sleep and leading to poor rest and fatigue.",
-    "precautions": [
-      "Maintain healthy weight",
-      "Use CPAP machine if prescribed",
-      "Avoid alcohol before bedtime",
-      "Sleep on your side"
-    ],
     "medications": [
       "CPAP (Continuous Positive Airway Pressure)",
       "Weight loss",
@@ -1342,13 +1180,13 @@
       "Modafinil (for residual sleepiness)",
       "Surgery (e.g., UPPP, if indicated)"
     ],
-    "diet": [
-      "Weight management diet (calorie control)",
-      "Avoid alcohol and sedatives",
-      "High-fiber foods (whole grains, fruits)",
-      "Avoid heavy meals before bedtime",
-      "Hydration"
+    "precautions": [
+      "Maintain healthy weight",
+      "Use CPAP machine if prescribed",
+      "Avoid alcohol before bedtime",
+      "Sleep on your side"
     ],
+    "diet": [],
     "workout": [
       "Weight management exercises: Walking, swimming",
       "Breathing training: Strengthen airway muscles",
@@ -1356,20 +1194,21 @@
       "Avoid late-night workouts: Prevent sleep disruption"
     ]
   },
-  "psoriasis": {
+  "Psoriasis": {
+    "disease": "Psoriasis",
     "description": "Psoriasis is a chronic autoimmune skin condition causing rapid skin cell growth that results in thick, scaly, red patches, often on the elbows, knees, or scalp.",
-    "precautions": [
-      "Keep skin moisturized",
-      "Avoid triggers like stress",
-      "Use prescribed creams",
-      "Avoid scratching"
-    ],
     "medications": [
       "Topical corticosteroids",
       "Vitamin D analogs (e.g., Calcipotriol)",
       "Methotrexate",
       "Biologics (e.g., Adalimumab)",
       "Phototherapy (UVB)"
+    ],
+    "precautions": [
+      "Keep skin moisturized",
+      "Avoid triggers like stress",
+      "Use prescribed creams",
+      "Avoid scratching"
     ],
     "diet": [
       "Anti-inflammatory foods (turmeric, ginger, berries)",
@@ -1385,14 +1224,9 @@
       "Avoid hot/sweaty environments: Prevent flare-ups"
     ]
   },
-  "arthritis of the hip": {
+  "Arthritis of the hip": {
+    "disease": "Arthritis of the hip",
     "description": "Arthritis of the hip involves inflammation and degeneration of the hip joint cartilage, leading to pain, stiffness, and reduced mobility, commonly due to osteoarthritis.",
-    "precautions": [
-      "Do low-impact exercises",
-      "Use walking aids if needed",
-      "Maintain healthy weight",
-      "Take anti-inflammatory medication"
-    ],
     "medications": [
       "NSAIDs",
       "Corticosteroid injections",
@@ -1400,13 +1234,13 @@
       "Glucosamine supplements",
       "Hip replacement surgery (in advanced cases)"
     ],
-    "diet": [
-      "Anti-inflammatory foods (olive oil, turmeric, berries)",
-      "Omega-3 fatty acids (fish, flaxseeds)",
-      "Calcium-rich foods (dairy, leafy greens)",
-      "Vitamin D-rich foods (fortified milk, egg yolk)",
-      "Maintain healthy weight diet"
+    "precautions": [
+      "Do low-impact exercises",
+      "Use walking aids if needed",
+      "Maintain healthy weight",
+      "Take anti-inflammatory medication"
     ],
+    "diet": [],
     "workout": [
       "Water aerobics: Low joint impact",
       "Stretching: Maintain hip mobility",
@@ -1414,14 +1248,9 @@
       "Strength training: Build support muscles around joint"
     ]
   },
-  "sickle cell crisis": {
+  "Sickle cell crisis": {
+    "disease": "Sickle cell crisis",
     "description": "Sickle cell crisis is a painful episode in people with sickle cell disease, where misshapen red blood cells block blood flow, causing severe pain, fatigue, and potential organ damage.",
-    "precautions": [
-      "Stay hydrated",
-      "Avoid extreme temperatures",
-      "Prevent infections",
-      "Take prescribed medication regularly"
-    ],
     "medications": [
       "Hydroxyurea",
       "Folic acid",
@@ -1429,13 +1258,13 @@
       "IV fluids",
       "Blood transfusions (if needed)"
     ],
-    "diet": [
-      "Folate-rich foods (leafy greens, legumes)",
-      "Hydrating fluids (water, herbal teas)",
-      "Iron-rich foods (lean meats, beans)",
-      "Vitamin B6-rich foods (bananas, poultry)",
-      "Balanced protein intake"
+    "precautions": [
+      "Stay hydrated",
+      "Avoid extreme temperatures",
+      "Prevent infections",
+      "Take prescribed medication regularly"
     ],
+    "diet": [],
     "workout": [
       "Rest: Avoid physical stress during crisis",
       "Hydration focus: Essential during and after workouts",
@@ -1443,28 +1272,17 @@
       "Avoid high altitudes: Prevent oxygen drop"
     ]
   },
-  "otitis externa (swimmer's ear)": {
+  "Otitis externa (swimmer's ear)": {
+    "disease": "Otitis externa (swimmer's ear)",
     "description": "Otitis externa is an infection of the outer ear canal, often due to trapped water and bacteria, leading to ear pain, itching, swelling, and discharge.",
+    "medications": [],
     "precautions": [
       "Dry ears after swimming",
       "Avoid inserting objects into ears",
       "Use prescribed ear drops",
       "Avoid dirty water bodies"
     ],
-    "medications": [
-      "Topical antibiotic ear drops (e.g., Ciprofloxacin + Hydrocortisone)",
-      "Acidifying drops (e.g., Acetic acid)",
-      "Analgesics",
-      "Ear wick for deep infections",
-      "Avoid water exposure"
-    ],
-    "diet": [
-      "Hydration",
-      "Avoid irritants and allergens",
-      "Vitamin C-rich foods (citrus fruits, bell peppers)",
-      "Anti-inflammatory foods (turmeric, ginger)",
-      "Probiotics (yogurt, kefir)"
-    ],
+    "diet": [],
     "workout": [
       "Avoid swimming: Until healed",
       "Walking: Gentle, safe movement",
@@ -1472,14 +1290,9 @@
       "Protect ears: Use dry earplugs during workouts"
     ]
   },
-  "acute bronchiolitis": {
+  "Acute bronchiolitis": {
+    "disease": "Acute bronchiolitis",
     "description": "Acute bronchiolitis is a common lower respiratory tract infection in infants, usually caused by RSV, leading to wheezing, coughing, and difficulty breathing.",
-    "precautions": [
-      "Keep child hydrated",
-      "Use humidifier",
-      "Avoid exposure to smoke",
-      "Monitor breathing"
-    ],
     "medications": [
       "Supportive care",
       "Nasal suctioning",
@@ -1487,13 +1300,13 @@
       "Oxygen therapy (if hypoxic)",
       "Antipyretics (e.g., Paracetamol)"
     ],
-    "diet": [
-      "Hydration (water, herbal teas)",
-      "Vitamin C-rich foods (oranges, strawberries)",
-      "Protein-rich foods (chicken, beans)",
-      "Avoid dairy if mucus increases",
-      "Anti-inflammatory foods (ginger, turmeric)"
+    "precautions": [
+      "Keep child hydrated",
+      "Use humidifier",
+      "Avoid exposure to smoke",
+      "Monitor breathing"
     ],
+    "diet": [],
     "workout": [
       "Rest during illness: Avoid all exertion",
       "Breathing therapy: Rebuild lung strength",
@@ -1501,14 +1314,9 @@
       "Avoid dusty or polluted areas: Protect airways"
     ]
   },
-  "pyogenic skin infection": {
+  "Pyogenic skin infection": {
+    "disease": "Pyogenic skin infection",
     "description": "A pyogenic skin infection is a bacterial infection of the skin that produces pus, such as abscesses, boils, or cellulitis, often caused by Staphylococcus aureus.",
-    "precautions": [
-      "Keep wound clean and dry",
-      "Avoid scratching",
-      "Take prescribed antibiotics",
-      "Cover infected area"
-    ],
     "medications": [
       "Oral antibiotics (e.g., Cephalexin, Clindamycin)",
       "Topical antibiotics (e.g., Mupirocin)",
@@ -1516,13 +1324,13 @@
       "Antiseptic cleansing",
       "Pain management"
     ],
-    "diet": [
-      "Protein-rich foods (lean meat, eggs)",
-      "Vitamin C-rich foods (citrus fruits, kiwi)",
-      "Zinc-rich foods (pumpkin seeds, nuts)",
-      "Hydration",
-      "Avoid sugary and processed foods"
+    "precautions": [
+      "Keep wound clean and dry",
+      "Avoid scratching",
+      "Take prescribed antibiotics",
+      "Cover infected area"
     ],
+    "diet": [],
     "workout": [
       "Avoid shared gym equipment: Prevent spread",
       "No swimming: Until cleared",
@@ -1530,14 +1338,9 @@
       "Use clean towels: Hygiene is key"
     ]
   },
-  "noninfectious gastroenteritis": {
+  "Noninfectious gastroenteritis": {
+    "disease": "Noninfectious gastroenteritis",
     "description": "Noninfectious gastroenteritis refers to inflammation of the stomach and intestines not caused by infection, but by irritants like medications, alcohol, or food intolerances.",
-    "precautions": [
-      "Avoid irritant foods",
-      "Stay hydrated",
-      "Eat bland diet",
-      "Rest well"
-    ],
     "medications": [
       "Antiemetics (e.g., Ondansetron)",
       "Antispasmodics (e.g., Dicyclomine)",
@@ -1545,13 +1348,13 @@
       "Hydration therapy",
       "Dietary changes (BRAT diet)"
     ],
-    "diet": [
-      "Bland diet (bananas, rice, applesauce)",
-      "Hydration",
-      "Avoid spicy, fatty, and dairy foods",
-      "Probiotics (yogurt, kefir)",
-      "Small frequent meals"
+    "precautions": [
+      "Avoid irritant foods",
+      "Stay hydrated",
+      "Eat bland diet",
+      "Rest well"
     ],
+    "diet": [],
     "workout": [
       "Gentle walking: Only after rehydration",
       "Rest: During acute symptoms",
@@ -1559,14 +1362,9 @@
       "Hydration focus: Replace electrolytes"
     ]
   },
-  "benign prostatic hyperplasia (bph)": {
+  "Benign prostatic hyperplasia (BPH)": {
+    "disease": "Benign prostatic hyperplasia (BPH)",
     "description": "BPH is a non-cancerous enlargement of the prostate gland in older men, causing difficulty urinating, weak stream, or frequent urination, especially at night.",
-    "precautions": [
-      "Limit evening fluid intake",
-      "Avoid alcohol and caffeine",
-      "Empty bladder completely",
-      "Follow up with urologist"
-    ],
     "medications": [
       "Alpha blockers (e.g., Tamsulosin)",
       "5-alpha reductase inhibitors (e.g., Finasteride)",
@@ -1574,13 +1372,13 @@
       "Surgical options (e.g., TURP)",
       "Lifestyle changes"
     ],
-    "diet": [
-      "Hydration",
-      "Limit caffeine and alcohol",
-      "Zinc-rich foods (pumpkin seeds, beef)",
-      "Tomatoes (lycopene)",
-      "High-fiber foods (whole grains, fruits, vegetables)"
+    "precautions": [
+      "Limit evening fluid intake",
+      "Avoid alcohol and caffeine",
+      "Empty bladder completely",
+      "Follow up with urologist"
     ],
+    "diet": [],
     "workout": [
       "Pelvic floor exercises: Improve urinary control",
       "Walking: Promotes bladder health",
@@ -1588,14 +1386,9 @@
       "Stretching: Relieve pelvic tension"
     ]
   },
-  "spinal stenosis": {
+  "Spinal stenosis": {
+    "disease": "Spinal stenosis",
     "description": "Spinal stenosis is the narrowing of the spinal canal, often due to arthritis or disc problems, leading to back pain, numbness, and weakness in the legs.",
-    "precautions": [
-      "Avoid high-impact activities",
-      "Use walking support",
-      "Physical therapy",
-      "Take anti-inflammatory meds"
-    ],
     "medications": [
       "NSAIDs",
       "Physical therapy",
@@ -1603,13 +1396,13 @@
       "Gabapentin or Pregabalin",
       "Surgical decompression (e.g., laminectomy)"
     ],
-    "diet": [
-      "Anti-inflammatory foods (berries, leafy greens)",
-      "Omega-3 fatty acids (salmon, flaxseeds)",
-      "Calcium-rich foods (milk, cheese)",
-      "Vitamin D-rich foods (egg yolk, fortified cereals)",
-      "Protein-rich foods (chicken, legumes)"
+    "precautions": [
+      "Avoid high-impact activities",
+      "Use walking support",
+      "Physical therapy",
+      "Take anti-inflammatory meds"
     ],
+    "diet": [],
     "workout": [
       "Flexion-based exercises: Reduce spinal pressure",
       "Stationary biking: Low back stress",
@@ -1617,14 +1410,9 @@
       "Avoid arching or extension exercises: Prevent nerve irritation"
     ]
   },
-  "acute bronchitis": {
+  "Acute bronchitis": {
+    "disease": "Acute bronchitis",
     "description": "Acute bronchitis is inflammation of the bronchial tubes in the lungs, typically caused by a viral infection, resulting in cough, mucus production, chest discomfort, and low-grade fever.",
-    "precautions": [
-      "Avoid smoking",
-      "Drink warm fluids",
-      "Use cough suppressants if needed",
-      "Rest and recover"
-    ],
     "medications": [
       "Cough suppressants (e.g., Dextromethorphan)",
       "Expectorants (e.g., Guaifenesin)",
@@ -1632,13 +1420,13 @@
       "NSAIDs",
       "Antibiotics (only if bacterial suspected)"
     ],
-    "diet": [
-      "Hydration",
-      "Vitamin C-rich foods (citrus fruits, bell peppers)",
-      "Avoid dairy if mucus increases",
-      "Anti-inflammatory foods (ginger, turmeric)",
-      "Protein-rich foods (chicken, beans)"
+    "precautions": [
+      "Avoid smoking",
+      "Drink warm fluids",
+      "Use cough suppressants if needed",
+      "Rest and recover"
     ],
+    "diet": [],
     "workout": [
       "Breathing exercises: Aid recovery",
       "Rest: Essential during coughing phase",
@@ -1646,20 +1434,21 @@
       "Avoid cold-air workouts: Prevent airway constriction"
     ]
   },
-  "croup": {
+  "Croup": {
+    "disease": "Croup",
     "description": "Croup is a viral infection that causes swelling of the airway in young children, leading to a barking cough, hoarseness, and difficulty breathing, often worse at night.",
-    "precautions": [
-      "Use humidified air",
-      "Keep child calm",
-      "Encourage fluid intake",
-      "Seek medical help for breathing difficulty"
-    ],
     "medications": [
       "Dexamethasone (oral or IM)",
       "Nebulized epinephrine",
       "Humidified air",
       "Antipyretics",
       "Hydration"
+    ],
+    "precautions": [
+      "Use humidified air",
+      "Keep child calm",
+      "Encourage fluid intake",
+      "Seek medical help for breathing difficulty"
     ],
     "diet": [
       "Hydration",
@@ -1675,14 +1464,9 @@
       "Gentle play: Indoors and calm once recovering"
     ]
   },
-  "idiopathic excessive menstruation": {
+  "Idiopathic excessive menstruation": {
+    "disease": "Idiopathic excessive menstruation",
     "description": "Idiopathic excessive menstruation refers to abnormally heavy or prolonged menstrual bleeding without an identifiable underlying medical cause.",
-    "precautions": [
-      "Use sanitary protection",
-      "Monitor blood loss",
-      "Iron-rich diet",
-      "Consult gynecologist"
-    ],
     "medications": [
       "Tranexamic acid",
       "NSAIDs (e.g., Mefenamic acid)",
@@ -1690,13 +1474,13 @@
       "Levonorgestrel-releasing IUD",
       "Iron supplements"
     ],
-    "diet": [
-      "Iron-rich foods (spinach, red meat)",
-      "Vitamin C-rich foods (oranges, bell peppers)",
-      "Hydration",
-      "Avoid caffeine and alcohol",
-      "High-fiber foods (whole grains, fruits)"
+    "precautions": [
+      "Use sanitary protection",
+      "Monitor blood loss",
+      "Iron-rich diet",
+      "Consult gynecologist"
     ],
+    "diet": [],
     "workout": [
       "Yoga: Eases cramps and bleeding",
       "Walking: Low-impact movement",
@@ -1704,14 +1488,9 @@
       "Avoid intense cardio: Prevent symptom worsening"
     ]
   },
-  "ear drum damage": {
+  "Ear drum damage": {
+    "disease": "Ear drum damage",
     "description": "Ear drum damage (tympanic membrane perforation) is a tear or hole in the eardrum due to infection, injury, or loud noise, which may cause pain, hearing loss, or drainage.",
-    "precautions": [
-      "Avoid water entry into ear",
-      "Don\u2019t insert objects into ear",
-      "Use ear drops as prescribed",
-      "Follow up with ENT"
-    ],
     "medications": [
       "Antibiotic ear drops (if infection)",
       "Oral antibiotics (if needed)",
@@ -1719,13 +1498,13 @@
       "Pain relief (e.g., Acetaminophen)",
       "Tympanoplasty (if persistent perforation)"
     ],
-    "diet": [
-      "Protein-rich foods (lean meats, eggs)",
-      "Vitamin C-rich foods (citrus, broccoli)",
-      "Zinc-rich foods (shellfish, pumpkin seeds)",
-      "Hydration",
-      "Avoid irritants"
+    "precautions": [
+      "Avoid water entry into ear",
+      "Don\u2019t insert objects into ear",
+      "Use ear drops as prescribed",
+      "Follow up with ENT"
     ],
+    "diet": [],
     "workout": [
       "Avoid swimming and underwater sports",
       "Walking: Safe and low-impact",
@@ -1733,14 +1512,9 @@
       "Protect ears from loud music/explosive sports"
     ]
   },
-  "temporary or benign blood in urine": {
+  "Temporary or benign blood in urine": {
+    "disease": "Temporary or benign blood in urine",
     "description": "Temporary or benign hematuria is the presence of blood in the urine without a serious underlying cause, sometimes triggered by exercise, medications, or mild infections.",
-    "precautions": [
-      "Stay hydrated",
-      "Avoid strenuous activity",
-      "Avoid certain medications (as advised)",
-      "Follow up with doctor"
-    ],
     "medications": [
       "Hydration therapy",
       "Avoid strenuous exercise",
@@ -1748,13 +1522,13 @@
       "Monitor kidney function",
       "Reassurance and follow-up"
     ],
-    "diet": [
-      "Hydration",
-      "Avoid irritants (spicy foods, caffeine)",
-      "Balanced diet with fruits and vegetables",
-      "Limit sodium and processed foods",
-      "Consult doctor for specific recommendations"
+    "precautions": [
+      "Stay hydrated",
+      "Avoid strenuous activity",
+      "Avoid certain medications (as advised)",
+      "Follow up with doctor"
     ],
+    "diet": [],
     "workout": [
       "Walking: Low strain on kidneys",
       "Hydration before and after: Support urinary health",
@@ -1762,14 +1536,9 @@
       "Gentle stretching: Support circulation"
     ]
   },
-  "common cold": {
+  "Common cold": {
+    "disease": "Common cold",
     "description": "The common cold is a viral infection of the upper respiratory tract, typically causing sneezing, sore throat, nasal congestion, cough, and mild fever.",
-    "precautions": [
-      "Drink plenty of fluids",
-      "Rest well",
-      "Use nasal decongestants",
-      "Practice good hygiene"
-    ],
     "medications": [
       "Paracetamol",
       "Ibuprofen",
@@ -1777,13 +1546,13 @@
       "Antihistamines",
       "Cough syrups (e.g., Dextromethorphan)"
     ],
-    "diet": [
-      "Hydration (water, herbal teas)",
-      "Vitamin C-rich foods (citrus, kiwi)",
-      "Zinc-rich foods (nuts, seeds)",
-      "Chicken soup",
-      "Avoid dairy if mucus increases"
+    "precautions": [
+      "Drink plenty of fluids",
+      "Rest well",
+      "Use nasal decongestants",
+      "Practice good hygiene"
     ],
+    "diet": [],
     "workout": [
       "Rest: Essential during acute phase",
       "Gentle yoga: After fever subsides",
@@ -1791,20 +1560,21 @@
       "Breathing exercises: Open airways"
     ]
   },
-  "depression": {
+  "Depression": {
+    "disease": "Depression",
     "description": "Depression is a mental health disorder characterized by persistent sadness, loss of interest or pleasure, fatigue, and changes in sleep or appetite, significantly impacting daily life.",
-    "precautions": [
-      "Maintain social connection",
-      "Follow treatment plan",
-      "Get regular exercise",
-      "Avoid alcohol and drugs"
-    ],
     "medications": [
       "SSRIs (e.g., Sertraline, Escitalopram)",
       "SNRIs (e.g., Venlafaxine)",
       "Atypical antidepressants (e.g., Bupropion)",
       "Cognitive Behavioral Therapy (CBT)",
       "Psychotherapy"
+    ],
+    "precautions": [
+      "Maintain social connection",
+      "Follow treatment plan",
+      "Get regular exercise",
+      "Avoid alcohol and drugs"
     ],
     "diet": [
       "Omega-3 fatty acids (salmon, walnuts)",
@@ -1820,14 +1590,9 @@
       "Walking in nature: Proven to reduce symptoms"
     ]
   },
-  "idiopathic irregular menstrual cycle": {
+  "Idiopathic irregular menstrual cycle": {
+    "disease": "Idiopathic irregular menstrual cycle",
     "description": "Idiopathic irregular menstrual cycle refers to inconsistent or unpredictable menstrual periods without a clear medical cause, often linked to hormonal imbalance.",
-    "precautions": [
-      "Keep menstrual diary",
-      "Maintain healthy weight",
-      "Reduce stress",
-      "Consult a gynecologist"
-    ],
     "medications": [
       "Combined oral contraceptives",
       "Progestins",
@@ -1835,13 +1600,13 @@
       "Lifestyle modification",
       "Clomiphene (for ovulation induction)"
     ],
-    "diet": [
-      "Balanced diet with protein (chicken, beans)",
-      "Iron-rich foods (spinach, lentils)",
-      "Vitamin B6-rich foods (bananas, poultry)",
-      "Hydration",
-      "Avoid caffeine and high sugar foods"
+    "precautions": [
+      "Keep menstrual diary",
+      "Maintain healthy weight",
+      "Reduce stress",
+      "Consult a gynecologist"
     ],
+    "diet": [],
     "workout": [
       "Moderate aerobic workouts: Regulate hormones",
       "Yoga: Balance endocrine function",
@@ -1849,20 +1614,21 @@
       "Avoid excessive exercise: Can disrupt cycles"
     ]
   },
-  "schizophrenia": {
+  "Schizophrenia": {
+    "disease": "Schizophrenia",
     "description": "Schizophrenia is a severe psychiatric disorder involving distortions in thinking, perception, emotions, language, and behavior, often with hallucinations or delusions.",
-    "precautions": [
-      "Adhere to medication",
-      "Avoid substance abuse",
-      "Attend therapy sessions",
-      "Build a support network"
-    ],
     "medications": [
       "Antipsychotics (e.g., Risperidone, Olanzapine)",
       "Clozapine (treatment-resistant cases)",
       "Cognitive behavioral therapy",
       "Long-acting injectables",
       "Psychosocial support"
+    ],
+    "precautions": [
+      "Adhere to medication",
+      "Avoid substance abuse",
+      "Attend therapy sessions",
+      "Build a support network"
     ],
     "diet": [
       "Omega-3 fatty acids (fish, flaxseeds)",
@@ -1878,20 +1644,21 @@
       "Avoid sensory overload: Choose quiet environments"
     ]
   },
-  "sepsis": {
+  "Sepsis": {
+    "disease": "Sepsis",
     "description": "Sepsis is a life-threatening response to infection where the body\u2019s immune system causes widespread inflammation, leading to tissue damage, organ failure, and possibly death.",
-    "precautions": [
-      "Seek urgent medical care",
-      "Follow antibiotic regimen",
-      "Monitor temperature & vitals",
-      "Maintain good hygiene"
-    ],
     "medications": [
       "IV broad-spectrum antibiotics (e.g., Piperacillin-tazobactam)",
       "IV fluids",
       "Vasopressors (e.g., Norepinephrine)",
       "Oxygen therapy",
       "Source control (e.g., drainage of abscess)"
+    ],
+    "precautions": [
+      "Seek urgent medical care",
+      "Follow antibiotic regimen",
+      "Monitor temperature & vitals",
+      "Maintain good hygiene"
     ],
     "diet": [
       "High-protein foods (eggs, lean meat)",
@@ -1907,20 +1674,21 @@
       "Avoid overexertion: Recovery can be long-term"
     ]
   },
-  "cholecystitis": {
+  "Cholecystitis": {
+    "disease": "Cholecystitis",
     "description": "Cholecystitis is inflammation of the gallbladder, often due to gallstones, causing severe upper abdominal pain, fever, nausea, and tenderness.",
-    "precautions": [
-      "Avoid fatty foods",
-      "Stay hydrated",
-      "Follow up for imaging/tests",
-      "Take antibiotics as prescribed"
-    ],
     "medications": [
       "IV antibiotics (e.g., Ceftriaxone + Metronidazole)",
       "Pain relievers (e.g., Morphine)",
       "IV fluids",
       "NPO (nothing by mouth)",
       "Cholecystectomy (surgical removal of gallbladder)"
+    ],
+    "precautions": [
+      "Avoid fatty foods",
+      "Stay hydrated",
+      "Follow up for imaging/tests",
+      "Take antibiotics as prescribed"
     ],
     "diet": [
       "Low-fat diet (lean proteins, vegetables)",
@@ -1936,20 +1704,21 @@
       "Avoid core strain: Prevent gallbladder pressure"
     ]
   },
-  "cystitis": {
+  "Cystitis": {
+    "disease": "Cystitis",
     "description": "Cystitis is inflammation of the bladder, usually from a bacterial infection, leading to frequent, painful urination and lower abdominal discomfort.",
-    "precautions": [
-      "Drink cranberry juice or water",
-      "Urinate frequently",
-      "Avoid irritants like caffeine",
-      "Wipe front to back"
-    ],
     "medications": [
       "Nitrofurantoin",
       "Trimethoprim-sulfamethoxazole",
       "Fosfomycin",
       "Phenazopyridine (for pain relief)",
       "Hydration"
+    ],
+    "precautions": [
+      "Drink cranberry juice or water",
+      "Urinate frequently",
+      "Avoid irritants like caffeine",
+      "Wipe front to back"
     ],
     "diet": [
       "Hydration (water, cranberry juice)",
@@ -1965,20 +1734,21 @@
       "Avoid workouts that cause dehydration"
     ]
   },
-  "hemorrhoids": {
+  "Hemorrhoids": {
+    "disease": "Hemorrhoids",
     "description": "Hemorrhoids are swollen veins in the anus or rectum that cause pain, itching, bleeding, or discomfort during bowel movements.",
-    "precautions": [
-      "Eat fiber-rich foods",
-      "Avoid prolonged sitting",
-      "Stay hydrated",
-      "Use sitz baths"
-    ],
     "medications": [
       "Topical hydrocortisone cream",
       "Witch hazel pads",
       "Stool softeners (e.g., Docusate)",
       "Sitz baths",
       "Surgical procedures (e.g., rubber band ligation)"
+    ],
+    "precautions": [
+      "Eat fiber-rich foods",
+      "Avoid prolonged sitting",
+      "Stay hydrated",
+      "Use sitz baths"
     ],
     "diet": [
       "High-fiber foods (whole grains, fruits, vegetables)",
@@ -1994,14 +1764,9 @@
       "Gentle yoga: Especially pelvic-friendly poses"
     ]
   },
-  "contact dermatitis": {
+  "Contact dermatitis": {
+    "disease": "Contact dermatitis",
     "description": "Contact dermatitis is a skin inflammation caused by exposure to an irritant or allergen, resulting in redness, itching, blisters, or dryness.",
-    "precautions": [
-      "Identify and avoid allergen",
-      "Use fragrance-free products",
-      "Apply soothing lotion",
-      "Wear gloves when needed"
-    ],
     "medications": [
       "Topical corticosteroids (e.g., Hydrocortisone)",
       "Oral antihistamines",
@@ -2009,13 +1774,13 @@
       "Avoidance of allergen/irritant",
       "Oral corticosteroids (if severe)"
     ],
-    "diet": [
-      "Avoid allergenic foods",
-      "Anti-inflammatory foods (turmeric, ginger)",
-      "Hydrating fluids",
-      "Vitamin E-rich foods (nuts, seeds)",
-      "Probiotics (fermented foods)"
+    "precautions": [
+      "Identify and avoid allergen",
+      "Use fragrance-free products",
+      "Apply soothing lotion",
+      "Wear gloves when needed"
     ],
+    "diet": [],
     "workout": [
       "Avoid sweating heavily: Can irritate skin",
       "Indoor stretching: Cool and dry",
@@ -2023,14 +1788,9 @@
       "Clean skin after exercise: Prevent flare-ups"
     ]
   },
-  "sinus bradycardia": {
+  "Sinus bradycardia": {
+    "disease": "Sinus bradycardia",
     "description": "Sinus bradycardia is a slower than normal heart rate originating from the sinus node, which may be normal in athletes or caused by medications or medical conditions.",
-    "precautions": [
-      "Avoid excessive physical strain",
-      "Regular cardiac monitoring",
-      "Follow-up with cardiologist",
-      "Manage electrolyte balance"
-    ],
     "medications": [
       "Atropine (acute cases)",
       "Temporary or permanent pacemaker (if symptomatic)",
@@ -2038,13 +1798,13 @@
       "Isoproterenol infusion (if needed)",
       "Monitor ECG"
     ],
-    "diet": [
-      "Balanced diet with adequate electrolytes (potassium from bananas, magnesium from nuts)",
-      "Hydration",
-      "Limit caffeine and alcohol",
-      "Whole grains and lean proteins",
-      "Consult cardiologist"
+    "precautions": [
+      "Avoid excessive physical strain",
+      "Regular cardiac monitoring",
+      "Follow-up with cardiologist",
+      "Manage electrolyte balance"
     ],
+    "diet": [],
     "workout": [
       "Light aerobic activity: Walking or slow cycling",
       "Warm-up and cool-down: Essential to prevent dizziness",
@@ -2052,14 +1812,9 @@
       "Avoid overexertion: Monitor heart rate"
     ]
   },
-  "pelvic inflammatory disease": {
+  "Pelvic inflammatory disease": {
+    "disease": "Pelvic inflammatory disease",
     "description": "Pelvic inflammatory disease (PID) is an infection of the female reproductive organs, often caused by sexually transmitted bacteria, leading to abdominal pain, fever, and abnormal discharge.",
-    "precautions": [
-      "Complete full course of antibiotics",
-      "Avoid sexual activity during treatment",
-      "Practice safe sex",
-      "Attend follow-up appointments"
-    ],
     "medications": [
       "Ceftriaxone + Doxycycline + Metronidazole",
       "Pain relievers",
@@ -2067,13 +1822,13 @@
       "Partner treatment",
       "Abstain from intercourse during treatment"
     ],
-    "diet": [
-      "Hydration",
-      "Protein-rich foods (chicken, beans)",
-      "Vitamin C-rich foods (citrus fruits)",
-      "Avoid irritants and processed foods",
-      "Probiotics (yogurt, kefir)"
+    "precautions": [
+      "Complete full course of antibiotics",
+      "Avoid sexual activity during treatment",
+      "Practice safe sex",
+      "Attend follow-up appointments"
     ],
+    "diet": [],
     "workout": [
       "Pelvic floor strengthening: Aid recovery",
       "Walking: Supports circulation",
@@ -2081,14 +1836,9 @@
       "Gentle yoga: Pelvic-friendly movements"
     ]
   },
-  "liver disease": {
+  "Liver disease": {
+    "disease": "Liver disease",
     "description": "Liver disease refers to a range of disorders affecting the liver, such as hepatitis, fatty liver, or cirrhosis, potentially causing jaundice, fatigue, and liver dysfunction.",
-    "precautions": [
-      "Avoid alcohol",
-      "Follow a liver-friendly diet",
-      "Get vaccinated for hepatitis",
-      "Monitor liver function tests"
-    ],
     "medications": [
       "Lactulose (for hepatic encephalopathy)",
       "Diuretics (e.g., Spironolactone)",
@@ -2096,13 +1846,13 @@
       "Ursodeoxycholic acid",
       "Antivirals (e.g., Tenofovir for HBV)"
     ],
-    "diet": [
-      "Low sodium diet (avoid processed foods)",
-      "High-protein foods (eggs, lean meats)",
-      "Vitamin-rich foods (leafy greens, fruits)",
-      "Avoid alcohol and saturated fats",
-      "Hydration"
+    "precautions": [
+      "Avoid alcohol",
+      "Follow a liver-friendly diet",
+      "Get vaccinated for hepatitis",
+      "Monitor liver function tests"
     ],
+    "diet": [],
     "workout": [
       "Walking: Promotes liver circulation",
       "Avoid strenuous workouts: Can worsen fatigue",
@@ -2110,14 +1860,9 @@
       "Avoid alcohol-based environments (gyms with bars etc.): Stay safe"
     ]
   },
-  "chronic constipation": {
+  "Chronic constipation": {
+    "disease": "Chronic constipation",
     "description": "Chronic constipation is a long-term condition characterized by infrequent or difficult bowel movements, often accompanied by abdominal discomfort or bloating.",
-    "precautions": [
-      "Increase fiber intake",
-      "Exercise regularly",
-      "Stay hydrated",
-      "Avoid delaying bowel movements"
-    ],
     "medications": [
       "Laxatives (e.g., Polyethylene glycol)",
       "Stool softeners (e.g., Docusate)",
@@ -2125,13 +1870,13 @@
       "Osmotic agents (e.g., Lactulose)",
       "Prokinetics"
     ],
-    "diet": [
-      "High-fiber foods (whole grains, fruits, vegetables)",
-      "Hydration",
-      "Probiotics (yogurt, kimchi)",
-      "Limit processed and fatty foods",
-      "Regular meals and physical activity"
+    "precautions": [
+      "Increase fiber intake",
+      "Exercise regularly",
+      "Stay hydrated",
+      "Avoid delaying bowel movements"
     ],
+    "diet": [],
     "workout": [
       "Walking: Stimulates bowel movement",
       "Yoga: Helps with digestion",
@@ -2139,14 +1884,9 @@
       "Hydration pre- and post-workout: Key support"
     ]
   },
-  "skin polyp": {
+  "Skin polyp": {
+    "disease": "Skin polyp",
     "description": "A skin polyp (skin tag) is a small, benign growth of skin that typically appears in areas where skin rubs together, like the neck, armpits, or groin.",
-    "precautions": [
-      "Avoid irritation or injury to area",
-      "Monitor size and appearance",
-      "Don\u2019t self-remove",
-      "Seek medical evaluation"
-    ],
     "medications": [
       "Cryotherapy",
       "Electrosurgical removal",
@@ -2154,13 +1894,13 @@
       "Topical anesthesia",
       "Histopathology (to rule out malignancy)"
     ],
-    "diet": [
-      "Balanced diet with antioxidants (berries, leafy greens)",
-      "Vitamin A-rich foods (carrots, sweet potatoes)",
-      "Hydration",
-      "Avoid processed and fried foods",
-      "Omega-3 fatty acids (fish, flaxseeds)"
+    "precautions": [
+      "Avoid irritation or injury to area",
+      "Monitor size and appearance",
+      "Don\u2019t self-remove",
+      "Seek medical evaluation"
     ],
+    "diet": [],
     "workout": [
       "Avoid friction-prone exercises: Prevent irritation",
       "Wear soft, non-abrasive clothing",
@@ -2168,14 +1908,9 @@
       "Monitor any changes during workout routines"
     ]
   },
-  "brachial neuritis": {
+  "Brachial neuritis": {
+    "disease": "Brachial neuritis",
     "description": "Brachial neuritis is inflammation of the brachial plexus nerves, causing sudden shoulder and arm pain followed by weakness or numbness.",
-    "precautions": [
-      "Avoid heavy lifting",
-      "Physical therapy",
-      "Manage pain with meds",
-      "Get adequate rest"
-    ],
     "medications": [
       "NSAIDs",
       "Oral corticosteroids",
@@ -2183,13 +1918,13 @@
       "Physical therapy",
       "Pain management"
     ],
-    "diet": [
-      "Protein-rich foods (chicken, beans)",
-      "Anti-inflammatory foods (turmeric, ginger)",
-      "Omega-3 fatty acids (salmon, walnuts)",
-      "Vitamin B complex (whole grains, eggs)",
-      "Hydration"
+    "precautions": [
+      "Avoid heavy lifting",
+      "Physical therapy",
+      "Manage pain with meds",
+      "Get adequate rest"
     ],
+    "diet": [],
     "workout": [
       "Range-of-motion exercises: Restore shoulder movement",
       "Light resistance training: Under physiotherapy",
@@ -2197,20 +1932,21 @@
       "Pain management with guided stretching"
     ]
   },
-  "esophagitis": {
+  "Esophagitis": {
+    "disease": "Esophagitis",
     "description": "Esophagitis is inflammation of the esophagus, commonly due to acid reflux, infections, or medications, causing pain when swallowing and chest discomfort.",
-    "precautions": [
-      "Avoid spicy & acidic food",
-      "Eat smaller meals",
-      "Sit upright after eating",
-      "Follow prescribed medication"
-    ],
     "medications": [
       "Proton Pump Inhibitors (e.g., Omeprazole)",
       "H2 Blockers (e.g., Ranitidine)",
       "Sucralfate",
       "Antifungal or antiviral agents (if infectious)",
       "Dietary changes"
+    ],
+    "precautions": [
+      "Avoid spicy & acidic food",
+      "Eat smaller meals",
+      "Sit upright after eating",
+      "Follow prescribed medication"
     ],
     "diet": [
       "Soft, bland diet (bananas, applesauce, oatmeal)",
@@ -2226,20 +1962,21 @@
       "No crunches or abdominal pressure"
     ]
   },
-  "diverticulitis": {
+  "Diverticulitis": {
+    "disease": "Diverticulitis",
     "description": "Diverticulitis is inflammation or infection of small pouches (diverticula) in the colon wall, leading to abdominal pain, fever, and changes in bowel habits.",
-    "precautions": [
-      "Eat low-fiber during flare-ups",
-      "Stay hydrated",
-      "Take antibiotics if prescribed",
-      "Avoid seeds/nuts if advised"
-    ],
     "medications": [
       "Antibiotics (e.g., Ciprofloxacin + Metronidazole)",
       "Clear liquid diet (during flare)",
       "Pain relievers",
       "High-fiber diet (after recovery)",
       "Surgery (if complications)"
+    ],
+    "precautions": [
+      "Eat low-fiber during flare-ups",
+      "Stay hydrated",
+      "Take antibiotics if prescribed",
+      "Avoid seeds/nuts if advised"
     ],
     "diet": [
       "Low-fiber diet during flare-up (white bread, white rice)",
@@ -2255,14 +1992,9 @@
       "Hydration support during and after workouts"
     ]
   },
-  "sprain or strain": {
+  "Sprain or strain": {
+    "disease": "Sprain or strain",
     "description": "A sprain is a stretched or torn ligament, while a strain is a stretched or torn muscle or tendon; both cause pain, swelling, and limited movement.",
-    "precautions": [
-      "Rest the area",
-      "Apply ice packs",
-      "Compression with bandage",
-      "Elevate the limb"
-    ],
     "medications": [
       "RICE (Rest, Ice, Compression, Elevation)",
       "NSAIDs (e.g., Ibuprofen)",
@@ -2270,13 +2002,13 @@
       "Physical therapy",
       "Immobilization (if needed)"
     ],
-    "diet": [
-      "Protein-rich foods (lean meat, eggs)",
-      "Anti-inflammatory foods (ginger, turmeric)",
-      "Vitamin C-rich foods (citrus fruits)",
-      "Hydration",
-      "Zinc-rich foods (nuts, seeds)"
+    "precautions": [
+      "Rest the area",
+      "Apply ice packs",
+      "Compression with bandage",
+      "Elevate the limb"
     ],
+    "diet": [],
     "workout": [
       "RICE first (rest, ice, compress, elevate)",
       "Gentle range-of-motion exercises: After pain subsides",
@@ -2284,14 +2016,9 @@
       "Rehabilitation-focused strength training"
     ]
   },
-  "idiopathic painful menstruation": {
+  "Idiopathic painful menstruation": {
+    "disease": "Idiopathic painful menstruation",
     "description": "Idiopathic painful menstruation (primary dysmenorrhea) is severe menstrual cramping without an identifiable medical condition, often starting in adolescence.",
-    "precautions": [
-      "Use heat pads",
-      "Take antispasmodics/NSAIDs",
-      "Regular exercise",
-      "Avoid stress"
-    ],
     "medications": [
       "NSAIDs (e.g., Ibuprofen)",
       "Oral contraceptives",
@@ -2299,13 +2026,13 @@
       "Vitamin B1 and magnesium supplements",
       "Physical activity"
     ],
-    "diet": [
-      "Magnesium-rich foods (spinach, dark chocolate)",
-      "Omega-3 fatty acids (salmon, walnuts)",
-      "Hydration",
-      "Avoid salty and processed foods",
-      "Ginger and turmeric tea"
+    "precautions": [
+      "Use heat pads",
+      "Take antispasmodics/NSAIDs",
+      "Regular exercise",
+      "Avoid stress"
     ],
+    "diet": [],
     "workout": [
       "Yoga: Especially child\u2019s pose and reclined twist",
       "Walking: Helps reduce cramps",
@@ -2313,14 +2040,9 @@
       "Avoid high-intensity workouts during pain spikes"
     ]
   },
-  "eustachian tube dysfunction (ear disorder)": {
+  "Eustachian tube dysfunction (ear disorder)": {
+    "disease": "Eustachian tube dysfunction (ear disorder)",
     "description": "Eustachian tube dysfunction occurs when the tube connecting the middle ear to the throat becomes blocked or fails to open, causing pressure, pain, or hearing issues.",
-    "precautions": [
-      "Avoid flying with a cold",
-      "Use decongestants",
-      "Perform Valsalva maneuver",
-      "Stay hydrated"
-    ],
     "medications": [
       "Nasal decongestants",
       "Nasal corticosteroids",
@@ -2328,34 +2050,25 @@
       "Antihistamines",
       "Surgical placement of ear tubes (in severe cases)"
     ],
-    "diet": [
-      "Anti-inflammatory foods (berries, leafy greens)",
-      "Vitamin C-rich foods (oranges, peppers)",
-      "Hydration",
-      "Avoid dairy if congestion worsens",
-      "Probiotics (yogurt)"
-    ],
-    "workout": [
-      "Avoid pressure changes: No underwater or flying sports",
-      "Breathing and jaw exercises: Promote drainage",
-      "Gentle yoga: Avoid headstand poses",
-      "Walking: Comfortable, low pressure"
-    ]
+    "precautions": [],
+    "diet": [],
+    "workout": []
   },
-  "appendicitis": {
+  "Appendicitis": {
+    "disease": "Appendicitis",
     "description": "Appendicitis is inflammation of the appendix, usually requiring surgery, and causes sudden lower right abdominal pain, nausea, and fever.",
-    "precautions": [
-      "Avoid taking laxatives",
-      "Seek emergency care",
-      "Don\u2019t eat or drink before surgery",
-      "Follow post-op instructions"
-    ],
     "medications": [
       "Surgical removal (Appendectomy)",
       "Pre-operative antibiotics (e.g., Ceftriaxone + Metronidazole)",
       "Pain management",
       "IV fluids",
       "NPO status before surgery"
+    ],
+    "precautions": [
+      "Avoid taking laxatives",
+      "Seek emergency care",
+      "Don\u2019t eat or drink before surgery",
+      "Follow post-op instructions"
     ],
     "diet": [
       "Post-surgery: soft foods (broths, rice, applesauce)",
@@ -2371,14 +2084,9 @@
       "Avoid abdominal workouts until cleared"
     ]
   },
-  "hyperemesis gravidarum": {
+  "Hyperemesis gravidarum": {
+    "disease": "Hyperemesis gravidarum",
     "description": "Hyperemesis gravidarum is a severe form of morning sickness in pregnancy, leading to persistent nausea, vomiting, dehydration, and weight loss.",
-    "precautions": [
-      "Eat small, frequent meals",
-      "Stay hydrated",
-      "Avoid strong odors",
-      "Take prescribed anti-nausea meds"
-    ],
     "medications": [
       "IV fluids and electrolytes",
       "Vitamin B6 (Pyridoxine)",
@@ -2386,13 +2094,13 @@
       "Thiamine supplementation",
       "Nutritional support (e.g., TPN if severe)"
     ],
-    "diet": [
-      "Small frequent meals",
-      "Bland foods (crackers, rice)",
-      "Ginger tea",
-      "Vitamin B6-rich foods (bananas, chickpeas)",
-      "Hydration with electrolytes (ORS, coconut water)"
+    "precautions": [
+      "Eat small, frequent meals",
+      "Stay hydrated",
+      "Avoid strong odors",
+      "Take prescribed anti-nausea meds"
     ],
+    "diet": [],
     "workout": [
       "Gentle walking: If tolerated",
       "Prenatal yoga: Helps manage nausea",
@@ -2400,14 +2108,9 @@
       "Hydration breaks essential"
     ]
   },
-  "urinary tract infection": {
+  "Urinary tract infection": {
+    "disease": "Urinary tract infection",
     "description": "A urinary tract infection (UTI) is an infection in any part of the urinary system, commonly the bladder, causing pain during urination, urgency, and cloudy or strong-smelling urine.",
-    "precautions": [
-      "Drink plenty of fluids",
-      "Urinate after sex",
-      "Wipe front to back",
-      "Complete antibiotic course"
-    ],
     "medications": [
       "Nitrofurantoin",
       "Ciprofloxacin",
@@ -2415,13 +2118,13 @@
       "Cranberry supplements",
       "Hydration therapy"
     ],
-    "diet": [
-      "Hydration (water, cranberry juice)",
-      "Avoid caffeine, alcohol, and spicy foods",
-      "Vitamin C-rich foods (citrus, bell peppers)",
-      "Probiotics (yogurt, kefir)",
-      "Fiber-rich foods"
+    "precautions": [
+      "Drink plenty of fluids",
+      "Urinate after sex",
+      "Wipe front to back",
+      "Complete antibiotic course"
     ],
+    "diet": [],
     "workout": [
       "Walking: Gentle activity safe during mild infections",
       "Avoid workouts that apply pressure to bladder",
@@ -2429,14 +2132,9 @@
       "Pelvic floor exercises: Strengthen urinary control"
     ]
   },
-  "peripheral nerve disorder": {
+  "Peripheral nerve disorder": {
+    "disease": "Peripheral nerve disorder",
     "description": "Peripheral nerve disorders affect the nerves outside the brain and spinal cord, leading to numbness, weakness, pain, or coordination problems.",
-    "precautions": [
-      "Avoid repetitive injury",
-      "Use ergonomic tools",
-      "Take B vitamins if deficient",
-      "Follow neurologist\u2019s advice"
-    ],
     "medications": [
       "Gabapentin",
       "Pregabalin",
@@ -2444,12 +2142,13 @@
       "Physical therapy",
       "Alpha-lipoic acid (as supplement)"
     ],
-    "diet": [
-      "Vitamin B-rich foods (whole grains, eggs, leafy greens)",
-      "Omega-3 fatty acids (salmon, chia seeds)",
-      "Anti-inflammatory foods (turmeric, berries)",
-      "Hydration"
+    "precautions": [
+      "Avoid repetitive injury",
+      "Use ergonomic tools",
+      "Take B vitamins if deficient",
+      "Follow neurologist\u2019s advice"
     ],
+    "diet": [],
     "workout": [
       "Balance training: Prevent falls",
       "Physical therapy: Guided nerve rehab",
@@ -2457,14 +2156,9 @@
       "Swimming: Low-impact full-body option"
     ]
   },
-  "sebaceous cyst": {
+  "Sebaceous cyst": {
+    "disease": "Sebaceous cyst",
     "description": "A sebaceous cyst is a noncancerous bump beneath the skin, filled with oily material, often caused by blocked sebaceous glands.",
-    "precautions": [
-      "Keep area clean",
-      "Avoid squeezing",
-      "Apply warm compress",
-      "Get it drained by a doctor if needed"
-    ],
     "medications": [
       "Warm compress",
       "Incision and drainage (if infected)",
@@ -2472,12 +2166,13 @@
       "Surgical excision",
       "Steroid injection (if inflamed)"
     ],
-    "diet": [
-      "Anti-inflammatory foods (ginger, turmeric, leafy greens)",
-      "Zinc-rich foods (pumpkin seeds, nuts)",
-      "Vitamin A-rich foods (carrots, sweet potatoes)",
-      "Hydration"
+    "precautions": [
+      "Keep area clean",
+      "Avoid squeezing",
+      "Apply warm compress",
+      "Get it drained by a doctor if needed"
     ],
+    "diet": [],
     "workout": [
       "Avoid pressure or friction on cyst",
       "Low-sweat activities: Prevent irritation",
@@ -2485,14 +2180,9 @@
       "Avoid helmets/hats if cyst is on scalp"
     ]
   },
-  "spontaneous abortion": {
+  "Spontaneous abortion": {
+    "disease": "Spontaneous abortion",
     "description": "Spontaneous abortion (miscarriage) is the loss of a pregnancy before 20 weeks, often due to genetic issues or unknown causes, and may involve bleeding and cramping.",
-    "precautions": [
-      "Take emotional support",
-      "Rest adequately",
-      "Avoid strenuous activity",
-      "Follow up for check-up"
-    ],
     "medications": [
       "Misoprostol (to complete expulsion)",
       "Mifepristone + Misoprostol (in selected cases)",
@@ -2500,13 +2190,13 @@
       "Rh immunoglobulin (if Rh-negative)",
       "Emotional support and counseling"
     ],
-    "diet": [
-      "Iron-rich foods (red meat, spinach)",
-      "Vitamin C (citrus, strawberries)",
-      "Folate-rich foods (legumes, dark leafy greens)",
-      "Hydration",
-      "Comforting herbal teas"
+    "precautions": [
+      "Take emotional support",
+      "Rest adequately",
+      "Avoid strenuous activity",
+      "Follow up for check-up"
     ],
+    "diet": [],
     "workout": [
       "Gentle stretching: Emotional and physical recovery",
       "Walking: When emotionally and physically ready",
@@ -2514,20 +2204,21 @@
       "Avoid strenuous exercise: Until cleared by doctor"
     ]
   },
-  "gallstone": {
+  "Gallstone": {
+    "disease": "Gallstone",
     "description": "Gallstones are hardened deposits of digestive fluid in the gallbladder that can block bile flow, causing abdominal pain, nausea, and sometimes infection.",
-    "precautions": [
-      "Avoid high-fat foods",
-      "Maintain a healthy weight",
-      "Eat regular meals",
-      "Follow up for surgical evaluation if needed"
-    ],
     "medications": [
       "Ursodeoxycholic acid (in some cases)",
       "Pain relievers (e.g., NSAIDs)",
       "Cholecystectomy (surgical removal)",
       "Antibiotics (if cholecystitis)",
       "Dietary modifications"
+    ],
+    "precautions": [
+      "Avoid high-fat foods",
+      "Maintain a healthy weight",
+      "Eat regular meals",
+      "Follow up for surgical evaluation if needed"
     ],
     "diet": [
       "Low-fat diet (steamed vegetables, lean meats)",
@@ -2543,14 +2234,9 @@
       "Avoid core-focused exercises: Prevent discomfort"
     ]
   },
-  "multiple sclerosis": {
+  "Multiple sclerosis": {
+    "disease": "Multiple sclerosis",
     "description": "Multiple sclerosis (MS) is an autoimmune disease where the immune system attacks the protective sheath of nerves, leading to weakness, vision problems, and coordination issues.",
-    "precautions": [
-      "Avoid overheating",
-      "Follow medication schedule",
-      "Stay physically active",
-      "Rest when needed"
-    ],
     "medications": [
       "Interferon beta",
       "Glatiramer acetate",
@@ -2558,13 +2244,13 @@
       "Corticosteroids (for flare-ups)",
       "Disease-modifying therapies (e.g., Fingolimod)"
     ],
-    "diet": [
-      "Omega-3 fatty acids (flaxseeds, salmon)",
-      "Vitamin D-rich foods (eggs, fortified milk)",
-      "Antioxidant-rich foods (berries, spinach)",
-      "Limit saturated fats",
-      "Probiotics"
+    "precautions": [
+      "Avoid overheating",
+      "Follow medication schedule",
+      "Stay physically active",
+      "Rest when needed"
     ],
+    "diet": [],
     "workout": [
       "Balance training: Prevent falls",
       "Aqua therapy: Joint-friendly",
@@ -2572,20 +2258,21 @@
       "Seated resistance training: Build strength safely"
     ]
   },
-  "angina": {
+  "Angina": {
+    "disease": "Angina",
     "description": "Angina is chest pain or discomfort due to reduced blood flow to the heart muscle, often triggered by exertion or stress, and relieved by rest or medication.",
-    "precautions": [
-      "Avoid overexertion",
-      "Take nitroglycerin as prescribed",
-      "Manage stress",
-      "Avoid cold exposure"
-    ],
     "medications": [
       "Nitroglycerin (sublingual)",
       "Beta-blockers",
       "Calcium channel blockers",
       "Aspirin",
       "Statins"
+    ],
+    "precautions": [
+      "Avoid overexertion",
+      "Take nitroglycerin as prescribed",
+      "Manage stress",
+      "Avoid cold exposure"
     ],
     "diet": [
       "Heart-healthy diet (oats, olive oil, fish)",
@@ -2601,14 +2288,9 @@
       "No heavy lifting: Can trigger symptoms"
     ]
   },
-  "skin pigmentation disorder": {
+  "Skin pigmentation disorder": {
+    "disease": "Skin pigmentation disorder",
     "description": "Skin pigmentation disorders involve changes in skin color due to excess or lack of melanin, such as vitiligo, melasma, or hyperpigmentation.",
-    "precautions": [
-      "Use sunscreen daily",
-      "Avoid skin irritants",
-      "Follow dermatological treatments",
-      "Stay hydrated"
-    ],
     "medications": [
       "Hydroquinone cream",
       "Topical retinoids",
@@ -2616,13 +2298,13 @@
       "Chemical peels",
       "Laser therapy (for resistant cases)"
     ],
-    "diet": [
-      "Vitamin C-rich foods (oranges, bell peppers)",
-      "Vitamin E-rich foods (almonds, sunflower seeds)",
-      "Beta-carotene (carrots, sweet potatoes)",
-      "Hydration",
-      "Green tea"
+    "precautions": [
+      "Use sunscreen daily",
+      "Avoid skin irritants",
+      "Follow dermatological treatments",
+      "Stay hydrated"
     ],
+    "diet": [],
     "workout": [
       "Avoid sun exposure: Exercise indoors or with protection",
       "Low-sweat activities: Prevent friction and inflammation",
@@ -2630,14 +2312,9 @@
       "Hydration: Helps skin health"
     ]
   },
-  "personality disorder": {
+  "Personality disorder": {
+    "disease": "Personality disorder",
     "description": "Personality disorders are mental health conditions involving rigid and unhealthy patterns of thinking, functioning, and behaving that impair social or occupational life.",
-    "precautions": [
-      "Follow psychotherapy plan",
-      "Avoid substance use",
-      "Build healthy relationships",
-      "Maintain regular routines"
-    ],
     "medications": [
       "Psychotherapy (e.g., DBT for BPD)",
       "SSRIs (for mood symptoms)",
@@ -2645,13 +2322,13 @@
       "Antipsychotics (in some cases)",
       "Group therapy"
     ],
-    "diet": [
-      "Balanced diet",
-      "Omega-3 fatty acids (walnuts, flaxseed)",
-      "Vitamin B-complex (eggs, legumes)",
-      "Magnesium-rich foods (dark chocolate, spinach)",
-      "Avoid sugar and processed foods"
+    "precautions": [
+      "Follow psychotherapy plan",
+      "Avoid substance use",
+      "Build healthy relationships",
+      "Maintain regular routines"
     ],
+    "diet": [],
     "workout": [
       "Team sports: Encourage social interaction",
       "Walking or running: Structured routine helps mood",
@@ -2659,14 +2336,9 @@
       "Supervised fitness coaching: Builds discipline and trust"
     ]
   },
-  "strep throat": {
+  "Strep throat": {
+    "disease": "Strep throat",
     "description": "Strep throat is a bacterial throat infection caused by Streptococcus pyogenes, leading to sore throat, fever, swollen glands, and red tonsils with white patches.",
-    "precautions": [
-      "Complete full antibiotic course",
-      "Avoid sharing utensils",
-      "Get adequate rest",
-      "Drink warm fluids"
-    ],
     "medications": [
       "Penicillin",
       "Amoxicillin",
@@ -2674,13 +2346,13 @@
       "Analgesics (e.g., Acetaminophen)",
       "Salt water gargles"
     ],
-    "diet": [
-      "Soft foods (soups, mashed potatoes)",
-      "Warm teas (ginger, chamomile)",
-      "Hydration",
-      "Avoid acidic or spicy foods",
-      "Vitamin C-rich foods (oranges, strawberries)"
+    "precautions": [
+      "Complete full antibiotic course",
+      "Avoid sharing utensils",
+      "Get adequate rest",
+      "Drink warm fluids"
     ],
+    "diet": [],
     "workout": [
       "Rest: Until infection clears",
       "Avoid cardio: While febrile or sore throat",
@@ -2688,14 +2360,9 @@
       "Hydration and vocal rest after workouts"
     ]
   },
-  "developmental disability": {
+  "Developmental disability": {
+    "disease": "Developmental disability",
     "description": "Developmental disabilities are chronic conditions that begin in childhood and affect physical, learning, language, or behavioral areas, such as autism or intellectual disability.",
-    "precautions": [
-      "Follow individualized education plans",
-      "Encourage structured routine",
-      "Regular therapy",
-      "Provide positive reinforcement"
-    ],
     "medications": [
       "Speech therapy",
       "Occupational therapy",
@@ -2703,13 +2370,13 @@
       "Medications (e.g., Risperidone for irritability in autism)",
       "Special education programs"
     ],
-    "diet": [
-      "Balanced, nutrient-dense diet",
-      "Omega-3 fatty acids (fish, flaxseeds)",
-      "B vitamins (whole grains, meat)",
-      "Fiber-rich foods",
-      "Limit sugar and artificial additives"
+    "precautions": [
+      "Follow individualized education plans",
+      "Encourage structured routine",
+      "Regular therapy",
+      "Provide positive reinforcement"
     ],
+    "diet": [],
     "workout": [
       "Occupational therapy-integrated activities",
       "Swimming: Enhances motor coordination",
@@ -2717,14 +2384,9 @@
       "Balance and core work: Tailored to individual ability"
     ]
   },
-  "chronic back pain": {
+  "Chronic back pain": {
+    "disease": "Chronic back pain",
     "description": "Chronic back pain is persistent or recurring pain in the back lasting more than three months, often due to structural issues, nerve damage, or degenerative conditions.",
-    "precautions": [
-      "Maintain proper posture",
-      "Regular stretching",
-      "Use ergonomic furniture",
-      "Avoid lifting heavy objects"
-    ],
     "medications": [
       "NSAIDs",
       "Muscle relaxants",
@@ -2732,12 +2394,13 @@
       "Epidural steroid injections",
       "Chronic pain management (e.g., TENS, acupuncture)"
     ],
-    "diet": [
-      "Anti-inflammatory foods (berries, turmeric)",
-      "Calcium and Vitamin D (milk, cheese, eggs)",
-      "Magnesium-rich foods (nuts, leafy greens)",
-      "Omega-3s (salmon)"
+    "precautions": [
+      "Maintain proper posture",
+      "Regular stretching",
+      "Use ergonomic furniture",
+      "Avoid lifting heavy objects"
     ],
+    "diet": [],
     "workout": [
       "Core stabilization: Essential for support",
       "Water aerobics: Minimal spinal impact",
@@ -2745,14 +2408,9 @@
       "Avoid high-impact sports"
     ]
   },
-  "heart failure": {
+  "Heart failure": {
+    "disease": "Heart failure",
     "description": "Heart failure is a condition where the heart can't pump blood effectively, leading to fatigue, shortness of breath, fluid retention, and reduced exercise capacity.",
-    "precautions": [
-      "Monitor fluid intake",
-      "Follow low-sodium diet",
-      "Take prescribed meds",
-      "Track weight daily"
-    ],
     "medications": [
       "ACE inhibitors",
       "Beta-blockers",
@@ -2760,13 +2418,13 @@
       "Aldosterone antagonists (e.g., Spironolactone)",
       "Digoxin (in some cases)"
     ],
-    "diet": [
-      "Low-sodium diet",
-      "Fluid monitoring",
-      "Potassium-rich foods (bananas, sweet potatoes)",
-      "Omega-3 fatty acids (fish)",
-      "Avoid red meat and saturated fats"
+    "precautions": [
+      "Monitor fluid intake",
+      "Follow low-sodium diet",
+      "Take prescribed meds",
+      "Track weight daily"
     ],
+    "diet": [],
     "workout": [
       "Supervised cardiac rehab: Custom-designed programs",
       "Walking: Slow and monitored",
@@ -2774,20 +2432,21 @@
       "Avoid dehydration or sudden exertion"
     ]
   },
-  "conjunctivitis": {
+  "Conjunctivitis": {
+    "disease": "Conjunctivitis",
     "description": "Conjunctivitis (pink eye) is inflammation of the conjunctiva of the eye due to infection or allergy, resulting in redness, discharge, and eye irritation.",
-    "precautions": [
-      "Use prescribed eye drops",
-      "Avoid touching/rubbing eyes",
-      "Wash hands frequently",
-      "Don\u2019t share towels"
-    ],
     "medications": [
       "Antibiotic eye drops (e.g., Erythromycin, Moxifloxacin)",
       "Antiviral drops (e.g., Ganciclovir for herpes)",
       "Lubricant drops",
       "Antihistamines (for allergic type)",
       "Cool compresses"
+    ],
+    "precautions": [
+      "Use prescribed eye drops",
+      "Avoid touching/rubbing eyes",
+      "Wash hands frequently",
+      "Don\u2019t share towels"
     ],
     "diet": [
       "Vitamin A-rich foods (carrots, spinach)",
@@ -2803,14 +2462,9 @@
       "Clean face after workouts"
     ]
   },
-  "herniated disk": {
+  "Herniated disk": {
+    "disease": "Herniated disk",
     "description": "A herniated disk occurs when the inner gel-like core of a spinal disc bulges out through a tear, pressing on nearby nerves and causing back pain, numbness, or weakness.",
-    "precautions": [
-      "Avoid lifting heavy items",
-      "Follow physical therapy",
-      "Use proper posture",
-      "Take prescribed meds"
-    ],
     "medications": [
       "NSAIDs",
       "Physical therapy",
@@ -2818,12 +2472,13 @@
       "Steroid injections",
       "Surgical discectomy (if severe)"
     ],
-    "diet": [
-      "Anti-inflammatory diet (ginger, leafy greens)",
-      "Omega-3 fatty acids (fish, flaxseed)",
-      "Vitamin D and calcium (fortified foods, milk)",
-      "Hydration"
+    "precautions": [
+      "Avoid lifting heavy items",
+      "Follow physical therapy",
+      "Use proper posture",
+      "Take prescribed meds"
     ],
+    "diet": [],
     "workout": [
       "McKenzie extension exercises: Under guidance",
       "Walking: Supports spine",
@@ -2831,14 +2486,9 @@
       "Avoid bending/twisting under load"
     ]
   },
-  "diaper rash": {
+  "Diaper rash": {
+    "disease": "Diaper rash",
     "description": "Diaper rash is skin irritation in the diaper area of infants or adults using diapers, often caused by moisture, friction, or infection.",
-    "precautions": [
-      "Keep area dry",
-      "Change diapers frequently",
-      "Apply protective creams",
-      "Avoid scented products"
-    ],
     "medications": [
       "Zinc oxide cream",
       "Petroleum jelly",
@@ -2846,13 +2496,13 @@
       "Hydrocortisone cream (short-term)",
       "Frequent diaper changes"
     ],
-    "diet": [
-      "Breastfeeding (for infants)",
-      "For older babies: Avoid acidic foods (tomatoes, citrus)",
-      "Probiotics (yogurt)",
-      "Zinc-rich foods (eggs, meat)",
-      "Hydration"
+    "precautions": [
+      "Keep area dry",
+      "Change diapers frequently",
+      "Apply protective creams",
+      "Avoid scented products"
     ],
+    "diet": [],
     "workout": [
       "Not exercise-relevant: Focus on hygiene",
       "Avoid heat and sweat buildup",
@@ -2860,20 +2510,21 @@
       "Gentle motion in open diapers (for infants)"
     ]
   },
-  "eczema": {
+  "Eczema": {
+    "disease": "Eczema",
     "description": "Eczema (atopic dermatitis) is a chronic skin condition that causes itchy, inflamed, red, and dry skin, often triggered by allergens, stress, or irritants.",
-    "precautions": [
-      "Moisturize regularly",
-      "Avoid irritants like soaps & wool",
-      "Use corticosteroid creams",
-      "Reduce stress"
-    ],
     "medications": [
       "Topical corticosteroids",
       "Emollients/Moisturizers",
       "Antihistamines (for itching)",
       "Calcineurin inhibitors (e.g., Tacrolimus)",
       "Phototherapy (in severe cases)"
+    ],
+    "precautions": [
+      "Moisturize regularly",
+      "Avoid irritants like soaps & wool",
+      "Use corticosteroid creams",
+      "Reduce stress"
     ],
     "diet": [
       "Anti-inflammatory foods (turmeric, blueberries)",
@@ -2889,12 +2540,1059 @@
       "Shower promptly after exercise"
     ]
   },
-  "copd": {
+  "otitis externa (swimmer's ear)": {
+    "disease": "otitis externa (swimmer's ear)",
+    "description": "No description available.",
+    "medications": [
+      "Topical antibiotic ear drops (e.g., Ciprofloxacin + Hydrocortisone)",
+      "Acidifying drops (e.g., Acetic acid)",
+      "Analgesics",
+      "Ear wick for deep infections",
+      "Avoid water exposure"
+    ],
+    "precautions": [],
+    "diet": [],
+    "workout": []
+  },
+  "COPD": {
+    "disease": "COPD",
+    "description": "No description available.",
+    "medications": [],
     "precautions": [
       "Avoid smoking",
       "Use inhalers as prescribed",
       "Stay away from air pollution",
       "Get vaccinated against flu"
+    ],
+    "diet": [],
+    "workout": []
+  },
+  "Eustachian Tube Dysfunction (Ear Disorder)": {
+    "disease": "Eustachian Tube Dysfunction (Ear Disorder)",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [
+      "Avoid flying with a cold",
+      "Use decongestants",
+      "Perform Valsalva maneuver",
+      "Stay hydrated"
+    ],
+    "diet": [
+      "Anti-inflammatory foods (berries, leafy greens)",
+      "Vitamin C-rich foods (oranges, peppers)",
+      "Hydration",
+      "Avoid dairy if congestion worsens",
+      "Probiotics (yogurt)"
+    ],
+    "workout": [
+      "Avoid pressure changes: No underwater or flying sports",
+      "Breathing and jaw exercises: Promote drainage",
+      "Gentle yoga: Avoid headstand poses",
+      "Walking: Comfortable, low pressure"
     ]
+  },
+  "Panic Disorder": {
+    "disease": "Panic Disorder",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Magnesium-rich foods (spinach, pumpkin seeds, almonds)",
+      "Omega-3 fatty acids (salmon, flaxseeds, walnuts)",
+      "Complex carbs (oats, quinoa)",
+      "Green tea (L-theanine)",
+      "Limit caffeine and sugar"
+    ],
+    "workout": []
+  },
+  "Problem During Pregnancy": {
+    "disease": "Problem During Pregnancy",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Prenatal vitamins (consult doctor)",
+      "Iron-rich foods (red meat, lentils, spinach)",
+      "Folate-rich foods (leafy greens, fortified cereals)",
+      "Calcium and Vitamin D (milk, cheese, fortified plant milk)",
+      "Avoid raw fish, deli meats, unpasteurized dairy"
+    ],
+    "workout": []
+  },
+  "Acute Pancreatitis": {
+    "disease": "Acute Pancreatitis",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Low-fat foods (boiled vegetables, lean chicken breast)",
+      "Small frequent meals",
+      "Broths and clear liquids (chicken broth, vegetable broth)",
+      "Avoid alcohol and caffeine",
+      "Lean proteins (tofu, white fish)"
+    ],
+    "workout": []
+  },
+  "Infectious Gastroenteritis": {
+    "disease": "Infectious Gastroenteritis",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Oral rehydration solution (ORS)",
+      "BRAT diet (bananas, rice, applesauce, toast)",
+      "Clear soups (chicken soup)",
+      "Avoid dairy and greasy foods",
+      "Probiotics (yogurt, kefir)"
+    ],
+    "workout": []
+  },
+  "Acute Sinusitis": {
+    "disease": "Acute Sinusitis",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Spicy foods (hot peppers, horseradish)",
+      "Hydration (water, herbal teas)",
+      "Vitamin C-rich foods (oranges, strawberries)",
+      "Warm teas (ginger, chamomile)",
+      "Avoid processed sugars"
+    ],
+    "workout": []
+  },
+  "Cornea Infection": {
+    "disease": "Cornea Infection",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Vitamin A-rich foods (carrots, sweet potatoes, spinach)",
+      "Zinc-rich foods (pumpkin seeds, beef)",
+      "Hydration (water)",
+      "Avoid alcohol and smoking",
+      "Omega-3-rich foods (flaxseed, salmon)"
+    ],
+    "workout": []
+  },
+  "Marijuana Abuse": {
+    "disease": "Marijuana Abuse",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Hydration (water, herbal teas)",
+      "Omega-3s for brain health (walnuts, flaxseeds)",
+      "Foods rich in B vitamins (eggs, poultry, leafy greens)",
+      "Antioxidant-rich foods (berries, nuts)",
+      "Limit processed foods"
+    ],
+    "workout": []
+  },
+  "Actinic Keratosis": {
+    "disease": "Actinic Keratosis",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Antioxidant-rich foods (berries, spinach, nuts)",
+      "Vitamin E-rich foods (almonds, sunflower seeds)",
+      "Omega-3 fatty acids (salmon, flaxseeds)",
+      "Green tea",
+      "Avoid excessive sun exposure"
+    ],
+    "workout": []
+  },
+  "Chronic Obstructive Pulmonary Disease (COPD)": {
+    "disease": "Chronic Obstructive Pulmonary Disease (COPD)",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Anti-inflammatory foods (turmeric, ginger, berries)",
+      "Omega-3 fatty acids (wild salmon, walnuts)",
+      "High-protein foods (chicken, beans)",
+      "Vitamin C-rich foods (oranges, broccoli)",
+      "Hydration"
+    ],
+    "workout": []
+  },
+  "Injury to the Arm": {
+    "disease": "Injury to the Arm",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Protein-rich foods (chicken, eggs, legumes)",
+      "Vitamin C-rich foods (citrus fruits, strawberries)",
+      "Zinc sources (beef, pumpkin seeds)",
+      "Hydration",
+      "Anti-inflammatory foods (turmeric, ginger)"
+    ],
+    "workout": []
+  },
+  "Complex Regional Pain Syndrome": {
+    "disease": "Complex Regional Pain Syndrome",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Anti-inflammatory foods (turmeric, berries, leafy greens)",
+      "Omega-3 fatty acids (salmon, walnuts)",
+      "Magnesium-rich foods (spinach, almonds)",
+      "Vitamin D-rich foods (fortified milk, egg yolks)",
+      "Avoid processed sugars and alcohol"
+    ],
+    "workout": []
+  },
+  "Injury to the Trunk": {
+    "disease": "Injury to the Trunk",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "High-protein foods (tofu, lean meats)",
+      "Vitamin C-rich foods (bell peppers, kiwi)",
+      "Zinc sources (shellfish, nuts)",
+      "Hydration",
+      "Anti-inflammatory spices (ginger, turmeric)"
+    ],
+    "workout": []
+  },
+  "Hiatal Hernia": {
+    "disease": "Hiatal Hernia",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Small, frequent meals",
+      "Avoid spicy foods and caffeine",
+      "High-fiber foods (oats, vegetables)",
+      "Lean proteins (chicken, fish)",
+      "Avoid fatty and fried foods"
+    ],
+    "workout": []
+  },
+  "Acute Bronchospasm": {
+    "disease": "Acute Bronchospasm",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Anti-inflammatory foods (ginger, turmeric)",
+      "Omega-3 fatty acids (wild salmon, chia seeds)",
+      "Vitamin C-rich foods (citrus fruits)",
+      "Hydration",
+      "Avoid dairy if mucus increases"
+    ],
+    "workout": []
+  },
+  "Degenerative Disc Disease": {
+    "disease": "Degenerative Disc Disease",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Calcium-rich foods (milk, cheese)",
+      "Vitamin D-rich foods (fatty fish, egg yolk)",
+      "Anti-inflammatory foods (berries, leafy greens)",
+      "Magnesium sources (pumpkin seeds, almonds)",
+      "Protein-rich foods (chicken, legumes)"
+    ],
+    "workout": []
+  },
+  "Pain After an Operation": {
+    "disease": "Pain After an Operation",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "High-protein foods (eggs, fish)",
+      "Vitamin C-rich foods (kiwi, strawberries)",
+      "Zinc-rich foods (beef, nuts)",
+      "Anti-inflammatory foods (turmeric, ginger)",
+      "Hydration"
+    ],
+    "workout": []
+  },
+  "Injury to the Leg": {
+    "disease": "Injury to the Leg",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Protein-rich foods (lean meats, beans)",
+      "Vitamin C-rich foods (oranges, strawberries)",
+      "Zinc-rich foods (shellfish, pumpkin seeds)",
+      "Anti-inflammatory spices (ginger, turmeric)",
+      "Hydration"
+    ],
+    "workout": []
+  },
+  "Otitis Media": {
+    "disease": "Otitis Media",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Hydrating fluids (water, herbal teas)",
+      "Vitamin C-rich foods (citrus fruits)",
+      "Probiotics (yogurt, kefir)",
+      "Avoid dairy if it increases mucus",
+      "Anti-inflammatory foods (ginger, turmeric)"
+    ],
+    "workout": []
+  },
+  "Acute Kidney Injury": {
+    "disease": "Acute Kidney Injury",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Low-protein diet (consult doctor)",
+      "Limit sodium (avoid processed foods)",
+      "Potassium regulation (bananas, potatoes \u2013 based on medical advice)",
+      "Hydration monitoring",
+      "Avoid high-phosphorus foods (dairy, nuts)"
+    ],
+    "workout": []
+  },
+  "Threatened Pregnancy": {
+    "disease": "Threatened Pregnancy",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Folic acid-rich foods (leafy greens, beans)",
+      "Iron-rich foods (red meat, lentils)",
+      "Hydration",
+      "Balanced diet with protein (chicken, fish)",
+      "Avoid alcohol, caffeine, and high-mercury fish"
+    ],
+    "workout": []
+  },
+  "Gum Disease": {
+    "disease": "Gum Disease",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Vitamin C-rich foods (citrus fruits, strawberries)",
+      "Calcium-rich foods (milk, yogurt)",
+      "Green tea",
+      "Avoid sugary and sticky foods",
+      "Omega-3 fatty acids (walnuts, flaxseeds)"
+    ],
+    "workout": []
+  },
+  "Gastrointestinal Hemorrhage": {
+    "disease": "Gastrointestinal Hemorrhage",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Avoid spicy and acidic foods",
+      "Bland diet (bananas, rice, applesauce)",
+      "Hydration",
+      "Iron-rich foods post bleeding (spinach, beans)",
+      "Avoid alcohol and NSAIDs"
+    ],
+    "workout": []
+  },
+  "Conjunctivitis Due to Allergy": {
+    "disease": "Conjunctivitis Due to Allergy",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Antihistamine-rich foods (quercetin in apples, onions)",
+      "Omega-3 fatty acids (salmon, flaxseeds)",
+      "Vitamin C-rich foods (citrus)",
+      "Hydration",
+      "Avoid allergens"
+    ],
+    "workout": []
+  },
+  "Drug Reaction": {
+    "disease": "Drug Reaction",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Balanced diet with antioxidants (berries, leafy greens)",
+      "Hydration",
+      "Avoid processed and allergenic foods",
+      "Vitamin C and E-rich foods (nuts, seeds, citrus)",
+      "Consult doctor for specific restrictions"
+    ],
+    "workout": []
+  },
+  "Macular Degeneration": {
+    "disease": "Macular Degeneration",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Vitamin A-rich foods (carrots, sweet potatoes)",
+      "Lutein and zeaxanthin foods (spinach, kale)",
+      "Omega-3 fatty acids (fish, walnuts)",
+      "Zinc-rich foods (pumpkin seeds, beef)",
+      "Antioxidant-rich foods (blueberries, citrus)"
+    ],
+    "workout": []
+  },
+  "Vaginal Cyst": {
+    "disease": "Vaginal Cyst",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Probiotics (yogurt, kefir)",
+      "Anti-inflammatory foods (berries, leafy greens)",
+      "Hydration",
+      "Avoid irritants and processed foods",
+      "Omega-3 fatty acids (salmon, flaxseeds)"
+    ],
+    "workout": []
+  },
+  "Carpal Tunnel Syndrome": {
+    "disease": "Carpal Tunnel Syndrome",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Anti-inflammatory foods (turmeric, ginger)",
+      "Omega-3 fatty acids (chia seeds, salmon)",
+      "Magnesium-rich foods (spinach, almonds)",
+      "Vitamin B6-rich foods (bananas, poultry)",
+      "Avoid excess caffeine and sugar"
+    ],
+    "workout": []
+  },
+  "Nose Disorder": {
+    "disease": "Nose Disorder",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Hydration",
+      "Vitamin C-rich foods (citrus, strawberries)",
+      "Zinc-rich foods (meat, seeds)",
+      "Avoid allergens and irritants",
+      "Warm fluids and anti-inflammatory foods (ginger, honey)"
+    ],
+    "workout": []
+  },
+  "Dental Caries": {
+    "disease": "Dental Caries",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Calcium-rich foods (milk, cheese)",
+      "Vitamin D-rich foods (fatty fish, fortified cereals)",
+      "Limit sugary and sticky foods",
+      "Crunchy fruits and vegetables (apples, carrots)",
+      "Green tea"
+    ],
+    "workout": []
+  },
+  "Hypertensive Heart Disease": {
+    "disease": "Hypertensive Heart Disease",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Low-sodium diet (avoid processed foods)",
+      "Potassium-rich foods (bananas, sweet potatoes)",
+      "Omega-3 fatty acids (salmon, walnuts)",
+      "Whole grains (brown rice, oats)",
+      "Limit saturated fats (butter, fatty meats)"
+    ],
+    "workout": []
+  },
+  "Seasonal Allergies (Hay Fever)": {
+    "disease": "Seasonal Allergies (Hay Fever)",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Quercetin-rich foods (onions, apples)",
+      "Vitamin C-rich foods (citrus fruits)",
+      "Omega-3 fatty acids (flaxseeds, fish)",
+      "Probiotics (yogurt, kimchi)",
+      "Avoid allergens"
+    ],
+    "workout": []
+  },
+  "Fungal Infection of the Hair": {
+    "disease": "Fungal Infection of the Hair",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Antifungal foods (garlic, coconut oil)",
+      "Probiotics (yogurt, kefir)",
+      "Vitamin E-rich foods (nuts, seeds)",
+      "Zinc-rich foods (beef, pumpkin seeds)",
+      "Avoid sugar and processed foods"
+    ],
+    "workout": []
+  },
+  "Rectal Disorder": {
+    "disease": "Rectal Disorder",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "High-fiber foods (whole grains, fruits, vegetables)",
+      "Hydration",
+      "Avoid spicy and processed foods",
+      "Probiotics (yogurt, sauerkraut)",
+      "Limit caffeine and alcohol"
+    ],
+    "workout": []
+  },
+  "Heart Attack": {
+    "disease": "Heart Attack",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Low-sodium diet (vegetables, fresh fruits)",
+      "Omega-3 fatty acids (salmon, flaxseeds)",
+      "Whole grains (brown rice, oats)",
+      "Lean proteins (chicken, beans)",
+      "Limit saturated and trans fats (processed foods, fried foods)"
+    ],
+    "workout": []
+  },
+  "Obstructive Sleep Apnea (OSA)": {
+    "disease": "Obstructive Sleep Apnea (OSA)",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Weight management diet (calorie control)",
+      "Avoid alcohol and sedatives",
+      "High-fiber foods (whole grains, fruits)",
+      "Avoid heavy meals before bedtime",
+      "Hydration"
+    ],
+    "workout": []
+  },
+  "Arthritis of the Hip": {
+    "disease": "Arthritis of the Hip",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Anti-inflammatory foods (olive oil, turmeric, berries)",
+      "Omega-3 fatty acids (fish, flaxseeds)",
+      "Calcium-rich foods (dairy, leafy greens)",
+      "Vitamin D-rich foods (fortified milk, egg yolk)",
+      "Maintain healthy weight diet"
+    ],
+    "workout": []
+  },
+  "Sickle Cell Crisis": {
+    "disease": "Sickle Cell Crisis",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Folate-rich foods (leafy greens, legumes)",
+      "Hydrating fluids (water, herbal teas)",
+      "Iron-rich foods (lean meats, beans)",
+      "Vitamin B6-rich foods (bananas, poultry)",
+      "Balanced protein intake"
+    ],
+    "workout": []
+  },
+  "Otitis Externa (Swimmer's Ear)": {
+    "disease": "Otitis Externa (Swimmer's Ear)",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Hydration",
+      "Avoid irritants and allergens",
+      "Vitamin C-rich foods (citrus fruits, bell peppers)",
+      "Anti-inflammatory foods (turmeric, ginger)",
+      "Probiotics (yogurt, kefir)"
+    ],
+    "workout": []
+  },
+  "Acute Bronchiolitis": {
+    "disease": "Acute Bronchiolitis",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Hydration (water, herbal teas)",
+      "Vitamin C-rich foods (oranges, strawberries)",
+      "Protein-rich foods (chicken, beans)",
+      "Avoid dairy if mucus increases",
+      "Anti-inflammatory foods (ginger, turmeric)"
+    ],
+    "workout": []
+  },
+  "Pyogenic Skin Infection": {
+    "disease": "Pyogenic Skin Infection",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Protein-rich foods (lean meat, eggs)",
+      "Vitamin C-rich foods (citrus fruits, kiwi)",
+      "Zinc-rich foods (pumpkin seeds, nuts)",
+      "Hydration",
+      "Avoid sugary and processed foods"
+    ],
+    "workout": []
+  },
+  "Noninfectious Gastroenteritis": {
+    "disease": "Noninfectious Gastroenteritis",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Bland diet (bananas, rice, applesauce)",
+      "Hydration",
+      "Avoid spicy, fatty, and dairy foods",
+      "Probiotics (yogurt, kefir)",
+      "Small frequent meals"
+    ],
+    "workout": []
+  },
+  "Benign Prostatic Hyperplasia (BPH)": {
+    "disease": "Benign Prostatic Hyperplasia (BPH)",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Hydration",
+      "Limit caffeine and alcohol",
+      "Zinc-rich foods (pumpkin seeds, beef)",
+      "Tomatoes (lycopene)",
+      "High-fiber foods (whole grains, fruits, vegetables)"
+    ],
+    "workout": []
+  },
+  "Spinal Stenosis": {
+    "disease": "Spinal Stenosis",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Anti-inflammatory foods (berries, leafy greens)",
+      "Omega-3 fatty acids (salmon, flaxseeds)",
+      "Calcium-rich foods (milk, cheese)",
+      "Vitamin D-rich foods (egg yolk, fortified cereals)",
+      "Protein-rich foods (chicken, legumes)"
+    ],
+    "workout": []
+  },
+  "Acute Bronchitis": {
+    "disease": "Acute Bronchitis",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Hydration",
+      "Vitamin C-rich foods (citrus fruits, bell peppers)",
+      "Avoid dairy if mucus increases",
+      "Anti-inflammatory foods (ginger, turmeric)",
+      "Protein-rich foods (chicken, beans)"
+    ],
+    "workout": []
+  },
+  "Idiopathic Excessive Menstruation": {
+    "disease": "Idiopathic Excessive Menstruation",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Iron-rich foods (spinach, red meat)",
+      "Vitamin C-rich foods (oranges, bell peppers)",
+      "Hydration",
+      "Avoid caffeine and alcohol",
+      "High-fiber foods (whole grains, fruits)"
+    ],
+    "workout": []
+  },
+  "Ear Drum Damage": {
+    "disease": "Ear Drum Damage",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Protein-rich foods (lean meats, eggs)",
+      "Vitamin C-rich foods (citrus, broccoli)",
+      "Zinc-rich foods (shellfish, pumpkin seeds)",
+      "Hydration",
+      "Avoid irritants"
+    ],
+    "workout": []
+  },
+  "Temporary or Benign Blood in Urine": {
+    "disease": "Temporary or Benign Blood in Urine",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Hydration",
+      "Avoid irritants (spicy foods, caffeine)",
+      "Balanced diet with fruits and vegetables",
+      "Limit sodium and processed foods",
+      "Consult doctor for specific recommendations"
+    ],
+    "workout": []
+  },
+  "Common Cold": {
+    "disease": "Common Cold",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Hydration (water, herbal teas)",
+      "Vitamin C-rich foods (citrus, kiwi)",
+      "Zinc-rich foods (nuts, seeds)",
+      "Chicken soup",
+      "Avoid dairy if mucus increases"
+    ],
+    "workout": []
+  },
+  "Idiopathic Irregular Menstrual Cycle": {
+    "disease": "Idiopathic Irregular Menstrual Cycle",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Balanced diet with protein (chicken, beans)",
+      "Iron-rich foods (spinach, lentils)",
+      "Vitamin B6-rich foods (bananas, poultry)",
+      "Hydration",
+      "Avoid caffeine and high sugar foods"
+    ],
+    "workout": []
+  },
+  "Contact Dermatitis": {
+    "disease": "Contact Dermatitis",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Avoid allergenic foods",
+      "Anti-inflammatory foods (turmeric, ginger)",
+      "Hydrating fluids",
+      "Vitamin E-rich foods (nuts, seeds)",
+      "Probiotics (fermented foods)"
+    ],
+    "workout": []
+  },
+  "Sinus Bradycardia": {
+    "disease": "Sinus Bradycardia",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Balanced diet with adequate electrolytes (potassium from bananas, magnesium from nuts)",
+      "Hydration",
+      "Limit caffeine and alcohol",
+      "Whole grains and lean proteins",
+      "Consult cardiologist"
+    ],
+    "workout": []
+  },
+  "Pelvic Inflammatory Disease": {
+    "disease": "Pelvic Inflammatory Disease",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Hydration",
+      "Protein-rich foods (chicken, beans)",
+      "Vitamin C-rich foods (citrus fruits)",
+      "Avoid irritants and processed foods",
+      "Probiotics (yogurt, kefir)"
+    ],
+    "workout": []
+  },
+  "Liver Disease": {
+    "disease": "Liver Disease",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Low sodium diet (avoid processed foods)",
+      "High-protein foods (eggs, lean meats)",
+      "Vitamin-rich foods (leafy greens, fruits)",
+      "Avoid alcohol and saturated fats",
+      "Hydration"
+    ],
+    "workout": []
+  },
+  "Chronic Constipation": {
+    "disease": "Chronic Constipation",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "High-fiber foods (whole grains, fruits, vegetables)",
+      "Hydration",
+      "Probiotics (yogurt, kimchi)",
+      "Limit processed and fatty foods",
+      "Regular meals and physical activity"
+    ],
+    "workout": []
+  },
+  "Skin Polyp": {
+    "disease": "Skin Polyp",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Balanced diet with antioxidants (berries, leafy greens)",
+      "Vitamin A-rich foods (carrots, sweet potatoes)",
+      "Hydration",
+      "Avoid processed and fried foods",
+      "Omega-3 fatty acids (fish, flaxseeds)"
+    ],
+    "workout": []
+  },
+  "Brachial Neuritis": {
+    "disease": "Brachial Neuritis",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Protein-rich foods (chicken, beans)",
+      "Anti-inflammatory foods (turmeric, ginger)",
+      "Omega-3 fatty acids (salmon, walnuts)",
+      "Vitamin B complex (whole grains, eggs)",
+      "Hydration"
+    ],
+    "workout": []
+  },
+  "Sprain or Strain": {
+    "disease": "Sprain or Strain",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Protein-rich foods (lean meat, eggs)",
+      "Anti-inflammatory foods (ginger, turmeric)",
+      "Vitamin C-rich foods (citrus fruits)",
+      "Hydration",
+      "Zinc-rich foods (nuts, seeds)"
+    ],
+    "workout": []
+  },
+  "Idiopathic Painful Menstruation": {
+    "disease": "Idiopathic Painful Menstruation",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Magnesium-rich foods (spinach, dark chocolate)",
+      "Omega-3 fatty acids (salmon, walnuts)",
+      "Hydration",
+      "Avoid salty and processed foods",
+      "Ginger and turmeric tea"
+    ],
+    "workout": []
+  },
+  "Hyperemesis Gravidarum": {
+    "disease": "Hyperemesis Gravidarum",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Small frequent meals",
+      "Bland foods (crackers, rice)",
+      "Ginger tea",
+      "Vitamin B6-rich foods (bananas, chickpeas)",
+      "Hydration with electrolytes (ORS, coconut water)"
+    ],
+    "workout": []
+  },
+  "Urinary Tract Infection": {
+    "disease": "Urinary Tract Infection",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Hydration (water, cranberry juice)",
+      "Avoid caffeine, alcohol, and spicy foods",
+      "Vitamin C-rich foods (citrus, bell peppers)",
+      "Probiotics (yogurt, kefir)",
+      "Fiber-rich foods"
+    ],
+    "workout": []
+  },
+  "Peripheral Nerve Disorder": {
+    "disease": "Peripheral Nerve Disorder",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Vitamin B-rich foods (whole grains, eggs, leafy greens)",
+      "Omega-3 fatty acids (salmon, chia seeds)",
+      "Anti-inflammatory foods (turmeric, berries)",
+      "Hydration"
+    ],
+    "workout": []
+  },
+  "Sebaceous Cyst": {
+    "disease": "Sebaceous Cyst",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Anti-inflammatory foods (ginger, turmeric, leafy greens)",
+      "Zinc-rich foods (pumpkin seeds, nuts)",
+      "Vitamin A-rich foods (carrots, sweet potatoes)",
+      "Hydration"
+    ],
+    "workout": []
+  },
+  "Spontaneous Abortion": {
+    "disease": "Spontaneous Abortion",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Iron-rich foods (red meat, spinach)",
+      "Vitamin C (citrus, strawberries)",
+      "Folate-rich foods (legumes, dark leafy greens)",
+      "Hydration",
+      "Comforting herbal teas"
+    ],
+    "workout": []
+  },
+  "Multiple Sclerosis": {
+    "disease": "Multiple Sclerosis",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Omega-3 fatty acids (flaxseeds, salmon)",
+      "Vitamin D-rich foods (eggs, fortified milk)",
+      "Antioxidant-rich foods (berries, spinach)",
+      "Limit saturated fats",
+      "Probiotics"
+    ],
+    "workout": []
+  },
+  "Skin Pigmentation Disorder": {
+    "disease": "Skin Pigmentation Disorder",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Vitamin C-rich foods (oranges, bell peppers)",
+      "Vitamin E-rich foods (almonds, sunflower seeds)",
+      "Beta-carotene (carrots, sweet potatoes)",
+      "Hydration",
+      "Green tea"
+    ],
+    "workout": []
+  },
+  "Personality Disorder": {
+    "disease": "Personality Disorder",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Balanced diet",
+      "Omega-3 fatty acids (walnuts, flaxseed)",
+      "Vitamin B-complex (eggs, legumes)",
+      "Magnesium-rich foods (dark chocolate, spinach)",
+      "Avoid sugar and processed foods"
+    ],
+    "workout": []
+  },
+  "Strep Throat": {
+    "disease": "Strep Throat",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Soft foods (soups, mashed potatoes)",
+      "Warm teas (ginger, chamomile)",
+      "Hydration",
+      "Avoid acidic or spicy foods",
+      "Vitamin C-rich foods (oranges, strawberries)"
+    ],
+    "workout": []
+  },
+  "Developmental Disability": {
+    "disease": "Developmental Disability",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Balanced, nutrient-dense diet",
+      "Omega-3 fatty acids (fish, flaxseeds)",
+      "B vitamins (whole grains, meat)",
+      "Fiber-rich foods",
+      "Limit sugar and artificial additives"
+    ],
+    "workout": []
+  },
+  "Chronic Back Pain": {
+    "disease": "Chronic Back Pain",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Anti-inflammatory foods (berries, turmeric)",
+      "Calcium and Vitamin D (milk, cheese, eggs)",
+      "Magnesium-rich foods (nuts, leafy greens)",
+      "Omega-3s (salmon)"
+    ],
+    "workout": []
+  },
+  "Heart Failure": {
+    "disease": "Heart Failure",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Low-sodium diet",
+      "Fluid monitoring",
+      "Potassium-rich foods (bananas, sweet potatoes)",
+      "Omega-3 fatty acids (fish)",
+      "Avoid red meat and saturated fats"
+    ],
+    "workout": []
+  },
+  "Herniated Disk": {
+    "disease": "Herniated Disk",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Anti-inflammatory diet (ginger, leafy greens)",
+      "Omega-3 fatty acids (fish, flaxseed)",
+      "Vitamin D and calcium (fortified foods, milk)",
+      "Hydration"
+    ],
+    "workout": []
+  },
+  "Diaper Rash": {
+    "disease": "Diaper Rash",
+    "description": "No description available.",
+    "medications": [],
+    "precautions": [],
+    "diet": [
+      "Breastfeeding (for infants)",
+      "For older babies: Avoid acidic foods (tomatoes, citrus)",
+      "Probiotics (yogurt)",
+      "Zinc-rich foods (eggs, meat)",
+      "Hydration"
+    ],
+    "workout": []
   }
 }

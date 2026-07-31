@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import {
   Activity, Brain, ShieldCheck, UserPlus, ClipboardList,
   Sparkles, HeartPulse, Stethoscope, TrendingUp, Search, X,
+  FileText, Pill, Utensils, Dumbbell, AlertTriangle, Layers, Network
 } from "lucide-react";
 import api from "../api/axios";
 import { useAuth } from "../context/AuthContext";
@@ -92,59 +93,63 @@ export default function Home() {
       {/* ---------------- HERO ---------------- */}
       <section className="hero-stage">
         <div className="hero">
-        <motion.div initial="hidden" animate="show" variants={fadeUp}>
-          <span className="eyebrow">
-            <span className="eyebrow-dot" />
-            AI symptom analysis
-          </span>
-          <h1>
-            Know what's going on <span className="accent">before you Google it wrong.</span>
-          </h1>
-          <p className="lead">
-            Tell us your symptoms. Our model checks them against real diagnostic
-            patterns, suggests next steps, and remembers your history — so every
-            check gets a little more personal.
-          </p>
-          <div className="hero-ctas">
-            <a href="#checker" className="btn-primary">Check my symptoms</a>
-            <a href="#how-it-works" className="btn-secondary">See how it works</a>
-          </div>
-          <p className="disclaimer">
-            <ShieldCheck size={15} /> Support tool, not a replacement for a real doctor.
-          </p>
-        </motion.div>
+          <motion.div initial="hidden" animate="show" variants={fadeUp}>
+            <span className="eyebrow">
+              <span className="eyebrow-dot" />
+              AI Medical Recommendation Engine
+            </span>
+            <h1>
+              Know what's going on <span className="accent">before you Google it wrong.</span>
+            </h1>
+            <p className="lead">
+              Tell us your symptoms. Our machine learning system checks them against real diagnostic
+              patterns, highlights expected disease symptoms, predicts candidate risks, and suggests tailored care.
+            </p>
+            <div className="hero-ctas">
+              <a href="#checker" className="btn-primary">Check my symptoms</a>
+              <a href="#how-it-works" className="btn-secondary">See how it works</a>
+            </div>
+            <p className="disclaimer">
+              <ShieldCheck size={15} /> Medical AI decision support tool. Consult a physician for official medical diagnosis.
+            </p>
+          </motion.div>
 
-        <motion.div
-          className="hero-card"
-          initial={{ opacity: 0, y: 30, scale: 0.97 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-        >
-          <span className="label">Symptoms selected</span>
-          <div className="chip-row">
-            <span className="demo-chip">Fever</span>
-            <span className="demo-chip">Cough</span>
-            <span className="demo-chip">Fatigue</span>
-          </div>
-          <span className="label">Prediction</span>
-          <div className="result-row">
-            <div className="ring">
-              <div className="ring-inner">78%</div>
+          <motion.div
+            className="hero-card"
+            initial={{ opacity: 0, y: 30, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+          >
+            <span className="label">Symptoms selected</span>
+            <div className="chip-row">
+              <span className="demo-chip">Fever</span>
+              <span className="demo-chip">Cough</span>
+              <span className="demo-chip">Fatigue</span>
             </div>
-            <div>
-              <h3>Likely Influenza</h3>
-              <span style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.85rem" }}>
-                Based on 4 symptoms &amp; vitals
-              </span>
+            <span className="label">Primary Prediction</span>
+            <div className="result-row">
+              <div className="ring">
+                <div className="ring-inner">85%</div>
+              </div>
+              <div>
+                <h3>Common Cold / Respiratory Care</h3>
+                <span style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.85rem" }}>
+                  Random Forest + TF-IDF + Cosine Matching
+                </span>
+              </div>
             </div>
-          </div>
-          <span className="label">Suggested next step</span>
-          <div className="med-pill-row" style={{ marginTop: 10 }}>
-            <span className="med-pill">Rest 8–10 hrs</span>
-            <span className="med-pill">Hydration</span>
-            <span className="med-pill">Monitor 48h</span>
-          </div>
-        </motion.div>
+            <span className="label">Expected Disease Symptoms</span>
+            <div className="chip-row" style={{ marginTop: 6 }}>
+              <span className="demo-chip" style={{ background: "rgba(255,255,255,0.1)", fontSize: "0.75rem" }}>Chills</span>
+              <span className="demo-chip" style={{ background: "rgba(255,255,255,0.1)", fontSize: "0.75rem" }}>Sore Throat</span>
+              <span className="demo-chip" style={{ background: "rgba(255,255,255,0.1)", fontSize: "0.75rem" }}>Sneezing</span>
+            </div>
+            <span className="label" style={{ marginTop: 12 }}>Suggested Next Steps</span>
+            <div className="med-pill-row" style={{ marginTop: 6 }}>
+              <span className="med-pill">Rest &amp; Hydration</span>
+              <span className="med-pill">Symptom Monitoring</span>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -156,16 +161,16 @@ export default function Home() {
           className="section-head"
           initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }} variants={fadeUp}
         >
-          <span className="eyebrow">The process</span>
-          <h2>Three steps, every time you check in</h2>
-          <p>No paperwork, no waiting room — just a quick, structured check that gets logged to your account.</p>
+          <span className="eyebrow">Interactive Workflow</span>
+          <h2>Three Steps to Medical Intelligence</h2>
+          <p>Structure your symptoms, analyze candidate diseases, and track your personalized history.</p>
         </motion.div>
 
         <div className="steps-grid">
           {[
-            { icon: UserPlus, num: "01", title: "Create your account", desc: "A secure, private profile — nobody sees your data but you." },
-            { icon: ClipboardList, num: "02", title: "Enter symptoms & vitals", desc: "Fever, cough, fatigue, breathing, age, blood pressure — the basics." },
-            { icon: Brain, num: "03", title: "Get your AI prediction", desc: "A likely condition, a confidence score, and suggested next steps." },
+            { icon: UserPlus, num: "01", title: "Create Your Account", desc: "A private healthcare profile storing your personal prediction history securely." },
+            { icon: ClipboardList, num: "02", title: "Select Symptoms & Vitals", desc: "Choose from 230 tracked clinical symptoms with real-time multi-symptom search." },
+            { icon: Brain, num: "03", title: "Multi-Model AI Diagnosis", desc: "Receive primary prediction, top 3 candidate diseases, expected symptoms, and risk level." },
           ].map((s, i) => (
             <motion.div
               key={s.num}
@@ -191,9 +196,9 @@ export default function Home() {
           className="section-head"
           initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }} variants={fadeUp}
         >
-          <span className="eyebrow"><Activity size={13} style={{ marginRight: 4 }} />Try it now</span>
-          <h2>Check your symptoms</h2>
-          <p>Select what you're feeling. The more you select, the sharper the prediction.</p>
+          <span className="eyebrow"><Activity size={13} style={{ marginRight: 4 }} />Live Diagnostic Engine</span>
+          <h2>Check Your Symptoms &amp; Get Medical Insights</h2>
+          <p>Select what you're feeling to view predictions, expected disease symptoms, and top candidate risks.</p>
         </motion.div>
 
         <motion.div
@@ -201,15 +206,15 @@ export default function Home() {
           initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeUp}
         >
           <form className="checker-form" onSubmit={handleSubmit}>
-            <h3>Symptom checker</h3>
-            <p>Search and add every symptom that applies — {allSymptoms.length || "230"} tracked conditions.</p>
+            <h3>Symptom Checker</h3>
+            <p>Search and select every symptom — {allSymptoms.length || "230"} tracked conditions.</p>
 
-            <span className="field-label">Search symptoms</span>
+            <span className="field-label">Search Symptoms</span>
             <div className="symptom-search">
               <Search size={17} className="symptom-search-icon" />
               <input
                 type="text"
-                placeholder="e.g. chest pain, fatigue, dizziness..."
+                placeholder="e.g. fever, chest pain, pain during pregnancy..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
@@ -225,12 +230,12 @@ export default function Home() {
             </div>
 
             <span className="field-label" style={{ marginTop: 20 }}>
-              Selected ({selected.length})
+              Selected Symptoms ({selected.length})
             </span>
             <div className="symptom-grid">
               {selected.length === 0 && (
                 <span style={{ color: "var(--ink-faint)", fontSize: "0.88rem" }}>
-                  Nothing selected yet — search above to add symptoms.
+                  No symptoms selected — search above to add your symptoms.
                 </span>
               )}
               {selected.map((s) => (
@@ -245,8 +250,8 @@ export default function Home() {
               ))}
             </div>
 
-            <button type="submit" disabled={loading} style={{ marginTop: 10 }}>
-              {loading ? "Analyzing..." : user ? "Get prediction" : "Log in to get a prediction"}
+            <button type="submit" disabled={loading} style={{ marginTop: 14 }}>
+              {loading ? "Analyzing Medical Data..." : user ? "Get Prediction" : "Log in to Get Prediction"}
             </button>
 
             {error && <p className="predict-error">{error}</p>}
@@ -260,38 +265,86 @@ export default function Home() {
           <div className={result ? "checker-result glass" : "checker-result empty glass"}>
             {!result && (
               <>
-                <HeartPulse size={40} />
-                <p>Your prediction will appear here once you submit.</p>
+                <HeartPulse size={44} style={{ opacity: 0.6, marginBottom: 10 }} />
+                <p style={{ fontWeight: 500 }}>Your diagnostic prediction and disease symptoms will appear here.</p>
               </>
             )}
             {result && (
-              <div>
-                <span className="field-label">Prediction</span>
-                <h3 className="result-disease">{result.disease}</h3>
-                <div className="result-meta">
-                  <span>{result.confidence}% confidence</span>
-                  <span className={`risk-badge risk-${result.risk}`}>{result.risk} risk</span>
+              <div style={{ width: "100%" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <span className="field-label">Primary AI Prediction</span>
+                  <span className={`risk-badge risk-${result.risk}`} style={{ fontWeight: 700, padding: "4px 10px", borderRadius: 12, fontSize: "0.78rem", textTransform: "uppercase" }}>
+                    {result.risk} Risk
+                  </span>
                 </div>
-                <p style={{ color: "var(--ink-soft)", fontSize: "0.92rem", lineHeight: 1.6 }}>
+                
+                <h3 className="result-disease" style={{ fontSize: "1.5rem", marginTop: 4, textTransform: "capitalize" }}>
+                  {result.disease}
+                </h3>
+                
+                <div className="result-meta" style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 12 }}>
+                  <span style={{ fontWeight: 600, color: "var(--primary)" }}>{result.confidence}% Confidence</span>
+                  <span style={{ fontSize: "0.82rem", color: "var(--ink-faint)" }}>Random Forest + TF-IDF Model</span>
+                </div>
+
+                <p style={{ color: "var(--ink-soft)", fontSize: "0.92rem", lineHeight: 1.6, marginBottom: 16 }}>
                   {result.description}
                 </p>
+
+                {/* --- EXPECTED DISEASE SYMPTOMS SECTION --- */}
+                {result.disease_symptoms?.length > 0 && (
+                  <div className="result-block" style={{ background: "rgba(29, 78, 216, 0.06)", padding: "12px 14px", borderRadius: 10, borderLeft: "4px solid var(--primary)", marginBottom: 16 }}>
+                    <h4 style={{ display: "flex", alignItems: "center", gap: 6, fontSize: "0.92rem", margin: "0 0 8px 0" }}>
+                      <Activity size={15} color="var(--primary)" /> Expected Symptoms for {result.disease}:
+                    </h4>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                      {result.disease_symptoms.map((sym, i) => (
+                        <span key={i} style={{ background: "var(--surface)", border: "1px solid rgba(255,255,255,0.12)", padding: "3px 10px", borderRadius: 12, fontSize: "0.8rem", textTransform: "capitalize" }}>
+                          • {sym}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* --- TOP 3 CANDIDATE DIAGNOSES --- */}
+                {result.top_candidates?.length > 1 && (
+                  <div className="result-block" style={{ marginBottom: 16 }}>
+                    <h4 style={{ display: "flex", alignItems: "center", gap: 6, fontSize: "0.9rem", marginBottom: 8 }}>
+                      <Layers size={15} /> Top Candidate Diagnoses:
+                    </h4>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                      {result.top_candidates.map((cand, i) => (
+                        <div key={i} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", fontSize: "0.85rem", background: "rgba(255,255,255,0.03)", padding: "6px 10px", borderRadius: 6 }}>
+                          <span style={{ textTransform: "capitalize" }}>{i + 1}. {cand.disease}</span>
+                          <span style={{ fontWeight: 600 }}>{cand.confidence}%</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* --- PRECAUTIONS & MEDICATIONS --- */}
                 <div className="result-block">
-                  <h4>Precautions</h4>
+                  <h4 style={{ display: "flex", alignItems: "center", gap: 6 }}><ShieldCheck size={15} /> Precautions</h4>
                   <ul>{result.precautions.map((m, i) => <li key={i}>{m}</li>)}</ul>
                 </div>
+
                 <div className="result-block">
-                  <h4>Suggested medications</h4>
+                  <h4 style={{ display: "flex", alignItems: "center", gap: 6 }}><Pill size={15} /> Suggested Medications</h4>
                   <ul>{result.medications.map((a, i) => <li key={i}>{a}</li>)}</ul>
                 </div>
+
                 {result.diet?.length > 0 && (
                   <div className="result-block">
-                    <h4>Diet</h4>
+                    <h4 style={{ display: "flex", alignItems: "center", gap: 6 }}><Utensils size={15} /> Recommended Diet</h4>
                     <ul>{result.diet.map((d, i) => <li key={i}>{d}</li>)}</ul>
                   </div>
                 )}
+
                 {result.workout?.length > 0 && (
                   <div className="result-block">
-                    <h4>Recommended activity</h4>
+                    <h4 style={{ display: "flex", alignItems: "center", gap: 6 }}><Dumbbell size={15} /> Recommended Activity</h4>
                     <ul>{result.workout.map((w, i) => <li key={i}>{w}</li>)}</ul>
                   </div>
                 )}
@@ -309,9 +362,9 @@ export default function Home() {
           className="section-head"
           initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }} variants={fadeUp}
         >
-          <span className="eyebrow"><Sparkles size={13} style={{ marginRight: 4 }} />Why "personalized"</span>
-          <h2>It remembers, so it gets sharper over time</h2>
-          <p>Every check is saved to your account. Patterns across visits are worth more than any single check alone.</p>
+          <span className="eyebrow"><Sparkles size={13} style={{ marginRight: 4 }} />Personalized AI History</span>
+          <h2>It Remembers, so It Gets Sharper Over Time</h2>
+          <p>Every check is saved to your private profile history. Health patterns across visits provide deep medical context.</p>
         </motion.div>
 
         <motion.div
@@ -321,22 +374,22 @@ export default function Home() {
           <div className="timeline-item">
             <div className="timeline-dot"><Stethoscope size={18} /></div>
             <div className="timeline-content">
-              <div className="t-title">First check-in</div>
-              <div className="t-desc">Fever + cough logged, flagged as low risk.</div>
+              <div className="t-title">First Check-in Logged</div>
+              <div className="t-desc">Symptom selection saved with local timestamp &amp; risk rating.</div>
             </div>
           </div>
           <div className="timeline-item">
             <div className="timeline-dot"><Activity size={18} /></div>
             <div className="timeline-content">
-              <div className="t-title">Second check-in, 3 months later</div>
-              <div className="t-desc">Breathing difficulty logged again — third respiratory flag this year.</div>
+              <div className="t-title">Follow-up Analysis</div>
+              <div className="t-desc">Symptom progression tracked against previous diagnostic records.</div>
             </div>
           </div>
           <div className="timeline-item">
             <div className="timeline-dot"><TrendingUp size={18} /></div>
             <div className="timeline-content">
-              <div className="t-title">Your dashboard notices the pattern</div>
-              <div className="t-desc">Recurring respiratory symptoms — worth mentioning at your next real appointment.</div>
+              <div className="t-title">Personalized Recommendation Matrix</div>
+              <div className="t-desc">SVD Collaborative Filtering + Content-Based TF-IDF matching tailors care.</div>
             </div>
           </div>
         </motion.div>
@@ -345,7 +398,7 @@ export default function Home() {
       {/* ---------------- FOOTER ---------------- */}
       <footer className="site-footer">
         <span className="brand">MediCare AI</span>
-        <span className="footer-note">Frontend: React · Backend: Flask · ML: scikit-learn</span>
+        <span className="footer-note">Frontend: React · Backend: Flask · ML: scikit-learn &amp; Keras</span>
       </footer>
     </div>
   );
