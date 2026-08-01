@@ -15,7 +15,7 @@ from pathlib import Path
 
 import joblib
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.metrics import accuracy_score, f1_score
 from sklearn.model_selection import train_test_split
 
@@ -27,15 +27,14 @@ MODEL_PATH = MODEL_DIR / "best_model.pkl"
 SYMPTOM_PATH = MODEL_DIR / "symptom_list.json"
 REPORT_PATH = MODEL_DIR / "training_report.json"
 RANDOM_STATE = 42
+
+# We use HistGradientBoostingClassifier as it is a highly precise, lightweight 
+# gradient boosting algorithm (similar to LightGBM) natively supported by scikit-learn.
 MODEL_PARAMS = {
-    # Depth and single-worker fitting keep the model within typical development
-    # machine memory while retaining the existing application's RF approach.
-    "n_estimators": 200,
-    "max_depth": 22,
-    "class_weight": "balanced_subsample",
-    "min_samples_leaf": 1,
-    "max_features": "sqrt",
-    "n_jobs": 1,
+    "learning_rate": 0.1,
+    "max_iter": 200,
+    "max_depth": 12,
+    "min_samples_leaf": 5,
     "random_state": RANDOM_STATE,
 }
 
@@ -101,7 +100,7 @@ def main() -> None:
     x_train, x_test, y_train, y_test = train_test_split(
         x, y, test_size=0.20, random_state=RANDOM_STATE, stratify=y
     )
-    validation_model = RandomForestClassifier(**MODEL_PARAMS)
+    validation_model = HistGradientBoostingClassifier(**MODEL_PARAMS)
     validation_model.fit(x_train, y_train)
     predicted = validation_model.predict(x_test)
     report["validation"] = {
@@ -113,7 +112,7 @@ def main() -> None:
     }
 
     # Refit on every clean record for the application artifact.
-    final_model = RandomForestClassifier(**MODEL_PARAMS)
+    final_model = HistGradientBoostingClassifier(**MODEL_PARAMS)
     final_model.fit(x, y)
     joblib.dump(final_model, MODEL_PATH)
     SYMPTOM_PATH.write_text(json.dumps(features, indent=2), encoding="utf-8")

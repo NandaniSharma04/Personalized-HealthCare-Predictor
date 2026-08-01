@@ -14,8 +14,8 @@
   "validation": {
     "split": "stratified 80/20 split after removing ambiguous profiles",
     "random_state": 42,
-    "accuracy": 0.892503,
-    "macro_f1": 0.902532,
+    "accuracy": 0.907188,
+    "macro_f1": 0.897674,
     "test_rows": 17433
   }
 }
