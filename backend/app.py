@@ -41,10 +41,17 @@ app.config["SESSION_COOKIE_HTTPONLY"] = True
 app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
 app.config["SESSION_COOKIE_SECURE"] = os.environ.get("FLASK_ENV") == "production"
 
-CORS(app, supports_credentials=True, origins=[
+frontend_origins = [
     "http://localhost:5173",   # Vite dev server
+    "http://127.0.0.1:5173",   # common local browser origin
     os.environ.get("FRONTEND_URL", ""),  # set this to your deployed React URL later
-])
+]
+
+CORS(
+    app,
+    supports_credentials=True,
+    origins=[origin for origin in frontend_origins if origin],
+)
 db.init_app(app)
 app.register_blueprint(auth_bp)
 

@@ -5,7 +5,7 @@ import axios from "axios";
 // without this, login would appear to work but you'd get logged out on
 // every page refresh.
 const api = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: import.meta.env.VITE_API_BASE_URL || "",
   withCredentials: true,
   headers: { "Content-Type": "application/json" },
 });
