@@ -1,140 +1,236 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>HealthAI | Sign Up</title>
+    <title>HealthAI | Sign Up</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
-<link rel="stylesheet" href="auth.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+
+    <!-- HealthAI CSS -->
+    <link
+        rel="stylesheet"
+        href="./auth.css"
+    >
 
 </head>
 
+
 <body>
 
-<!-- Animated Background -->
 
-<canvas id="dnaCanvas"></canvas>
+    <!-- =========================================================
+         ANIMATED BACKGROUND
+    ========================================================== -->
 
-<div class="overlay"></div>
+    <canvas id="dnaCanvas"></canvas>
 
-<div class="glow glow1"></div>
+    <div class="overlay"></div>
 
-<div class="glow glow2"></div>
+    <div class="glow glow1"></div>
 
-<!-- Header -->
+    <div class="glow glow2"></div>
 
-<header>
 
-<nav>
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
 
-<div class="logo">
+    <header>
 
-<i class="fa-solid fa-dna"></i>
+        <nav>
 
-<span>HealthAI</span>
+            <div class="logo">
 
-</div>
+                <i class="fa-solid fa-dna"></i>
 
-<a href="login.html" class="back-btn">
+                <span>
+                    HealthAI
+                </span>
 
-<i class="fa-solid fa-arrow-left"></i>
+            </div>
 
-Back
 
-</a>
+            <a
+                href="./login.html"
+                class="back-btn"
+            >
 
-</nav>
+                <i class="fa-solid fa-arrow-left"></i>
 
-</header>
+                Back
 
-<!-- Signup Section -->
+            </a>
 
-<section class="logout-section">
+        </nav>
 
-<div class="logout-card">
+    </header>
 
-<h1>Create Account</h1>
 
-<p>Join HealthAI AI Health System</p>
+    <!-- =========================================================
+         SIGNUP SECTION
+    ========================================================== -->
 
-<form id="signupForm">
+    <section class="logout-section">
 
-<div class="input-box">
+        <div class="logout-card">
 
-<i class="fa-solid fa-user"></i>
+            <h1>
+                Create Account
+            </h1>
 
-<input
-type="text"
-id="name"
-placeholder="Full Name"
-required>
 
-</div>
+            <p>
+                Join HealthAI AI Health System
+            </p>
 
-<div class="input-box">
 
-<i class="fa-solid fa-envelope"></i>
+            <form id="signupForm">
 
-<input
-type="email"
-id="email"
-placeholder="Email Address"
-required>
 
-</div>
+                <!-- =================================================
+                     FULL NAME
+                ================================================== -->
 
-<div class="input-box">
+                <div class="input-box">
 
-<i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid fa-user"></i>
 
-<input
-type="password"
-id="password"
-placeholder="Password"
-required>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Full Name"
+                        autocomplete="name"
+                        required
+                    >
 
-</div>
+                </div>
 
-<button type="submit">
 
-Create Account
+                <!-- =================================================
+                     EMAIL
+                ================================================== -->
 
-</button>
+                <div class="input-box">
 
-<div class="divider">
+                    <i class="fa-solid fa-envelope"></i>
 
-OR
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Email Address"
+                        autocomplete="email"
+                        required
+                    >
 
-</div>
+                </div>
 
-<a href="login.html" class="signup-btn">
 
-Already have an account? Login
+                <!-- =================================================
+                     PASSWORD
+                ================================================== -->
 
-</a>
+                <div class="input-box">
 
-</form>
+                    <i class="fa-solid fa-lock"></i>
 
-</div>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Password"
+                        autocomplete="new-password"
+                        required
+                    >
 
-</section>
+                </div>
 
-<script src="js/dna.js"></script>
 
-<script src="js/signup.js"></script>
+                <!-- =================================================
+                     CREATE ACCOUNT
+                ================================================== -->
+
+                <button
+                    type="submit"
+                    id="signupButton"
+                >
+                    Create Account
+                </button>
+
+
+                <!-- =================================================
+                     DIVIDER
+                ================================================== -->
+
+                <div class="divider">
+                    OR
+                </div>
+
+
+                <!-- =================================================
+                     LOGIN
+                ================================================== -->
+
+                <a
+                    href="./login.html"
+                    class="signup-btn"
+                >
+                    Already have an account? Login
+                </a>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         DNA ANIMATION
+    ========================================================== -->
+
+    <script src="./js/dna.js"></script>
+
+
+    <!-- =========================================================
+         SIGNUP LOGIC
+    ========================================================== -->
+
+    <script src="./js/signup.js"></script>
 
 </body>
 

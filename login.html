@@ -1,183 +1,191 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>HealthAI | Login</title>
+    <title>HealthAI | Login</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
 
-<link rel="stylesheet" href="auth.css">
+    <link
+        rel="stylesheet"
+        href="auth.css"
+    >
 
 </head>
 
 <body>
 
-<!-- Animated Background -->
+    <canvas id="dnaCanvas"></canvas>
 
-<canvas id="dnaCanvas"></canvas>
+    <div class="overlay"></div>
 
-<div class="overlay"></div>
+    <div class="glow glow1"></div>
+    <div class="glow glow2"></div>
 
-<div class="glow glow1"></div>
 
-<div class="glow glow2"></div>
+    <header>
 
-<!-- Header -->
+        <nav>
 
-<header>
+            <div class="logo">
 
-<nav>
+                <i class="fa-solid fa-dna"></i>
 
-<div class="logo">
+                <span>HealthAI</span>
 
-<i class="fa-solid fa-dna"></i>
+            </div>
 
-<span>HealthAI</span>
+            <a
+                href="index.html"
+                class="back-btn"
+            >
 
-</div>
+                <i class="fa-solid fa-arrow-left"></i>
 
-<a href="index.html" class="back-btn">
+                Back
 
-<i class="fa-solid fa-arrow-left"></i>
+            </a>
 
-Back
+        </nav>
 
-</a>
+    </header>
 
-</nav>
 
-</header>
+    <section class="logout-section">
 
-<!-- Login Section -->
+        <div class="logout-card">
 
-<section class="logout-section">
+            <h1>Welcome Back</h1>
 
-<div class="logout-card">
+            <p>
+                Login to continue your AI Health Journey
+            </p>
 
-<h1>Welcome Back</h1>
 
-<p>Login to continue your AI Health Journey</p>
+            <form id="loginForm" novalidate>
 
-<form id="loginForm">
+                <div class="input-box">
 
-<div class="input-box">
+                    <i class="fa-solid fa-envelope"></i>
 
-<i class="fa-solid fa-envelope"></i>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Email Address"
+                        autocomplete="email"
+                        required
+                    >
 
-<input
-type="email"
-id="email"
-placeholder="Email Address"
-required>
+                </div>
 
-</div>
 
-<div class="input-box">
+                <div class="input-box">
 
-<i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid fa-lock"></i>
 
-<input
-type="password"
-id="password"
-placeholder="Password"
-required>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Password"
+                        autocomplete="current-password"
+                        required
+                    >
 
-<i
-class="fa-solid fa-eye togglePassword"
-id="togglePassword"></i>
+                    <i
+                        class="fa-solid fa-eye togglePassword"
+                        id="togglePassword"
+                        role="button"
+                        tabindex="0"
+                        aria-label="Show password"
+                    ></i>
 
-</div>
+                </div>
 
-<div class="options">
 
-<label>
+                <div class="options">
 
-<input type="checkbox">
+                    <label>
 
-Remember Me
+                        <input
+                            type="checkbox"
+                            id="remember"
+                            name="remember"
+                        >
 
-</label>
+                        Remember Me
 
-<a href="forgot.html">
+                    </label>
 
-Forgot Password?
 
-</a>
+                    <a href="forgot.html">
+                        Forgot Password?
+                    </a>
 
-</div>
+                </div>
 
-<button type="submit">
 
-Login
+                <button
+                    type="submit"
+                    id="loginButton"
+                >
+                    Login
+                </button>
 
-</button>
 
-<div class="divider">
+                <div class="divider">
+                    OR
+                </div>
 
-OR
 
-</div>
+                <a
+                    href="signup.html"
+                    class="signup-btn"
+                >
+                    Create New Account
+                </a>
 
-<a href="signup.html" class="signup-btn">
+            </form>
 
-Create New Account
+        </div>
 
-</a>
+    </section>
 
-</form>
 
-</div>
+    <script src="js/dna.js"></script>
 
-</section>
-
-<script src="js/dna.js"></script>
-
-<script src="js/login.js"></script>
-
-<script>
-
-const togglePassword=document.getElementById("togglePassword");
-
-const password=document.getElementById("password");
-
-togglePassword.addEventListener("click",function(){
-
-if(password.type==="password"){
-
-password.type="text";
-
-this.classList.remove("fa-eye");
-
-this.classList.add("fa-eye-slash");
-
-}
-
-else{
-
-password.type="password";
-
-this.classList.remove("fa-eye-slash");
-
-this.classList.add("fa-eye");
-
-}
-
-});
-
-</script>
+    <script src="js/login.js"></script>
 
 </body>
 
 </html>
+```

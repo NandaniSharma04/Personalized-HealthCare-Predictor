@@ -1,89 +1,183 @@
-document
-.getElementById("loginForm")
-.addEventListener("submit", async function(e){
+document.addEventListener("DOMContentLoaded", () => {
 
-e.preventDefault();
+    const loginForm = document.getElementById("loginForm");
+
+    if (!loginForm) {
+        console.error("[LOGIN] loginForm not found.");
+        return;
+    }
+
+    console.log("[LOGIN] JavaScript loaded.");
+
+    loginForm.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+
+        const rememberInput = loginForm.querySelector(
+            'input[type="checkbox"]'
+        );
+
+        if (!emailInput || !passwordInput) {
+            console.error("[LOGIN] Required input missing.");
+            alert("Login form is incomplete.");
+            return;
+        }
+
+        const email = emailInput.value.trim().toLowerCase();
+        const password = passwordInput.value;
+
+        const remember = rememberInput
+            ? rememberInput.checked
+            : false;
+
+        if (!email || !password) {
+            alert(
+                "Please enter your email and password."
+            );
+            return;
+        }
+
+        const submitButton = loginForm.querySelector(
+            'button[type="submit"]'
+        );
+
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Logging in...";
+        }
+
+        try {
+
+            console.log(
+                "[LOGIN] Sending POST /api/login"
+            );
+
+            const response = await fetch(
+                "http://127.0.0.1:5000/api/login",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+
+                    credentials: "include",
+
+                    body: JSON.stringify({
+                        email: email,
+                        password: password,
+                        remember: remember
+                    })
+                }
+            );
+
+            console.log(
+                "[LOGIN] HTTP status:",
+                response.status
+            );
+
+            const result = await response.json();
+
+            console.log(
+                "[LOGIN] Server response:",
+                result
+            );
+
+            if (response.ok && result.success) {
+
+                if (result.user) {
+
+                    localStorage.setItem(
+                        "currentUser",
+                        JSON.stringify(result.user)
+                    );
+                }
+
+                alert("Login successful.");
+
+                window.location.replace(
+                    "index.html"
+                );
+
+                return;
+            }
+
+            alert(
+                result.error ||
+                "Invalid email or password."
+            );
+
+        } catch (error) {
+
+            console.error(
+                "[LOGIN] Connection error:",
+                error
+            );
+
+            alert(
+                "Unable to connect to HealthAI backend.\n\n" +
+                "Make sure backend/app.py is running on:\n" +
+                "http://127.0.0.1:5000"
+            );
+
+        } finally {
+
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = "Login";
+            }
+        }
+    });
 
 
-let loginData = {
+    // ------------------------------------------------------------------------
+    // PASSWORD VISIBILITY
+    // ------------------------------------------------------------------------
 
-    email: document.getElementById("email").value,
+    const togglePassword = document.getElementById(
+        "togglePassword"
+    );
 
-    password: document.getElementById("password").value
+    const passwordInput = document.getElementById(
+        "password"
+    );
 
-};
+    if (togglePassword && passwordInput) {
 
+        togglePassword.addEventListener(
+            "click",
+            () => {
 
+                if (passwordInput.type === "password") {
 
-try {
+                    passwordInput.type = "text";
 
+                    togglePassword.classList.remove(
+                        "fa-eye"
+                    );
 
-let response = await fetch("/login", {
+                    togglePassword.classList.add(
+                        "fa-eye-slash"
+                    );
 
-    method:"POST",
+                } else {
 
-    headers:{
+                    passwordInput.type = "password";
 
-        "Content-Type":"application/json"
+                    togglePassword.classList.remove(
+                        "fa-eye-slash"
+                    );
 
-    },
-
-    body:JSON.stringify(loginData)
-
-});
-
-
-
-
-if(response.ok)
-
-{
-
-
-let user = await response.json();
-
-
-// save current login session
-
-localStorage.setItem(
-
-    "currentUser",
-
-    JSON.stringify(user)
-
-);
-
-
-
-window.location.href="index.html";
-
-
-}
-
-else
-
-{
-
-
-alert("Invalid Email or Password");
-
-
-}
-
-
-
-}
-
-catch(error)
-
-{
-
-
-alert("Server is not running. Start server.py first");
-
-
-}
-
-
-
+                    togglePassword.classList.add(
+                        "fa-eye"
+                    );
+                }
+            }
+        );
+    }
 });

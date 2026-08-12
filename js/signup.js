@@ -1,77 +1,159 @@
-document
-.getElementById("signupForm")
-.addEventListener("submit", async function(e){
 
-e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
 
+    const signupForm = document.getElementById("signupForm");
 
-let user = {
+    if (!signupForm) {
+        console.error("[SIGNUP] signupForm not found.");
+        return;
+    }
 
-name: document.getElementById("name").value,
+    console.log("[SIGNUP] JavaScript loaded.");
 
-email: document.getElementById("email").value,
+    signupForm.addEventListener("submit", async (event) => {
 
-password: document.getElementById("password").value
+        // VERY IMPORTANT:
+        // Prevent normal browser GET submission.
+        event.preventDefault();
+        event.stopPropagation();
 
-};
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
 
+        if (!nameInput || !emailInput || !passwordInput) {
+            console.error("[SIGNUP] Required input missing.");
+            alert("Signup form is incomplete.");
+            return;
+        }
 
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim().toLowerCase();
+        const password = passwordInput.value;
 
-try{
+        if (!name || !email || !password) {
+            alert("Please fill in all fields.");
+            return;
+        }
 
+        if (password.length < 8) {
+            alert("Password must be at least 8 characters.");
+            return;
+        }
 
-let response = await fetch("/signup",{
+        if (!/[A-Z]/.test(password)) {
+            alert(
+                "Password must include at least one uppercase letter."
+            );
+            return;
+        }
 
-method:"POST",
+        if (!/[a-z]/.test(password)) {
+            alert(
+                "Password must include at least one lowercase letter."
+            );
+            return;
+        }
 
-headers:{
+        if (!/[0-9]/.test(password)) {
+            alert(
+                "Password must include at least one number."
+            );
+            return;
+        }
 
-"Content-Type":"application/json"
+        const submitButton = signupForm.querySelector(
+            'button[type="submit"]'
+        );
 
-},
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Creating Account...";
+        }
 
-body:JSON.stringify(user)
+        try {
 
-});
+            console.log(
+                "[SIGNUP] Sending POST /api/signup"
+            );
 
+            const response = await fetch(
+                "http://127.0.0.1:5000/api/signup",
+                {
+                    method: "POST",
 
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
 
-let result = await response.text();
+                    credentials: "include",
 
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        password: password
+                    })
+                }
+            );
 
+            console.log(
+                "[SIGNUP] HTTP status:",
+                response.status
+            );
 
-if(response.ok)
+            const result = await response.json();
 
-{
+            console.log(
+                "[SIGNUP] Server response:",
+                result
+            );
 
-alert("Account Created Successfully");
+            if (response.ok && result.success) {
 
+                if (result.user) {
 
-window.location.href="login.html";
+                    localStorage.setItem(
+                        "currentUser",
+                        JSON.stringify(result.user)
+                    );
+                }
 
+                alert(
+                    "Account created successfully."
+                );
 
-}
+                window.location.replace(
+                    "index.html"
+                );
 
-else
+                return;
+            }
 
-{
+            alert(
+                result.error ||
+                "Unable to create account."
+            );
 
-alert(result);
+        } catch (error) {
 
-}
+            console.error(
+                "[SIGNUP] Connection error:",
+                error
+            );
 
+            alert(
+                "Unable to connect to HealthAI backend.\n\n" +
+                "Make sure backend/app.py is running on:\n" +
+                "http://127.0.0.1:5000"
+            );
 
+        } finally {
 
-}
-
-catch(error)
-
-{
-
-alert("Server is not running");
-
-}
-
-
-
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = "Create Account";
+            }
+        }
+    });
 });
