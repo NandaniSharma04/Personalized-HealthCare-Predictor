@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -6,17 +7,17 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
+import AdminDashboard from "./dashboards/admin/AdminDashboard";
+import AnalystDashboard from "./dashboards/analyst/AnalystDashboard";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Predictor from "./pages/Predictor";
 import "./index.css";
 
 export default function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        {/* Global background video -- lives here (not inside a page) so it
-            keeps playing continuously across every route instead of
-            restarting every time you navigate. */}
         <video
           className="site-video-bg"
           src="/videos/Background_video.mp4"
@@ -30,16 +31,43 @@ export default function App() {
         <div className="site-content">
           <Navbar />
           <Routes>
+            {/* Public Landing & Auth Routes */}
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+
+            {/* Protected Routes (Authentication Required) */}
+            <Route
+              path="/predictor"
+              element={
+                <ProtectedRoute>
+                  <Predictor />
+                </ProtectedRoute>
+              }
+            />
             <Route
               path="/dashboard"
               element={
                 <ProtectedRoute>
                   <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute allowedRoles={["admin"]}>
+                  <AdminDashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/analyst"
+              element={
+                <ProtectedRoute allowedRoles={["analyst", "admin"]}>
+                  <AnalystDashboard />
                 </ProtectedRoute>
               }
             />

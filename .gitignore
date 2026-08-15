@@ -1,8 +1,34 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
 venv/
+.venv/
+env/
+
+# Build and Bundles
+dist/
+frontend/dist/
+build/
+frontend/build/
+
+# Python Cache & Bytecode
 __pycache__/
+*.py[cod]
+*$py.class
 *.pyc
+
+# Environment & Secrets
+.env
 backend/.env
 backend/instance/
 *.db
+*.sqlite
+*.sqlite3
+
+# Logs & OS artifacts
+*.log
 .DS_Store
+Thumbs.db
 .vscode/
+.idea/
+.system_generated/

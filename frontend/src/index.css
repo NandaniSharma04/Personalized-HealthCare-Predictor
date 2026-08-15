@@ -327,32 +327,41 @@ button { font-family: inherit; cursor: pointer; }
 .footer-note { color: var(--ink-faint); font-size: 0.85rem; font-family: var(--font-mono); }
 
 /* ---------- Auth pages ---------- */
-.auth-page { display: flex; justify-content: center; padding: 90px 20px; min-height: 70vh; }
-.auth-card { border-radius: 24px; padding: 44px; width: 100%; max-width: 420px; }
-.auth-card h1 { font-size: 1.6rem; margin-bottom: 26px; }
-.auth-card label { display: block; margin-bottom: 18px; font-weight: 600; font-size: 0.9rem; color: var(--ink-soft); }
+.auth-page { display: flex; justify-content: center; align-items: center; padding: 40px 16px; min-height: 75vh; }
+.auth-card { 
+  border-radius: 18px; 
+  padding: 24px 28px; 
+  width: 100%; 
+  max-width: 380px; 
+  box-shadow: 0 16px 40px -10px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.14);
+}
+.auth-card h1 { font-size: 1.35rem; margin-bottom: 4px; text-align: center; }
+.auth-card label { display: block; margin-bottom: 12px; font-weight: 500; font-size: 0.82rem; color: var(--ink-soft); }
 .auth-card input {
-  width: 100%; padding: 12px 14px; margin-top: 7px;
-  border: 1.5px solid rgba(255,255,255,0.16); border-radius: 10px; font-size: 1rem;
+  width: 100%; padding: 9px 12px; margin-top: 5px;
+  border: 1.5px solid rgba(255,255,255,0.16); border-radius: 8px; font-size: 0.88rem;
   font-family: var(--font-body); background: rgba(255,255,255,0.06); color: var(--ink);
 }
-.auth-card input::placeholder { color: var(--ink-faint); }
-.auth-card input:focus { border-color: var(--cyan); }
+.auth-card input::placeholder { color: var(--ink-faint); font-size: 0.82rem; }
+.auth-card input:focus { border-color: var(--cyan); outline: none; }
 .auth-card button[type="submit"] {
-  width: 100%; padding: 13px;
+  width: 100%; padding: 11px;
   background: linear-gradient(100deg, var(--primary-deep), var(--cyan));
-  color: white; border: none; border-radius: 10px; font-weight: 700; font-size: 1rem; margin-top: 6px;
-  box-shadow: 0 16px 36px -14px rgba(34,211,238,0.55);
+  color: white; border: none; border-radius: 8px; font-weight: 600; font-size: 0.9rem; margin-top: 4px;
+  box-shadow: 0 12px 28px -10px rgba(34,211,238,0.45);
+  cursor: pointer;
 }
+.auth-card button[type="submit"]:hover { transform: translateY(-1px); }
 .auth-error {
-  color: var(--red); background: rgba(248,113,113,0.12); padding: 10px 14px; border-radius: 8px;
-  margin-bottom: 18px; font-size: 0.88rem; border: 1px solid rgba(248,113,113,0.25);
+  color: var(--red); background: rgba(248,113,113,0.12); padding: 8px 12px; border-radius: 6px;
+  margin-bottom: 14px; font-size: 0.8rem; border: 1px solid rgba(248,113,113,0.25);
 }
-.auth-switch { margin-top: 20px; text-align: center; font-size: 0.9rem; color: var(--ink-soft); }
+.auth-switch { margin-top: 14px; text-align: center; font-size: 0.82rem; color: var(--ink-soft); }
 .auth-switch a { color: var(--cyan); font-weight: 600; text-decoration: none; }
-.checkbox-row { display: flex; align-items: center; gap: 8px; }
-.checkbox-row input { width: auto; }
-.hint { display: block; font-size: 0.78rem; color: var(--ink-faint); font-weight: 400; margin-top: 5px; }
+.checkbox-row { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; }
+.checkbox-row input { width: auto; margin: 0; }
+.hint { display: block; font-size: 0.72rem; color: var(--ink-faint); font-weight: 400; margin-top: 3px; }
 
 /* ---------- Dashboard / static pages ---------- */
 .dashboard-page, .static-page { max-width: 900px; margin: 0 auto; padding: 60px 40px; }
@@ -373,3 +382,648 @@ button { font-family: inherit; cursor: pointer; }
   .nav-links { gap: 16px; }
   .section { padding: 56px 20px; }
 }
+
+/* ---------- Full-Stack Health Care AI Layout & Component Styles ---------- */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+.page-header { margin-bottom: 32px; }
+.page-title { font-size: 2.2rem; font-weight: 700; margin-bottom: 8px; }
+.page-subtitle { color: var(--ink-soft); font-size: 1.05rem; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.flex-center { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 60vh; }
+
+.predictor-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 32px;
+}
+@media (max-width: 900px) {
+  .predictor-layout { grid-template-columns: 1fr; }
+}
+
+.symptom-selector-container {
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+}
+.selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.selector-title { font-size: 1.2rem; font-weight: 700; }
+.selector-subtitle { font-size: 0.85rem; color: var(--ink-soft); }
+.selected-badge {
+  background: rgba(34, 211, 238, 0.15);
+  color: var(--cyan);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.search-bar-wrapper {
+  position: relative;
+  margin-bottom: 16px;
+}
+.search-input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ink);
+  font-size: 0.95rem;
+  outline: none;
+}
+.search-input:focus { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.2); }
+.search-clear-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--ink-soft);
+  font-size: 1.2rem;
+}
+
+.category-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.chip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--ink-soft);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.chip:hover { border-color: var(--cyan); color: var(--ink); }
+.chip-active {
+  background: linear-gradient(100deg, var(--primary-deep), var(--cyan));
+  color: white;
+  border-color: transparent;
+}
+
+.selected-symptoms-tags {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: rgba(34, 211, 238, 0.06);
+  border-radius: 12px;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+}
+.tags-label { font-size: 0.8rem; font-weight: 600; color: var(--cyan); display: block; margin-bottom: 8px; }
+.tags-flex { display: flex; flex-wrap: wrap; gap: 6px; }
+.symptom-tag {
+  background: rgba(34, 211, 238, 0.2);
+  color: var(--ink);
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.tag-remove { background: none; border: none; color: var(--cyan); font-weight: bold; font-size: 1rem; cursor: pointer; }
+
+.symptoms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+.symptom-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  color: var(--ink-soft);
+  text-align: left;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.symptom-card:hover { border-color: var(--cyan); color: var(--ink); background: rgba(34, 211, 238, 0.08); }
+.symptom-card-selected {
+  border-color: var(--cyan);
+  background: rgba(34, 211, 238, 0.15);
+  color: var(--ink);
+  font-weight: 600;
+}
+.checkbox-indicator {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--cyan);
+  flex-shrink: 0;
+}
+.symptom-card-selected .checkbox-indicator { border-color: var(--cyan); background: var(--cyan); color: #000; }
+
+.health-summary-card, .recommendation-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--card-shadow);
+}
+.summary-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+.summary-label { font-size: 0.8rem; text-transform: uppercase; color: var(--cyan); font-weight: 600; }
+.disease-title { font-size: 1.8rem; font-weight: 700; color: var(--ink); text-transform: capitalize; }
+
+.confidence-meter-container { margin-bottom: 20px; }
+.confidence-label-row { display: flex; justify-content: space-between; margin-bottom: 6px; font-weight: 600; font-size: 0.9rem; }
+.confidence-value { color: var(--cyan); }
+.confidence-bar-bg { width: 100%; height: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 999px; overflow: hidden; }
+.confidence-bar-fill { height: 100%; background: linear-gradient(90deg, var(--cyan), var(--mint)); border-radius: 999px; transition: width 0.6s ease; }
+
+.candidates-list { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.candidate-row { display: flex; justify-content: space-between; padding: 8px 12px; background: rgba(255, 255, 255, 0.04); border-radius: 8px; font-size: 0.9rem; }
+
+.recommendation-tabs { display: flex; gap: 8px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 12px; margin-bottom: 16px; overflow-x: auto; }
+.rec-tab { background: none; border: none; color: var(--ink-soft); padding: 8px 16px; font-weight: 600; font-size: 0.9rem; border-radius: 8px; cursor: pointer; white-space: nowrap; }
+.rec-tab-active { background: rgba(34, 211, 238, 0.15); color: var(--cyan); border: 1px solid rgba(34, 211, 238, 0.3); }
+
+.rec-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+.rec-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 16px; background: rgba(255, 255, 255, 0.04); border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.08); }
+.item-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+.metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.metric-card { display: flex; align-items: center; gap: 16px; padding: 20px; background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 16px; }
+.metric-icon { font-size: 2rem; }
+.metric-value { font-size: 1.6rem; font-weight: 700; display: block; color: var(--ink); }
+.metric-label { font-size: 0.85rem; color: var(--ink-soft); }
+
+.analyst-content-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; }
+@media (max-width: 900px) { .analyst-content-grid { grid-template-columns: 1fr; } }
+.analytics-card { background: var(--glass-bg); backdrop-filter: blur(24px); border: 1px solid var(--glass-border); border-radius: 20px; padding: 24px; }
+.bars-container { display: flex; flex-direction: column; gap: 14px; }
+.bar-row { display: flex; flex-direction: column; gap: 6px; }
+.bar-label-col { display: flex; justify-content: space-between; font-size: 0.88rem; font-weight: 500; }
+.bar-disease-name { text-transform: capitalize; color: var(--ink); }
+.bar-bg { width: 100%; height: 10px; background: rgba(255, 255, 255, 0.08); border-radius: 999px; overflow: hidden; }
+.bar-fill { height: 100%; background: linear-gradient(90deg, var(--primary-deep), var(--cyan)); border-radius: 999px; }
+
+.drift-box { background: rgba(34, 211, 238, 0.06); border: 1px solid rgba(34, 211, 238, 0.2); padding: 18px; border-radius: 14px; }
+.drift-score-row { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 8px; }
+.drift-value { color: var(--cyan); font-family: var(--font-mono); }
+.status-good { display: inline-block; background: rgba(74, 222, 128, 0.15); color: var(--mint); padding: 4px 10px; border-radius: 6px; font-size: 0.82rem; font-weight: 600; margin-bottom: 8px; }
+.data-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.88rem; }
+.data-table th, .data-table td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+.data-table th { color: var(--ink-faint); font-weight: 600; text-transform: uppercase; font-size: 0.75rem; }
+
+.btn-block { display: block; width: 100%; text-align: center; }
+.btn-lg { padding: 16px 28px; font-size: 1.05rem; }
+.mt-4 { margin-top: 16px; }
+.mt-6 { margin-top: 24px; }
+.text-center { text-align: center; }
+
+/* ============================================================
+   SaaS Healthcare AI Dashboard Styles
+   ============================================================ */
+.saas-dashboard-wrapper {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 24px 20px 60px 20px;
+}
+
+.saas-header {
+  padding: 20px 24px;
+  border-radius: 16px;
+}
+
+.user-avatar-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--cyan));
+  color: white;
+  font-weight: 700;
+  font-size: 1.25rem;
+  box-shadow: 0 0 16px rgba(34, 211, 238, 0.4);
+}
+
+.header-greeting {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.role-tag-badge {
+  font-size: 0.75rem;
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.dropdown-wrapper { position: relative; }
+.dropdown-popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 280px;
+  background: rgba(11, 16, 30, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+  z-index: 100;
+}
+.dropdown-popover.right-align { right: 0; }
+.dropdown-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  color: var(--ink-soft);
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.dropdown-btn:hover {
+  background: rgba(34, 211, 238, 0.1);
+  color: var(--cyan);
+}
+.badge-dot {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 8px;
+  height: 8px;
+  background: var(--red);
+  border-radius: 50%;
+}
+
+/* KPI Cards */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.kpi-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 14px;
+}
+.kpi-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(34, 211, 238, 0.12);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+.kpi-title {
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.kpi-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.1;
+  margin: 2px 0;
+}
+.kpi-value-sm {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--cyan);
+  margin: 2px 0;
+}
+.kpi-subtext {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+}
+
+/* Prediction Card */
+.disease-banner {
+  border-radius: 12px;
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+}
+.disease-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.symptoms-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.symptom-tag {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+/* Recommendations */
+.category-pill-badge {
+  background: rgba(167, 139, 250, 0.18);
+  color: var(--violet);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.star-btn {
+  background: none;
+  border: none;
+  color: var(--amber);
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: transform 0.1s;
+}
+.star-btn:hover { transform: scale(1.3); }
+
+/* Health Insight & Insufficient data */
+.health-insight-box {
+  border-left: 3px solid var(--cyan);
+  background: rgba(34, 211, 238, 0.05);
+  border-radius: 8px;
+}
+.insufficient-data-state {
+  border-radius: 10px;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+/* Quick Actions */
+.quick-buttons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-content {
+  border-radius: 16px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+}
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   USER DASHBOARD LAYOUT & RESPONSIVE DESIGN (Healthcare AI SaaS)
+   ========================================================================== */
+.user-dashboard-layout {
+  display: flex;
+  min-height: calc(100vh - 70px);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
+
+.user-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  align-self: flex-start;
+  position: sticky;
+  top: 90px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.user-sidebar .nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  color: #94a3b8;
+  font-size: 0.84rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.user-sidebar .nav-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.user-sidebar .nav-item.active {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(6, 182, 212, 0.15));
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.nav-badge {
+  margin-left: auto;
+  background: #ef4444;
+  color: white;
+  font-size: 0.68rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.user-main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.dashboard-top-header {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.avatar-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.kpi-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.kpi-icon-box.blue { background: rgba(37, 99, 235, 0.15); color: #60a5fa; }
+.kpi-icon-box.cyan { background: rgba(6, 182, 212, 0.15); color: #22d3ee; }
+.kpi-icon-box.purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+.kpi-icon-box.emerald { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+
+.kpi-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.grid-4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2563eb, #06b6d4);
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+.category-pill {
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.category-pill.cat-medicine { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+.category-pill.cat-precaution { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+.category-pill.cat-diet { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+.category-pill.cat-workout { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+.category-pill.cat-general { background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3); }
+
+.btn-filter {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-filter:hover, .btn-filter.active {
+  background: #2563eb;
+  border-color: #3b82f6;
+  color: #ffffff;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.custom-table th, .custom-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.custom-table th {
+  color: #94a3b8;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.text-xxs { font-size: 0.7rem; }
+.margin-0 { margin: 0; }
+.unread-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #38bdf8;
+}
+
+/* Responsive Grid Adapters */
+@media (max-width: 1024px) {
+  .grid-4col { grid-template-columns: repeat(2, 1fr); }
+  .grid-3col { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .user-dashboard-layout {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .user-sidebar {
+    width: 100%;
+    position: static;
+  }
+  .sidebar-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+  .grid-4col, .grid-3col, .grid-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+

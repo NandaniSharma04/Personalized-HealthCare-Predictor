@@ -7,31 +7,44 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // On first load, ask Flask "am I logged in?" using the existing cookie.
+  // On first load, check active session from backend
   useEffect(() => {
     api
-      .get("/api/me")
+      .get("/api/auth/me")
       .then((res) => {
-        if (res.data.logged_in) setUser(res.data.user);
+        if (res.data && res.data.logged_in) setUser(res.data.user);
+      })
+      .catch(() => {
+        // Session not active
+        setUser(null);
       })
       .finally(() => setLoading(false));
   }, []);
 
   async function login(email, password, remember = false) {
-    const res = await api.post("/api/login", { email, password, remember });
-    setUser(res.data.user);
+    const res = await api.post("/api/auth/login", { email, password, remember });
+    if (res.data && res.data.user) {
+      setUser(res.data.user);
+    }
     return res.data;
   }
 
-  async function signup(name, email, password) {
-    const res = await api.post("/api/signup", { name, email, password });
-    setUser(res.data.user);
+  async function signup(name, email, password, role = "user") {
+    const res = await api.post("/api/auth/register", { name, email, password, role });
+    if (res.data && res.data.user) {
+      setUser(res.data.user);
+    }
     return res.data;
   }
 
   async function logout() {
-    await api.post("/api/logout");
-    setUser(null);
+    try {
+      await api.post("/api/auth/logout");
+    } catch (err) {
+      console.warn("Logout API failed:", err);
+    } finally {
+      setUser(null);
+    }
   }
 
   return (

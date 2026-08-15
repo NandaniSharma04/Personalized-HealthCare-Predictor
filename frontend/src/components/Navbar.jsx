@@ -1,5 +1,7 @@
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { LogIn, LogOut, UserPlus, ShieldCheck, User, HeartPulse } from "lucide-react";
 
 export default function Navbar() {
   const { user, logout } = useAuth();
@@ -10,26 +12,99 @@ export default function Navbar() {
     navigate("/login");
   }
 
+  const role = user?.role?.toLowerCase();
+
   return (
     <nav className="navbar">
       <Link to="/" className="brand">
-        <span className="brand-dot" />
-        MediCare AI
+        <HeartPulse size={22} className="accent-text" style={{ marginRight: 6 }} />
+        <span>MediCare AI</span>
       </Link>
+      
       <div className="nav-links">
         <Link to="/">Home</Link>
+        <Link to="/predictor">Disease Predictor</Link>
+        
+        {/* Dynamic Role-Specific Dashboard Link: User or Admin */}
+        {role === "admin" ? (
+          <Link to="/admin" className="role-nav-highlight">
+            <ShieldCheck size={14} className="inline mr-1" /> Admin Dashboard
+          </Link>
+        ) : (
+          <Link to="/dashboard">
+            <User size={14} className="inline mr-1" /> My Dashboard
+          </Link>
+        )}
+
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
+        
         {user ? (
-          <>
-            <Link to="/dashboard">Dashboard</Link>
-            <button onClick={handleLogout}>Log out</button>
-          </>
+          <div className="flex-center-y gap-2">
+            <span
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "4px",
+                padding: "4px 8px",
+                background: "rgba(59, 130, 246, 0.15)",
+                border: "1px solid rgba(59, 130, 246, 0.3)",
+                borderRadius: "6px",
+                fontSize: "0.72rem",
+                fontWeight: "600",
+                color: "#60a5fa",
+                textTransform: "uppercase"
+              }}
+            >
+              {role === 'admin' ? <ShieldCheck size={12} /> : <User size={12} />}
+              {role || 'USER'}
+            </span>
+            
+            <button
+              onClick={handleLogout}
+              className="btn-outline text-xs"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "5px",
+                padding: "6px 12px",
+                borderRadius: "8px",
+                cursor: "pointer"
+              }}
+            >
+              <LogOut size={14} /> Log out
+            </button>
+          </div>
         ) : (
-          <>
-            <Link to="/login">Log in</Link>
-            <button onClick={() => navigate("/signup")}>Sign up</button>
-          </>
+          <div className="flex-center-y gap-2">
+            <Link
+              to="/login"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "4px",
+                fontSize: "0.85rem",
+                color: "#e2e8f0"
+              }}
+            >
+              <LogIn size={15} /> Log in
+            </Link>
+            
+            <button
+              onClick={() => navigate("/signup")}
+              className="btn-primary text-xs"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "4px",
+                padding: "6px 14px",
+                borderRadius: "8px",
+                cursor: "pointer"
+              }}
+            >
+              <UserPlus size={14} /> Sign up
+            </button>
+          </div>
         )}
       </div>
     </nav>
