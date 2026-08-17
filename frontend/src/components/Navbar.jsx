@@ -13,6 +13,7 @@ export default function Navbar() {
   }
 
   const role = user?.role?.toLowerCase();
+  const isAdmin = role === "admin";
 
   return (
     <nav className="navbar">
@@ -23,10 +24,12 @@ export default function Navbar() {
       
       <div className="nav-links">
         <Link to="/">Home</Link>
-        <Link to="/predictor">Disease Predictor</Link>
+
+        {/* Only show Disease Predictor to non-admin users */}
+        {!isAdmin && <Link to="/predictor">Disease Predictor</Link>}
         
         {/* Dynamic Role-Specific Dashboard Link: User or Admin */}
-        {role === "admin" ? (
+        {isAdmin ? (
           <Link to="/admin" className="role-nav-highlight">
             <ShieldCheck size={14} className="inline mr-1" /> Admin Dashboard
           </Link>
@@ -36,8 +39,13 @@ export default function Navbar() {
           </Link>
         )}
 
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
+        {/* Only show About and Contact to non-admin users */}
+        {!isAdmin && (
+          <>
+            <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
+          </>
+        )}
         
         {user ? (
           <div className="flex-center-y gap-2">
@@ -56,7 +64,7 @@ export default function Navbar() {
                 textTransform: "uppercase"
               }}
             >
-              {role === 'admin' ? <ShieldCheck size={12} /> : <User size={12} />}
+              {isAdmin ? <ShieldCheck size={12} /> : <User size={12} />}
               {role || 'USER'}
             </span>
             
