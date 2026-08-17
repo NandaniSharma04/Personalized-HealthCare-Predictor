@@ -9,6 +9,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("[LOGIN] JavaScript loaded.");
 
+    const rolePatientBtn = document.getElementById("rolePatientBtn");
+    const roleAdminBtn = document.getElementById("roleAdminBtn");
+    const selectedRoleInput = document.getElementById("selectedRole");
+
+    if (rolePatientBtn && roleAdminBtn && selectedRoleInput) {
+        rolePatientBtn.addEventListener("click", () => {
+            selectedRoleInput.value = "user";
+            rolePatientBtn.style.background = "rgba(59, 130, 246, 0.3)";
+            rolePatientBtn.style.color = "#fff";
+            roleAdminBtn.style.background = "rgba(255, 255, 255, 0.05)";
+            roleAdminBtn.style.color = "#94a3b8";
+        });
+        roleAdminBtn.addEventListener("click", () => {
+            selectedRoleInput.value = "admin";
+            roleAdminBtn.style.background = "rgba(59, 130, 246, 0.3)";
+            roleAdminBtn.style.color = "#fff";
+            rolePatientBtn.style.background = "rgba(255, 255, 255, 0.05)";
+            rolePatientBtn.style.color = "#94a3b8";
+        });
+    }
+
     loginForm.addEventListener("submit", async (event) => {
 
         event.preventDefault();
@@ -16,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const emailInput = document.getElementById("email");
         const passwordInput = document.getElementById("password");
+        const role = selectedRoleInput ? selectedRoleInput.value : "user";
 
         const rememberInput = loginForm.querySelector(
             'input[type="checkbox"]'
@@ -57,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
             const response = await fetch(
-                "http://127.0.0.1:5000/api/login",
+                "http://127.0.0.1:5000/api/auth/login",
                 {
                     method: "POST",
 
@@ -76,32 +98,31 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             );
 
-            console.log(
-                "[LOGIN] HTTP status:",
-                response.status
-            );
-
             const result = await response.json();
-
-            console.log(
-                "[LOGIN] Server response:",
-                result
-            );
 
             if (response.ok && result.success) {
 
                 if (result.user) {
-
                     localStorage.setItem(
                         "currentUser",
                         JSON.stringify(result.user)
                     );
+                    const accounts = JSON.parse(localStorage.getItem("logged_in_accounts") || "[]");
+                    if (!accounts.some(a => a.email.toLowerCase() === result.user.email.toLowerCase())) {
+                        accounts.push(result.user);
+                        localStorage.setItem("logged_in_accounts", JSON.stringify(accounts));
+                    }
+                }
+
+                if (role === "admin" && result.user?.role !== "admin") {
+                    alert("This account is not authorized to access the Administrator Portal.");
+                    return;
                 }
 
                 alert("Login successful.");
 
                 window.location.replace(
-                    "index.html"
+                    result.user?.role === "admin" ? "dashboard.html" : "index.html"
                 );
 
                 return;
@@ -119,11 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 error
             );
 
-            alert(
-                "Unable to connect to HealthAI backend.\n\n" +
-                "Make sure backend/app.py is running on:\n" +
-                "http://127.0.0.1:5000"
-            );
+            alert("Unable to contact the server. Please make sure the backend is running and try again.");
 
         } finally {
 

@@ -1027,3 +1027,167 @@ button { font-family: inherit; cursor: pointer; }
 
 
 
+/* ============================================================
+   ADMIN DASHBOARD PATCH — additive only, does not modify
+   any existing rule above. Fixes missing card/utility classes
+   used by AdminDashboard.jsx.
+============================================================ */
+
+/* Base card + glass surface (AdminDashboard uses "card glass-card"
+   and "card glass-panel" combos that were previously undefined) */
+.card {
+  border-radius: 16px;
+  padding: 20px;
+}
+.glass-card, .glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--card-shadow);
+}
+.glass-panel-sm {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Fix: kpi-icon was inheriting .flex-center's min-height:60vh,
+   stretching into the tall vertical bars seen in the screenshot.
+   This override only applies when BOTH classes are present. */
+.kpi-icon.flex-center {
+  min-height: auto;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Missing layout/flex utilities */
+.flex-center-y { display: flex; align-items: center; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-column { display: flex; flex-direction: column; }
+
+/* Missing spacing utilities */
+.gap-1 { gap: 4px; }
+.gap-2 { gap: 8px; }
+.gap-3 { gap: 12px; }
+.gap-4 { gap: 16px; }
+.gap-6 { gap: 24px; }
+.p-1 { padding: 4px; }
+.p-2 { padding: 8px; }
+.p-3 { padding: 12px; }
+.p-6 { padding: 24px; }
+.px-2 { padding-left: 8px; padding-right: 8px; }
+.px-3 { padding-left: 12px; padding-right: 12px; }
+.py-1 { padding-top: 4px; padding-bottom: 4px; }
+.py-3 { padding-top: 12px; padding-bottom: 12px; }
+.mb-3 { margin-bottom: 12px; }
+.mb-4 { margin-bottom: 16px; }
+.mb-6 { margin-bottom: 24px; }
+.mt-1 { margin-top: 4px; }
+.mt-2 { margin-top: 8px; }
+.mt-4 { margin-top: 16px; }
+.w-full { width: 100%; }
+.max-w-600 { max-width: 600px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* Missing text utilities */
+.text-xs { font-size: 0.8rem; }
+.text-sm { font-size: 0.9rem; }
+.text-muted { color: var(--ink-faint); }
+.text-good { color: var(--mint); }
+.text-cyan { color: var(--cyan); }
+.text-violet { color: var(--violet); }
+.accent-text { color: var(--cyan); }
+.font-mono { font-family: var(--font-mono); }
+.font-semibold { font-weight: 600; }
+.block { display: block; }
+.border-none { border: none; }
+.bg-none { background: none; }
+.bg-glass { background: rgba(255,255,255,0.06); }
+.pointer { cursor: pointer; }
+
+/* Missing component classes */
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.pill-badge {
+  display: inline-block;
+  background: rgba(34, 211, 238, 0.12);
+  color: var(--cyan);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.status-warning {
+  display: inline-block;
+  background: rgba(251, 191, 36, 0.15);
+  color: var(--amber);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.tab-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--ink-soft);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.tab-btn:hover { border-color: var(--cyan); color: var(--ink); }
+.tab-btn.active {
+  background: linear-gradient(100deg, var(--primary-deep), var(--cyan));
+  color: white;
+  border-color: transparent;
+}
+
+.quick-actions-bar, .timeframe-filter-bar {
+  display: flex;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--ink-soft);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
+.btn-outline:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-size: 0.85rem; color: var(--ink-soft); font-weight: 500; }
+
+.risk-badge-sm {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.system-telemetry-box {
+  border-radius: 10px;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}

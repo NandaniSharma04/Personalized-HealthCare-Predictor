@@ -20,7 +20,6 @@ def register():
     name = data.get("name") or data.get("username") or ""
     email = data.get("email", "")
     password = data.get("password", "")
-    role = data.get("role", "user")
 
     if not name or not email or not password:
         return jsonify({
@@ -37,7 +36,9 @@ def register():
         }), 400
 
     try:
-        user = register_user(name, email, password, role=role)
+        # Public registration must never be allowed to choose a privileged role.
+        # Administrator accounts are provisioned separately by a trusted operator.
+        user = register_user(name, email, password, role="user")
         login_user(user)
         return jsonify({
             "success": True,

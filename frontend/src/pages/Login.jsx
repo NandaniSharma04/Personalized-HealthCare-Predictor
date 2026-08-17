@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { ShieldCheck, UserCheck, Mail, Lock, Sparkles, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, UserCheck, Mail, Lock, Sparkles } from "lucide-react";
 
 export default function Login() {
   const { login } = useAuth();
@@ -13,26 +13,30 @@ export default function Login() {
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
-  // Quick fill demo credentials
-  const fillCredentials = (role) => {
-    setActiveRole(role);
-    if (role === 'admin') {
-      setForm({ email: "admin@healthai.com", password: "AdminPassword123!", remember: true });
-    } else {
-      setForm({ email: "patient@healthai.com", password: "PatientPassword123!", remember: true });
-    }
-    setError("");
-  };
-
   async function handleSubmit(e) {
     e.preventDefault();
     setError("");
+
     setSubmitting(true);
     try {
       const data = await login(form.email, form.password, form.remember);
+      
+      // Save logged in user account for admin tracking
+      if (data?.user) {
+        const accounts = JSON.parse(localStorage.getItem("logged_in_accounts") || "[]");
+        if (!accounts.some(a => a.email.toLowerCase() === data.user.email.toLowerCase())) {
+          accounts.push(data.user);
+          localStorage.setItem("logged_in_accounts", JSON.stringify(accounts));
+        }
+      }
+
       const userRole = data?.user?.role?.toLowerCase() || activeRole;
 
-      // Role-based dashboard redirection
+      if (activeRole === "admin" && userRole !== "admin") {
+        setError("This account is not authorized to access the Administrator Portal.");
+        return;
+      }
+
       if (userRole === "admin") {
         navigate("/admin");
       } else {
@@ -101,7 +105,7 @@ export default function Login() {
           background: "rgba(30, 41, 59, 0.7)",
           padding: "4px",
           borderRadius: "12px",
-          marginBottom: "14px",
+          marginBottom: "18px",
           border: "1px solid rgba(255, 255, 255, 0.06)"
         }}>
           <button
@@ -148,38 +152,6 @@ export default function Login() {
             onClick={() => setActiveRole('admin')}
           >
             <ShieldCheck size={13} /> Administrator
-          </button>
-        </div>
-
-        {/* 1-Click Demo Fill Pill */}
-        <div style={{
-          marginBottom: "16px",
-          padding: "8px 12px",
-          background: "rgba(37, 99, 235, 0.08)",
-          borderRadius: "10px",
-          border: "1px dashed rgba(59, 130, 246, 0.3)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between"
-        }}>
-          <span style={{ fontSize: "0.72rem", color: "#93c5fd" }}>
-            Demo {activeRole.toUpperCase()} Account
-          </span>
-          <button
-            type="button"
-            onClick={() => fillCredentials(activeRole)}
-            style={{
-              background: "rgba(59, 130, 246, 0.25)",
-              border: "1px solid rgba(59, 130, 246, 0.4)",
-              borderRadius: "6px",
-              padding: "3px 8px",
-              color: "#bfdbfe",
-              fontSize: "0.7rem",
-              fontWeight: "600",
-              cursor: "pointer"
-            }}
-          >
-            Auto-fill
           </button>
         </div>
 
