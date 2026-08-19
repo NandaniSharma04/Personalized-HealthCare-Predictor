@@ -32,9 +32,13 @@ def create_app(test_config=None):
     # Secret Key
     app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "healthai-flask-secret-key-2026")
     
-    # Database URI (SQLite fallback or PostgreSQL from env)
+    # Database URI (SQLite fallback or PostgreSQL from env, fixing postgres:// scheme for SQLAlchemy)
+    raw_db_url = os.environ.get("DATABASE_URL")
+    if raw_db_url and raw_db_url.startswith("postgres://"):
+        raw_db_url = raw_db_url.replace("postgres://", "postgresql://", 1)
+        
     db_path = Path(__file__).resolve().parent / "healthai.db"
-    app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL") or f"sqlite:///{db_path.as_posix()}"
+    app.config["SQLALCHEMY_DATABASE_URI"] = raw_db_url or f"sqlite:///{db_path.as_posix()}"
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
     if test_config:
@@ -42,7 +46,19 @@ def create_app(test_config=None):
 
     # Initialize extensions
     db.init_app(app)
-    CORS(app, supports_credentials=True, origins=["http://localhost:3000", "http://127.0.0.1:3000", "http://localhost:5173"])
+    CORS(
+        app,
+        supports_credentials=True,
+        origins=[
+            "http://localhost:3000",
+            "http://127.0.0.1:3000",
+            "http://localhost:5173",
+            "http://127.0.0.1:5173",
+            r"https://.*\.vercel\.app"
+        ],
+        allow_headers=["*"],
+        methods=["*"]
+    )
 
     login_manager = LoginManager()
     login_manager.init_app(app)
@@ -58,6 +74,12 @@ def create_app(test_config=None):
     def unauthorized():
         return jsonify({"success": False, "error": "Authentication required"}), 401
 
+    # Root & Health check endpoints
+    @app.route("/", methods=["GET"])
+    @app.route("/health", methods=["GET"])
+    def root_health():
+        return jsonify({"status": "healthy", "success": True, "server": "HealthAI Flask API"}), 200
+
     # Register Blueprints
     app.register_blueprint(auth_bp)
     app.register_blueprint(users_bp)
@@ -68,9 +90,13 @@ def create_app(test_config=None):
     app.register_blueprint(admin_bp)
 
     with app.app_context():
-        db.create_all()
+        try:
+            db.create_all()
+        except Exception as err:
+            print(f"[DB INIT WARNING] Could not pre-create tables: {err}", flush=True)
 
     return app
+
 
 app = create_app()
 
