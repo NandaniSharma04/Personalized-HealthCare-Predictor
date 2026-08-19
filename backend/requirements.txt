@@ -1,3 +1,8 @@
+flask
+flask-cors
+flask-sqlalchemy
+flask-login
+flask-limiter
 fastapi
 uvicorn[standard]
 pydantic
@@ -10,8 +15,4 @@ pandas
 numpy
 scikit-learn
 xgboost
-psycopg2-binary
-passlib[bcrypt]
-python-jose[cryptography]
 gunicorn
-
