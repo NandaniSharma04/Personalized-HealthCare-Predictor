@@ -17,6 +17,17 @@ export default function Predictor() {
     fetchSymptoms();
   }, []);
 
+  // Real-time automatic prediction update whenever selected symptoms change!
+  useEffect(() => {
+    if (selectedSymptoms.length > 0) {
+      const livePrediction = predictSymptomsClient(selectedSymptoms);
+      setResult(livePrediction);
+      setError('');
+    } else {
+      setResult(null);
+    }
+  }, [selectedSymptoms]);
+
   const fetchSymptoms = async () => {
     try {
       const res = await axios.get('/api/symptoms');
@@ -36,7 +47,6 @@ export default function Predictor() {
     }
     setError('');
     setLoading(true);
-    setResult(null);
 
     let predictionData = null;
 
@@ -48,7 +58,7 @@ export default function Predictor() {
         predictionData = res.data.data || res.data;
       }
     } catch (err) {
-      console.warn("Backend API request unfulfilled, calculating with clinical predictor engine...", err);
+      console.warn("Backend API request unfulfilled, using real-time clinical predictor engine:", err);
     }
 
     if (!predictionData || (!predictionData.predicted_disease && !predictionData.disease)) {

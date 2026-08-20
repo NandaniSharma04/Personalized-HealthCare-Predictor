@@ -43,6 +43,16 @@ export default function UserDashboard() {
   // Save / Feedback Notifications
   const [actionMsg, setActionMsg] = useState('');
 
+  // Real-time automatic prediction update whenever selected symptoms change!
+  useEffect(() => {
+    if (selectedSymptoms.length > 0) {
+      setPrediction(predictSymptomsClient(selectedSymptoms));
+      setPredError('');
+    } else {
+      setPrediction(null);
+    }
+  }, [selectedSymptoms]);
+
   // Profile Form States
   const [profileForm, setProfileForm] = useState({ name: '', phone: '', address: '', bio: '' });
   const [healthForm, setHealthForm] = useState({ age: '', gender: 'Male', allergies: '', existing_conditions: '', current_medications: '' });
