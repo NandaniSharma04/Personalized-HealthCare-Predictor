@@ -10,7 +10,6 @@ import LineChart from '../../charts/LineChart';
 import { formatDate, getRiskColorClass } from '../../utils/formatters';
 import { useAuth } from '../../context/AuthContext';
 import { ALL_CLINICAL_SYMPTOMS } from '../../constants/symptoms';
-import { predictSymptomsClient } from '../../utils/predictorEngine';
 import {
   LayoutDashboard, HeartPulse, History, Sparkles, LineChart as LineChartIcon,
   Activity, Bookmark, Bell, User, Settings, LogOut,
@@ -133,22 +132,20 @@ export default function UserDashboard() {
     setPredError('');
     setPredicting(true);
 
-    let predResult = null;
     try {
       const res = await axios.post('/api/predict', { symptoms: selectedSymptoms });
-      if (res.data && (res.data.success || res.data.predicted_disease || res.data.disease)) {
-        predResult = res.data;
+      if (res.data) {
+        setPrediction(res.data);
+        fetchDashboardData();
+      } else {
+        setPredError("Prediction analysis failed.");
       }
     } catch (err) {
-      console.warn("Backend API request unfulfilled, using clinical predictor engine:", err);
+      console.error("Prediction API error:", err);
+      setPredError(err.response?.data?.error || "Prediction request failed. Please check network connection.");
+    } finally {
+      setPredicting(false);
     }
-
-    if (!predResult) {
-      predResult = predictSymptomsClient(selectedSymptoms);
-    }
-
-    setPrediction(predResult);
-    setPredicting(false);
   };
 
   // Save Recommendation

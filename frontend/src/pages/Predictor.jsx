@@ -4,7 +4,6 @@ import SymptomSelector from '../components/SymptomSelector';
 import HealthSummaryCard from '../components/HealthSummaryCard';
 import RecommendationCard from '../components/RecommendationCard';
 import { ALL_CLINICAL_SYMPTOMS } from '../constants/symptoms';
-import { predictSymptomsClient } from '../utils/predictorEngine';
 
 export default function Predictor() {
   const [allSymptoms, setAllSymptoms] = useState(ALL_CLINICAL_SYMPTOMS);
@@ -17,12 +16,11 @@ export default function Predictor() {
     fetchSymptoms();
   }, []);
 
-  // Clear previous result when user clears all symptoms
+  // Clear previous prediction result whenever selected symptoms change
+  // Ensures old result is never presented as the prediction for new inputs
   useEffect(() => {
-    if (selectedSymptoms.length === 0) {
-      setResult(null);
-      setError('');
-    }
+    setResult(null);
+    setError('');
   }, [selectedSymptoms]);
 
   const fetchSymptoms = async () => {
@@ -39,31 +37,26 @@ export default function Predictor() {
   const handlePredict = async (e) => {
     if (e) e.preventDefault();
     if (selectedSymptoms.length === 0) {
-      setError("Please select at least one symptom to run clinical prediction.");
+      setError("Please select at least one symptom to run clinical evaluation.");
       return;
     }
     setError('');
     setLoading(true);
-
-    let predictionData = null;
 
     try {
       const res = await axios.post('/api/predict', {
         symptoms: selectedSymptoms
       });
       if (res && res.data) {
-        predictionData = res.data.data || res.data;
+        const payload = res.data.data || res.data;
+        setResult(payload);
       }
     } catch (err) {
-      console.warn("Backend API request unfulfilled, using real-time clinical predictor engine:", err);
+      console.error("Prediction error:", err);
+      setError(err.response?.data?.error || err.response?.data?.detail || err.message || "Failed to generate prediction from ML service.");
+    } finally {
+      setLoading(false);
     }
-
-    if (!predictionData || (!predictionData.predicted_disease && !predictionData.disease)) {
-      predictionData = predictSymptomsClient(selectedSymptoms);
-    }
-
-    setResult(predictionData);
-    setLoading(false);
   };
 
   return (
