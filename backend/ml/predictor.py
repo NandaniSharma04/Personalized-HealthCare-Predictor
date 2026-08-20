@@ -41,13 +41,64 @@ def load_json_file(path, default):
         print(f"[ML ERROR] JSON load failed ({path.name}): {exc}", flush=True)
         return default
 
+import pickle
+
+class LegacyNumpyUnpickler(pickle.Unpickler):
+    def find_class(self, module, name):
+        if "numpy.random" in module and name == "PCG64":
+            try:
+                import numpy.random
+                return getattr(numpy.random, "PCG64", super().find_class(module, name))
+            except Exception:
+                pass
+        return super().find_class(module, name)
+
+def train_fallback_model():
+    print("[ML] Attempting fallback model training on raw dataset...", flush=True)
+    try:
+        from sklearn.ensemble import HistGradientBoostingClassifier
+        DATA_PATH = Path(__file__).resolve().parents[2] / "data" / "raw_dataset" / "Diseases_and_Symptoms_dataset.csv"
+        if not DATA_PATH.exists():
+            print(f"[ML WARN] Dataset not found at {DATA_PATH}", flush=True)
+            return None
+        df = pd.read_csv(DATA_PATH)
+        if "diseases" not in df.columns:
+            return None
+        features = [c for c in df.columns if c != "diseases"]
+        X = df[features]
+        y = df["diseases"]
+        clf = HistGradientBoostingClassifier(learning_rate=0.1, max_iter=100, random_state=42)
+        clf.fit(X, y)
+        print(f"[ML] Fallback model successfully trained with {len(features)} symptoms.", flush=True)
+        return clf
+    except Exception as exc:
+        print(f"[ML ERROR] Fallback model training failed: {exc}", flush=True)
+        return None
+
 def load_model():
     if not MODEL_PATH.exists():
-        raise FileNotFoundError(f"Model not found: {MODEL_PATH}")
+        print(f"[ML WARN] Model file not found at {MODEL_PATH}. Fitting fallback model...", flush=True)
+        return train_fallback_model()
+        
     print(f"[ML] Loading trained model: {MODEL_PATH}", flush=True)
-    model = joblib.load(MODEL_PATH)
-    print(f"[ML] Model loaded: {type(model).__name__}", flush=True)
-    return model
+    try:
+        model = joblib.load(MODEL_PATH)
+        print(f"[ML] Model loaded successfully: {type(model).__name__}", flush=True)
+        return model
+    except Exception as err:
+        print(f"[ML WARN] Standard joblib.load failed ({err}). Trying LegacyNumpyUnpickler...", flush=True)
+        try:
+            with open(MODEL_PATH, "rb") as f:
+                unpickler = LegacyNumpyUnpickler(f)
+                model = unpickler.load()
+            print(f"[ML] Model loaded with LegacyNumpyUnpickler: {type(model).__name__}", flush=True)
+            return model
+        except Exception as err2:
+            print(f"[ML WARN] Legacy unpickler failed ({err2}). Fitting fallback model...", flush=True)
+            fallback = train_fallback_model()
+            if fallback is not None:
+                return fallback
+            raise err
 
 def load_symptoms():
     raw = load_json_file(SYMPTOM_PATH, [])
