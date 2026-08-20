@@ -41,35 +41,36 @@ def load_json_file(path, default):
         print(f"[ML ERROR] JSON load failed ({path.name}): {exc}", flush=True)
         return default
 
-import pickle
+from joblib.numpy_pickle import NumpyUnpickler
 
-class LegacyNumpyUnpickler(pickle.Unpickler):
+class LegacyNumpyUnpickler(NumpyUnpickler):
     def find_class(self, module, name):
-        if "numpy.random" in module and name == "PCG64":
-            try:
-                import numpy.random
-                return getattr(numpy.random, "PCG64", super().find_class(module, name))
-            except Exception:
-                pass
+        if "numpy.random" in module:
+            import numpy.random
+            if hasattr(numpy.random, name):
+                return getattr(numpy.random, name)
+            if hasattr(numpy.random, "_bit_generator") and hasattr(numpy.random._bit_generator, name):
+                return getattr(numpy.random._bit_generator, name)
         return super().find_class(module, name)
 
 def train_fallback_model():
-    print("[ML] Attempting fallback model training on raw dataset...", flush=True)
+    print("[ML] Attempting lightweight fallback model training on dataset sample...", flush=True)
     try:
         from sklearn.ensemble import HistGradientBoostingClassifier
         DATA_PATH = Path(__file__).resolve().parents[2] / "data" / "raw_dataset" / "Diseases_and_Symptoms_dataset.csv"
         if not DATA_PATH.exists():
             print(f"[ML WARN] Dataset not found at {DATA_PATH}", flush=True)
             return None
-        df = pd.read_csv(DATA_PATH)
+        # Read 2000 row sample to stay well under Render 512MB RAM limit
+        df = pd.read_csv(DATA_PATH, nrows=2000)
         if "diseases" not in df.columns:
             return None
         features = [c for c in df.columns if c != "diseases"]
         X = df[features]
         y = df["diseases"]
-        clf = HistGradientBoostingClassifier(learning_rate=0.1, max_iter=100, random_state=42)
+        clf = HistGradientBoostingClassifier(learning_rate=0.1, max_iter=30, random_state=42)
         clf.fit(X, y)
-        print(f"[ML] Fallback model successfully trained with {len(features)} symptoms.", flush=True)
+        print(f"[ML] Lightweight fallback model successfully trained with {len(features)} symptoms.", flush=True)
         return clf
     except Exception as exc:
         print(f"[ML ERROR] Fallback model training failed: {exc}", flush=True)
@@ -89,7 +90,7 @@ def load_model():
         print(f"[ML WARN] Standard joblib.load failed ({err}). Trying LegacyNumpyUnpickler...", flush=True)
         try:
             with open(MODEL_PATH, "rb") as f:
-                unpickler = LegacyNumpyUnpickler(f)
+                unpickler = LegacyNumpyUnpickler(MODEL_PATH, f)
                 model = unpickler.load()
             print(f"[ML] Model loaded with LegacyNumpyUnpickler: {type(model).__name__}", flush=True)
             return model
