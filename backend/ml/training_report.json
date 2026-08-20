@@ -1,21 +1,36 @@
 {
+  "model_algorithm": "LogisticRegression",
+  "model_version": "v2.0.0",
   "input_rows": 96088,
+  "training_rows": 76870,
+  "validation": {
+    "test_rows": 19218,
+    "accuracy": 0.898533,
+    "macro_f1": 0.898605,
+    "weighted_f1": 0.899098
+  },
   "input_features": 230,
   "input_classes": 100,
-  "null_values": 0,
-  "blank_string_columns": {},
-  "exact_duplicate_rows": 0,
-  "non_binary_symptom_values": 0,
-  "constant_features": [],
-  "ambiguous_symptom_profiles_removed": 4046,
-  "rows_removed_for_ambiguous_profiles": 8924,
-  "training_rows": 87164,
-  "training_classes": 100,
-  "validation": {
-    "split": "stratified 80/20 split after removing ambiguous profiles",
-    "random_state": 42,
-    "accuracy": 0.907188,
-    "macro_f1": 0.897674,
-    "test_rows": 17433
+  "comparison": {
+    "RandomForest": {
+      "accuracy": 0.7808,
+      "macro_f1": 0.7852,
+      "weighted_f1": 0.7928
+    },
+    "HistGradientBoosting": {
+      "accuracy": 0.8744,
+      "macro_f1": 0.8729,
+      "weighted_f1": 0.8747
+    },
+    "DecisionTree": {
+      "accuracy": 0.1961,
+      "macro_f1": 0.2158,
+      "weighted_f1": 0.2401
+    },
+    "LogisticRegression": {
+      "accuracy": 0.8985,
+      "macro_f1": 0.8986,
+      "weighted_f1": 0.8991
+    }
   }
 }
