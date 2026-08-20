@@ -3,9 +3,10 @@ import axios from '../api/axios';
 import SymptomSelector from '../components/SymptomSelector';
 import HealthSummaryCard from '../components/HealthSummaryCard';
 import RecommendationCard from '../components/RecommendationCard';
+import { ALL_CLINICAL_SYMPTOMS } from '../constants/symptoms';
 
 export default function Predictor() {
-  const [allSymptoms, setAllSymptoms] = useState([]);
+  const [allSymptoms, setAllSymptoms] = useState(ALL_CLINICAL_SYMPTOMS);
   const [selectedSymptoms, setSelectedSymptoms] = useState([]);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
@@ -18,17 +19,12 @@ export default function Predictor() {
   const fetchSymptoms = async () => {
     try {
       const res = await axios.get('/api/symptoms');
-      if (res.data && res.data.symptoms) {
+      if (res.data && res.data.symptoms && res.data.symptoms.length > 0) {
         setAllSymptoms(res.data.symptoms);
       }
     } catch (err) {
       console.error("Failed to load symptoms list:", err);
-      // Fallback default sample symptoms list
-      setAllSymptoms([
-        "anxiety and nervousness", "depression", "shortness of breath", "sharp chest pain",
-        "dizziness", "insomnia", "chest tightness", "headache", "fever", "cough",
-        "nausea", "vomiting", "fatigue", "abdominal pain", "skin rash", "itching"
-      ]);
+      setAllSymptoms(ALL_CLINICAL_SYMPTOMS);
     }
   };
 

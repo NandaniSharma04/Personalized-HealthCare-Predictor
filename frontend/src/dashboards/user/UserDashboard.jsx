@@ -32,7 +32,7 @@ export default function UserDashboard() {
   const [error, setError] = useState(null);
 
   // Symptom Checker State in Predictor Tab
-  const [allSymptoms, setAllSymptoms] = useState([]);
+  const [allSymptoms, setAllSymptoms] = useState(ALL_CLINICAL_SYMPTOMS);
   const [selectedSymptoms, setSelectedSymptoms] = useState([]);
   const [prediction, setPrediction] = useState(null);
   const [predicting, setPredicting] = useState(false);
