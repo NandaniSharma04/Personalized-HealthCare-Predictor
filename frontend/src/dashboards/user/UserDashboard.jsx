@@ -42,12 +42,11 @@ export default function UserDashboard() {
   // Save / Feedback Notifications
   const [actionMsg, setActionMsg] = useState('');
 
-  // Clear previous result when user clears all symptoms
+  // Clear previous prediction result whenever selected symptoms change
+  // Ensures old result is never presented as the prediction for new inputs
   useEffect(() => {
-    if (selectedSymptoms.length === 0) {
-      setPrediction(null);
-      setPredError('');
-    }
+    setPrediction(null);
+    setPredError('');
   }, [selectedSymptoms]);
 
   // Profile Form States
