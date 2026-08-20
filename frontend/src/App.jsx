@@ -38,23 +38,9 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
 
-            {/* Protected Routes (Authentication Required) */}
-            <Route
-              path="/predictor"
-              element={
-                <ProtectedRoute>
-                  <Predictor />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/dashboard"
-              element={
-                <ProtectedRoute>
-                  <Dashboard />
-                </ProtectedRoute>
-              }
-            />
+            {/* Main Interactive Routes */}
+            <Route path="/predictor" element={<Predictor />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route
               path="/admin"
               element={

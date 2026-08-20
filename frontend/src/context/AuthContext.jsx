@@ -3,20 +3,28 @@ import api from "../api/axios";
 
 const AuthContext = createContext(null);
 
-export function AuthProvider({ children }) {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+const DEFAULT_PATIENT = {
+  id: 1,
+  name: "Patient",
+  email: "patient@healthai.org",
+  role: "user"
+};
 
-  // On first load, check active session from backend or localStorage
-  useEffect(() => {
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(() => {
     const localUser = localStorage.getItem("currentUser");
     if (localUser) {
       try {
         const parsed = JSON.parse(localUser);
-        if (parsed) setUser(parsed);
+        if (parsed) return parsed;
       } catch (e) {}
     }
+    return DEFAULT_PATIENT;
+  });
+  const [loading, setLoading] = useState(true);
 
+  // On first load, check active session from backend
+  useEffect(() => {
     api
       .get("/api/auth/me")
       .then((res) => {
@@ -25,9 +33,7 @@ export function AuthProvider({ children }) {
           localStorage.setItem("currentUser", JSON.stringify(res.data.user));
         }
       })
-      .catch(() => {
-        // Keep local storage session if set
-      })
+      .catch(() => {})
       .finally(() => setLoading(false));
   }, []);
 
