@@ -43,13 +43,11 @@ export default function UserDashboard() {
   // Save / Feedback Notifications
   const [actionMsg, setActionMsg] = useState('');
 
-  // Real-time automatic prediction update whenever selected symptoms change!
+  // Clear previous result when user clears all symptoms
   useEffect(() => {
-    if (selectedSymptoms.length > 0) {
-      setPrediction(predictSymptomsClient(selectedSymptoms));
-      setPredError('');
-    } else {
+    if (selectedSymptoms.length === 0) {
       setPrediction(null);
+      setPredError('');
     }
   }, [selectedSymptoms]);
 

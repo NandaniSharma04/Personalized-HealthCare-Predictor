@@ -17,14 +17,11 @@ export default function Predictor() {
     fetchSymptoms();
   }, []);
 
-  // Real-time automatic prediction update whenever selected symptoms change!
+  // Clear previous result when user clears all symptoms
   useEffect(() => {
-    if (selectedSymptoms.length > 0) {
-      const livePrediction = predictSymptomsClient(selectedSymptoms);
-      setResult(livePrediction);
-      setError('');
-    } else {
+    if (selectedSymptoms.length === 0) {
       setResult(null);
+      setError('');
     }
   }, [selectedSymptoms]);
 
