@@ -41,6 +41,10 @@ def create_app(test_config=None):
     db_path = Path(__file__).resolve().parent / "healthai.db"
     app.config["SQLALCHEMY_DATABASE_URI"] = raw_db_url or f"sqlite:///{db_path.as_posix()}"
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    
+    # Required for Cross-Origin Authentication (Render frontend <-> backend)
+    app.config["SESSION_COOKIE_SAMESITE"] = "None"
+    app.config["SESSION_COOKIE_SECURE"] = True
 
     if test_config:
         app.config.update(test_config)
