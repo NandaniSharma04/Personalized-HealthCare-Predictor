@@ -22,9 +22,16 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.decomposition import TruncatedSVD
 from sklearn.ensemble import RandomForestClassifier
 
-import tensorflow as tf
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Embedding, Dense, Flatten
+try:
+    import tensorflow as tf
+    from tensorflow.keras.models import Sequential
+    from tensorflow.keras.layers import Embedding, Dense, Flatten
+    TF_AVAILABLE = True
+except ImportError:
+    tf = None
+    Sequential = None
+    Embedding = Dense = Flatten = None
+    TF_AVAILABLE = False
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
