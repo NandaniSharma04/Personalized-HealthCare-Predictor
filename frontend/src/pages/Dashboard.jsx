@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import UserDashboard from "../dashboards/user/UserDashboard";
 import AdminDashboard from "../dashboards/admin/AdminDashboard";
 
-export default function Dashboard() {
+export default function Dashboard({ defaultTab = "dashboard" }) {
   const { user } = useAuth();
   const role = user?.role?.toLowerCase() || "user";
 
@@ -11,5 +11,5 @@ export default function Dashboard() {
     return <AdminDashboard />;
   }
 
-  return <UserDashboard />;
+  return <UserDashboard initialTab={defaultTab} />;
 }

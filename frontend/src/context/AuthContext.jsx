@@ -3,23 +3,16 @@ import api from "../api/axios";
 
 const AuthContext = createContext(null);
 
-const DEFAULT_PATIENT = {
-  id: 1,
-  name: "Patient",
-  email: "patient@healthai.org",
-  role: "user"
-};
-
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
     const localUser = localStorage.getItem("currentUser");
     if (localUser) {
       try {
         const parsed = JSON.parse(localUser);
-        if (parsed) return parsed;
+        if (parsed && parsed.id) return parsed;
       } catch (e) {}
     }
-    return DEFAULT_PATIENT;
+    return null;
   });
   const [loading, setLoading] = useState(true);
 
@@ -28,12 +21,21 @@ export function AuthProvider({ children }) {
     api
       .get("/api/auth/me")
       .then((res) => {
-        if (res.data && res.data.logged_in) {
+        if (res.data && res.data.logged_in && res.data.user) {
           setUser(res.data.user);
           localStorage.setItem("currentUser", JSON.stringify(res.data.user));
+        } else {
+          setUser(null);
+          localStorage.removeItem("currentUser");
         }
       })
-      .catch(() => {})
+      .catch(() => {
+        // If session check fails and no valid localStorage user, clear state
+        const localUser = localStorage.getItem("currentUser");
+        if (!localUser) {
+          setUser(null);
+        }
+      })
       .finally(() => setLoading(false));
   }, []);
 
@@ -67,8 +69,13 @@ export function AuthProvider({ children }) {
   }
 
   const setDirectUser = (userData) => {
-    localStorage.setItem("currentUser", JSON.stringify(userData));
-    setUser(userData);
+    if (userData) {
+      localStorage.setItem("currentUser", JSON.stringify(userData));
+      setUser(userData);
+    } else {
+      localStorage.removeItem("currentUser");
+      setUser(null);
+    }
   };
 
   return (

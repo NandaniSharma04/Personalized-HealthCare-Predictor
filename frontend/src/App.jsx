@@ -35,12 +35,101 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/register" element={<Signup />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
 
-            {/* Main Interactive Routes */}
-            <Route path="/predictor" element={<Predictor />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            {/* Main Interactive & Protected Dashboard Routes */}
+            <Route
+              path="/predictor"
+              element={
+                <ProtectedRoute>
+                  <Predictor />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/prediction"
+              element={
+                <ProtectedRoute>
+                  <Predictor />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <Dashboard defaultTab="dashboard" />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/predictions"
+              element={
+                <ProtectedRoute>
+                  <Dashboard defaultTab="history" />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/personalized-care"
+              element={
+                <ProtectedRoute>
+                  <Dashboard defaultTab="recommendations" />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/health-insights"
+              element={
+                <ProtectedRoute>
+                  <Dashboard defaultTab="insights" />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/activity"
+              element={
+                <ProtectedRoute>
+                  <Dashboard defaultTab="activity" />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/saved-plans"
+              element={
+                <ProtectedRoute>
+                  <Dashboard defaultTab="saved" />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/notifications"
+              element={
+                <ProtectedRoute>
+                  <Dashboard defaultTab="notifications" />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <Dashboard defaultTab="profile" />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/settings"
+              element={
+                <ProtectedRoute>
+                  <Dashboard defaultTab="settings" />
+                </ProtectedRoute>
+              }
+            />
+
+            {/* Role-Specific Admin & Analyst Dashboards */}
             <Route
               path="/admin"
               element={
