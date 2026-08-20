@@ -90,6 +90,7 @@ export default function UserDashboard() {
       }
     } catch (err) {
       if (err.response?.status === 401) {
+        if (logout) logout();
         navigate('/login');
       } else {
         setError(err.response?.data?.error || "Network error while connecting to backend service.");
@@ -272,8 +273,14 @@ export default function UserDashboard() {
 
     const freqMap = {};
     list.forEach(p => {
-      (p.symptoms_input || []).forEach(s => {
-        const cleaned = s.trim();
+      let symptoms = p.symptoms_input || [];
+      if (typeof symptoms === 'string') {
+        try { symptoms = JSON.parse(symptoms); } catch(e) { symptoms = []; }
+      }
+      if (!Array.isArray(symptoms)) symptoms = [];
+
+      symptoms.forEach(s => {
+        const cleaned = String(s).trim();
         freqMap[cleaned] = (freqMap[cleaned] || 0) + 1;
       });
     });

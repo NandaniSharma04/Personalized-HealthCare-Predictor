@@ -83,7 +83,7 @@ export function predictClientFallback(inputSymptoms = []) {
     return null;
   }
 
-  const normalizedInputs = inputSymptoms.map(s => String(s).trim().lowerCase());
+  const normalizedInputs = inputSymptoms.map(s => String(s).trim().toLowerCase());
   
   let bestMatch = null;
   let maxScore = -1;
