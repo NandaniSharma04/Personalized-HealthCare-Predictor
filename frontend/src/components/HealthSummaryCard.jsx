@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from '../api/axios';
 
 export default function HealthSummaryCard({ predictionResult }) {
   if (!predictionResult) return null;
@@ -94,11 +95,7 @@ function PredictionFeedbackSection({ disease }) {
     localStorage.setItem('patient_prediction_feedback', JSON.stringify(existingLogs));
 
     // Optional POST to backend if running
-    fetch('http://127.0.0.1:5000/api/feedback', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newFeedback)
-    }).catch(() => {});
+    axios.post('/api/feedback', newFeedback).catch(() => {});
 
     setSubmitted(true);
   };

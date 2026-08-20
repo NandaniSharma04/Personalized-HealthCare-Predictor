@@ -46,16 +46,25 @@ def create_app(test_config=None):
 
     # Initialize extensions
     db.init_app(app)
+    # CORS Configuration
+    allowed_origins = [
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        r"https://.*\.vercel\.app"
+    ]
+    frontend_env = os.environ.get("FRONTEND_URL")
+    if frontend_env:
+        for url in frontend_env.split(","):
+            cleaned = url.strip()
+            if cleaned and cleaned not in allowed_origins:
+                allowed_origins.append(cleaned)
+
     CORS(
         app,
         supports_credentials=True,
-        origins=[
-            "http://localhost:3000",
-            "http://127.0.0.1:3000",
-            "http://localhost:5173",
-            "http://127.0.0.1:5173",
-            r"https://.*\.vercel\.app"
-        ],
+        origins=allowed_origins,
         allow_headers=["*"],
         methods=["*"]
     )

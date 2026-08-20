@@ -3,19 +3,35 @@ from datetime import datetime, timedelta
 from sqlalchemy.orm import Session
 from ..models.auth_models import User, Role, UserRole, RefreshToken, AuditLog
 from ..core.config import settings
-import bcrypt
+import hashlib
+import hmac
+
+try:
+    import bcrypt
+except ImportError:
+    bcrypt = None
 
 def get_password_hash(password: str) -> str:
     pw_bytes = password.encode("utf-8")[:72]
-    salt = bcrypt.gensalt()
-    return bcrypt.hashpw(pw_bytes, salt).decode("utf-8")
+    if bcrypt is not None:
+        salt = bcrypt.gensalt()
+        return bcrypt.hashpw(pw_bytes, salt).decode("utf-8")
+    salt = b"healthai_fallback_salt_2026"
+    key = hashlib.pbkdf2_hmac("sha256", pw_bytes, salt, 100000)
+    return "pbkdf2$" + key.hex()
 
 
 def verify_password(password: str, hashed: str) -> bool:
     try:
         pw_bytes = password.encode("utf-8")[:72]
-        hashed_bytes = hashed.encode("utf-8")
-        return bcrypt.checkpw(pw_bytes, hashed_bytes)
+        if hashed and hashed.startswith("pbkdf2$"):
+            salt = b"healthai_fallback_salt_2026"
+            key = hashlib.pbkdf2_hmac("sha256", pw_bytes, salt, 100000)
+            return hmac.compare_digest("pbkdf2$" + key.hex(), hashed)
+        if bcrypt is not None and hashed:
+            hashed_bytes = hashed.encode("utf-8")
+            return bcrypt.checkpw(pw_bytes, hashed_bytes)
+        return False
     except Exception:
         return False
 
