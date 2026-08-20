@@ -1,15 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { ShieldCheck, UserCheck, Mail, Lock, Sparkles } from "lucide-react";
 
 export default function Login() {
-  const { login } = useAuth();
+  const { user, login } = useAuth();
   const navigate = useNavigate();
-  
+
+  // If user is already authenticated, redirect immediately to dashboard
+  useEffect(() => {
+    if (user) {
+      if (user.role === 'admin') {
+        navigate('/admin');
+      } else {
+        navigate('/dashboard');
+      }
+    }
+  }, [user, navigate]);
+
   // Selected login persona: 'user' | 'admin'
   const [activeRole, setActiveRole] = useState('user');
-  const [form, setForm] = useState({ email: "", password: "", remember: true });
+  const [form, setForm] = useState({ email: "sharanyagummadavelli@gmail.com", password: "••••••••", remember: true });
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
@@ -20,7 +31,7 @@ export default function Login() {
     setSubmitting(true);
     try {
       const data = await login(form.email, form.password, form.remember);
-      
+
       // Save logged in user account for admin tracking
       if (data?.user) {
         const accounts = JSON.parse(localStorage.getItem("logged_in_accounts") || "[]");
