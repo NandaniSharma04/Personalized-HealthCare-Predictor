@@ -8,6 +8,7 @@ import PieChart from '../../charts/PieChart';
 import BarChart from '../../charts/BarChart';
 import LineChart from '../../charts/LineChart';
 import { formatDate, getRiskColorClass } from '../../utils/formatters';
+import { predictClientFallback } from '../../utils/clientPredictor';
 import { useAuth } from '../../context/AuthContext';
 import { ALL_CLINICAL_SYMPTOMS } from '../../constants/symptoms';
 import {
@@ -133,15 +134,21 @@ export default function UserDashboard() {
 
     try {
       const res = await axios.post('/api/predict', { symptoms: selectedSymptoms });
-      if (res.data) {
-        setPrediction(res.data);
+      if (res && res.data && (res.data.predicted_disease || res.data.data)) {
+        setPrediction(res.data.data || res.data);
         fetchDashboardData();
       } else {
-        setPredError("Prediction analysis failed.");
+        const fallback = predictClientFallback(selectedSymptoms);
+        setPrediction(fallback);
       }
     } catch (err) {
-      console.error("Prediction API error:", err);
-      setPredError(err.response?.data?.error || "Prediction request failed. Please check network connection.");
+      console.warn("Prediction API unreachable, utilizing client fallback ML engine:", err);
+      const fallback = predictClientFallback(selectedSymptoms);
+      if (fallback) {
+        setPrediction(fallback);
+      } else {
+        setPredError("Prediction request failed. Please check network connection.");
+      }
     } finally {
       setPredicting(false);
     }

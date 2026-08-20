@@ -4,6 +4,7 @@ import SymptomSelector from '../components/SymptomSelector';
 import HealthSummaryCard from '../components/HealthSummaryCard';
 import RecommendationCard from '../components/RecommendationCard';
 import { ALL_CLINICAL_SYMPTOMS } from '../constants/symptoms';
+import { predictClientFallback } from '../utils/clientPredictor';
 
 export default function Predictor() {
   const [allSymptoms, setAllSymptoms] = useState(ALL_CLINICAL_SYMPTOMS);
@@ -47,13 +48,21 @@ export default function Predictor() {
       const res = await axios.post('/api/predict', {
         symptoms: selectedSymptoms
       });
-      if (res && res.data) {
+      if (res && res.data && (res.data.predicted_disease || res.data.data)) {
         const payload = res.data.data || res.data;
         setResult(payload);
+      } else {
+        const fallback = predictClientFallback(selectedSymptoms);
+        setResult(fallback);
       }
     } catch (err) {
-      console.error("Prediction error:", err);
-      setError(err.response?.data?.error || err.response?.data?.detail || err.message || "Failed to generate prediction from ML service.");
+      console.warn("API prediction request offline or unreachable, utilizing dataset client fallback engine:", err);
+      const fallback = predictClientFallback(selectedSymptoms);
+      if (fallback) {
+        setResult(fallback);
+      } else {
+        setError("Failed to generate prediction. Please try selecting active symptoms again.");
+      }
     } finally {
       setLoading(false);
     }
