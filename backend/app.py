@@ -2,6 +2,7 @@
 HealthAI - Flask Application Factory & Server Main Entrypoint
 """
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -46,13 +47,15 @@ def create_app(test_config=None):
 
     # Initialize extensions
     db.init_app(app)
+
     # CORS Configuration
     allowed_origins = [
         "http://localhost:3000",
         "http://127.0.0.1:3000",
         "http://localhost:5173",
         "http://127.0.0.1:5173",
-        r"https://.*\.vercel\.app"
+        re.compile(r"https://.*\.vercel\.app"),
+        re.compile(r"https://.*\.onrender\.com")
     ]
     frontend_env = os.environ.get("FRONTEND_URL")
     if frontend_env:
