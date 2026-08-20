@@ -42,10 +42,11 @@ export default function Predictor() {
       const res = await axios.post('/api/predict', {
         symptoms: selectedSymptoms
       });
-      setResult(res.data);
+      const payload = res.data?.data || res.data;
+      setResult(payload);
     } catch (err) {
       console.error("Prediction error:", err);
-      setError(err.response?.data?.detail || "Failed to generate prediction. Please try again.");
+      setError(err.response?.data?.error || err.response?.data?.detail || err.message || "Failed to generate prediction. Please try again.");
     } finally {
       setLoading(false);
     }
