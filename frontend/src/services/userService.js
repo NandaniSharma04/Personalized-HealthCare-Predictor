@@ -1,21 +1,23 @@
-import api from './api'
+import api from './api';
 
-export const getProfile = async (token) => {
-  const res = await api.get('/users/me', { headers: { Authorization: `Bearer ${token}` } })
-  return res.data
-}
+export const getProfile = async () => {
+  const res = await api.get('/api/user/profile');
+  return res.data;
+};
 
-export const updateProfile = async (token, data) => {
-  const res = await api.put('/users/me', data, { headers: { Authorization: `Bearer ${token}` } })
-  return res.data
-}
+export const updateProfile = async (tokenOrData, maybeData) => {
+  const data = maybeData !== undefined ? maybeData : tokenOrData;
+  const res = await api.put('/api/user/profile', data);
+  return res.data;
+};
 
-export const getMedical = async (token) => {
-  const res = await api.get('/users/me/medical', { headers: { Authorization: `Bearer ${token}` } })
-  return res.data
-}
+export const getMedical = async () => {
+  const res = await api.get('/api/user/health-profile');
+  return res.data;
+};
 
-export const updateMedical = async (token, data) => {
-  const res = await api.put('/users/me/medical', data, { headers: { Authorization: `Bearer ${token}` } })
-  return res.data
-}
+export const updateMedical = async (tokenOrData, maybeData) => {
+  const data = maybeData !== undefined ? maybeData : tokenOrData;
+  const res = await api.put('/api/user/health-profile', data);
+  return res.data;
+};
