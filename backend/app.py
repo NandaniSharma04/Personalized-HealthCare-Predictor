@@ -98,6 +98,7 @@ def create_app(test_config=None):
     # Root & Health check endpoints
     @app.route("/", methods=["GET"])
     @app.route("/health", methods=["GET"])
+    @app.route("/api/health", methods=["GET"])
     def root_health():
         return jsonify({"status": "healthy", "success": True, "server": "HealthAI Flask API"}), 200
 
