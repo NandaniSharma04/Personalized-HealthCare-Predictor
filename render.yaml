@@ -1,4 +1,5 @@
 services:
+  # Backend Flask API Microservice
   - type: web
     name: healthcare-backend
     env: python
@@ -6,6 +7,7 @@ services:
     region: singapore
     buildCommand: pip install -r backend/requirements.txt
     startCommand: gunicorn backend.app:app --bind 0.0.0.0:$PORT --workers 1 --timeout 120
+    healthCheckPath: /api/health
     envVars:
       - key: PYTHONPATH
         value: .
@@ -14,15 +16,16 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.0
       - key: FRONTEND_URL
-        value: https://healthcare-frontend.onrender.com
+        value: https://healthcare-frontend.onrender.com,https://healthcare-frontend-0k17.onrender.com
 
+  # Frontend React Web Application
   - type: web
     name: healthcare-frontend
     env: node
     plan: free
     region: singapore
     buildCommand: cd frontend && npm install && npm run build
-    startCommand: cd frontend && npm install -g serve && serve -s dist -l $PORT
+    startCommand: cd frontend && npm start
     envVars:
       - key: NODE_VERSION
         value: 18.17.0
