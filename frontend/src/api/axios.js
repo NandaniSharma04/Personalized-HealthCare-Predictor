@@ -4,7 +4,7 @@ import axios from "axios";
 // so the browser sends/receives the session cookie Flask-Login uses --
 // without this, login would appear to work but you'd get logged out on
 // every page refresh.
-const DEFAULT_BACKEND_URL = "https://healthcare-backend.onrender.com";
+const DEFAULT_BACKEND_URL = "https://healthai-backend-service.onrender.com";
 
 const resolvedBaseURL = import.meta.env.VITE_API_BASE_URL || import.meta.env.VITE_API_URL || (import.meta.env.DEV ? "" : DEFAULT_BACKEND_URL);
 
