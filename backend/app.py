@@ -13,7 +13,7 @@ for p in [str(PROJECT_ROOT), str(BACKEND_DIR)]:
     if p not in sys.path:
         sys.path.insert(0, p)
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 from flask_login import LoginManager
 
@@ -79,9 +79,32 @@ def create_app(test_config=None):
         app,
         supports_credentials=True,
         origins=allowed_origins,
-        allow_headers=["*"],
-        methods=["*"]
+        allow_headers=["Content-Type", "Authorization", "X-Requested-With", "Accept"],
+        methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"]
     )
+
+    @app.before_request
+    def handle_preflight():
+        if request.method == "OPTIONS":
+            response = app.make_default_options_response()
+            origin = request.headers.get("Origin")
+            if origin:
+                response.headers["Access-Control-Allow-Origin"] = origin
+                response.headers["Access-Control-Allow-Credentials"] = "true"
+                response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
+                response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization, X-Requested-With, Accept"
+                response.headers["Access-Control-Max-Age"] = "86400"
+            return response
+
+    @app.after_request
+    def inject_cors_headers(response):
+        origin = request.headers.get("Origin")
+        if origin and ("onrender.com" in origin or "vercel.app" in origin or "localhost" in origin or "127.0.0.1" in origin):
+            response.headers["Access-Control-Allow-Origin"] = origin
+            response.headers["Access-Control-Allow-Credentials"] = "true"
+            response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
+            response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization, X-Requested-With, Accept"
+        return response
 
     login_manager = LoginManager()
     login_manager.init_app(app)
