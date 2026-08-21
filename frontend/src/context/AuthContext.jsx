@@ -53,16 +53,18 @@ export function AuthProvider({ children }) {
 
   async function signup(name, email, password, role = "user") {
     try {
-      // Pass role only if necessary, though backend usually forces 'user' for public signup
+      // Pass role only if necessary, though backend forces 'user' for public signup
       const res = await api.post("/api/auth/register", { name, email, password, role });
-      if (res.data && res.data.user) {
-        setUser(res.data.user);
-        return res.data;
-      }
-      return { success: false, error: "Registration failed to return user data." };
+      return res.data;
     } catch (err) {
-      const errorMsg = err.response?.data?.error || "Registration failed. Please try again.";
-      return { success: false, error: errorMsg };
+      const backendError = err.response?.data?.error || err.response?.data?.message;
+      if (backendError) {
+        return { success: false, error: backendError, code: err.response?.data?.code };
+      }
+      if (err.message === "Network Error" || !err.response) {
+        return { success: false, error: "Cannot connect to the backend server. Please verify the backend service is running." };
+      }
+      return { success: false, error: "Registration failed. Please try again." };
     }
   }
 

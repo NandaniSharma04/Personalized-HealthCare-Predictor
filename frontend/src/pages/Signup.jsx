@@ -45,7 +45,7 @@ export default function Signup() {
         err.response?.data?.error ||
         err.response?.data?.message ||
         err.message ||
-        "Registration failed. Please try again.";
+        "Registration failed. Please check your details or sign in if you already have an account.";
       setError(msg);
     } finally {
       setSubmitting(false);
