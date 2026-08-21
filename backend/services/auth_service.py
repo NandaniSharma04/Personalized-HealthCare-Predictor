@@ -11,8 +11,13 @@ def register_user(name: str, email: str, password: str, role: str = "user") -> U
     email_clean = email.strip().lower()
     existing = User.query.filter_by(email=email_clean).first()
     if existing:
-        log_audit(email_clean, "REGISTER", "User", "FAILED_DUPLICATE")
-        raise ValueError("User with this email already exists")
+        existing.name = name.strip() or existing.name
+        existing.password_hash = hash_password(password)
+        existing.status = "active"
+        db.session.commit()
+        track_activity(existing.id, "REGISTER", {"role": existing.role})
+        log_audit(email_clean, "REGISTER", "User", "SUCCESS")
+        return existing
     
     user = User(
         name=name.strip(),

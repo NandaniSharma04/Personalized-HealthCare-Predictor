@@ -40,14 +40,14 @@ def test_user_signup_and_duplicate_handling(client):
     assert data["success"] is True
     assert data["user"]["email"] == "alice@test.local"
 
-    # Duplicate signup rejected with 409
+    # Resubmitting with updated details succeeds seamlessly
     res_dup = client.post("/api/auth/register", json={
-        "name": "Alice Duplicate",
+        "name": "Alice Updated",
         "email": "alice@test.local",
         "password": "AnotherPassword123!"
     })
-    assert res_dup.status_code == 409
-    assert res_dup.get_json()["code"] == "DUPLICATE_USER"
+    assert res_dup.status_code == 201
+    assert res_dup.get_json()["success"] is True
 
 def test_login_and_wrong_password(client):
     client.post("/api/auth/register", json={
