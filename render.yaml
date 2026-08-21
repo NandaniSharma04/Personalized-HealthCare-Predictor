@@ -14,7 +14,7 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.0
       - key: FRONTEND_URL
-        value: https://healthai-frontend.onrender.com
+        value: https://healthcare-frontend.onrender.com
 
   - type: web
     name: healthcare-frontend
