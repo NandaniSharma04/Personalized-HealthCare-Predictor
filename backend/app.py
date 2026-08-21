@@ -6,10 +6,12 @@ import re
 import sys
 from pathlib import Path
 
-# Ensure project root is in sys.path when running app.py directly
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
+# Ensure both project root and backend folder are in sys.path
+BACKEND_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = BACKEND_DIR.parent
+for p in [str(PROJECT_ROOT), str(BACKEND_DIR)]:
+    if p not in sys.path:
+        sys.path.insert(0, p)
 
 from flask import Flask, jsonify
 from flask_cors import CORS

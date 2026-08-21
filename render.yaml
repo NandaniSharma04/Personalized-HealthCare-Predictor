@@ -5,8 +5,9 @@ services:
     env: python
     plan: free
     region: singapore
-    buildCommand: pip install -r backend/requirements.txt
-    startCommand: gunicorn backend.app:app --bind 0.0.0.0:$PORT --workers 1 --timeout 120
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 1 --timeout 120
     healthCheckPath: /api/health
     envVars:
       - key: PYTHONPATH
@@ -14,7 +15,7 @@ services:
       - key: SECRET_KEY
         generateValue: true
       - key: PYTHON_VERSION
-        value: 3.11.0
+        value: 3.11.9
       - key: FRONTEND_URL
         value: https://healthcare-frontend.onrender.com,https://healthcare-frontend-0k17.onrender.com
 
@@ -24,8 +25,9 @@ services:
     env: node
     plan: free
     region: singapore
-    buildCommand: cd frontend && npm install && npm run build
-    startCommand: cd frontend && npm start
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
     envVars:
       - key: NODE_VERSION
         value: 20.18.0
