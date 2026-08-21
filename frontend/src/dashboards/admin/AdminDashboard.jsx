@@ -231,10 +231,10 @@ export default function AdminDashboard() {
           👥 User Management ({kpis.total_users || 0})
         </button>
         <button className={`tab-btn ${activeTab === 'healthcare' ? 'active' : ''}`} onClick={() => setActiveTab('healthcare')}>
-          📚 Healthcare Content ({diseases.length || 175})
+          🗂 Healthcare Content ({diseases.length || 175})
         </button>
         <button className={`tab-btn ${activeTab === 'settings' ? 'active' : ''}`} onClick={() => setActiveTab('settings')}>
-          ⚙️ Platform Settings
+          ⚙ Platform Settings
         </button>
       </nav>
 

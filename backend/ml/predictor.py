@@ -212,8 +212,7 @@ def predict_symptoms(symptoms: list[str]) -> dict:
                 ignored_symptoms.append(norm)
 
     if not valid_symptoms:
-        # Fallback to first available symptom feature to prevent 400 error crash
-        valid_symptoms = [SYMPTOMS[0]] if SYMPTOMS else ["cough"]
+        raise ValueError("No valid symptoms provided.")
 
     # 2. Build Feature Vector & Run Inference
     X = build_feature_vector(valid_symptoms)

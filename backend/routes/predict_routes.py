@@ -11,6 +11,13 @@ predict_bp = Blueprint("predict_bp", __name__)
 @predict_bp.route("/predict", methods=["POST"])
 @predict_bp.route("/api/predict_disease", methods=["POST"])
 def predict():
+    if not current_user.is_authenticated:
+        return jsonify({
+            "success": False,
+            "error": "Authentication required. Please log in to perform disease prediction.",
+            "code": "UNAUTHORIZED"
+        }), 401
+
     data = request.get_json(silent=True) or {}
     symptoms = data.get("symptoms") or data.get("selectedSymptoms") or data.get("symptom") or []
     
@@ -21,7 +28,7 @@ def predict():
         return jsonify({"success": False, "error": "Please select at least one symptom to run clinical prediction."}), 400
         
     try:
-        uid = current_user.id if current_user.is_authenticated else None
+        uid = current_user.id
         res = run_prediction(symptoms, user_id=uid)
         return jsonify({"success": True, **res}), 200
     except ValueError as val_err:

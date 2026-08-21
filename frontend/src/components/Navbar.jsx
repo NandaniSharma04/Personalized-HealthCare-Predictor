@@ -25,27 +25,23 @@ export default function Navbar() {
       <div className="nav-links">
         <Link to="/">Home</Link>
 
-        {/* Only show Disease Predictor to non-admin users */}
-        {!isAdmin && <Link to="/predictor">Disease Predictor</Link>}
-        
-        {/* Dynamic Role-Specific Dashboard Link: User or Admin */}
+        {/* Disease Predictor — public, visible to everyone */}
+        <Link to="/predictor">Disease Predictor</Link>
+
+        {/* Role-specific dashboard link */}
         {isAdmin ? (
           <Link to="/admin" className="role-nav-highlight">
             <ShieldCheck size={14} className="inline mr-1" /> Admin Dashboard
           </Link>
-        ) : (
+        ) : user ? (
           <Link to="/dashboard">
             <User size={14} className="inline mr-1" /> My Dashboard
           </Link>
-        )}
+        ) : null}
 
-        {/* Only show About and Contact to non-admin users */}
-        {!isAdmin && (
-          <>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link>
-          </>
-        )}
+        {/* About and Contact — public */}
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
         
         {user ? (
           <div className="flex-center-y gap-2">

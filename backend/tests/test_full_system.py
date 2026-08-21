@@ -95,15 +95,16 @@ def test_rbac_privilege_escalation_prevention(client):
     client.post("/api/auth/register", json={
         "name": "Bob Analyst",
         "email": "bob@analyst.local",
-        "password": "AnalystPassword123!",
-        "role": "analyst"
+        "password": "AnalystPassword123!"
     })
     client.post("/api/auth/register", json={
         "name": "Charlie Admin",
         "email": "charlie@admin.local",
-        "password": "AdminPassword123!",
-        "role": "admin"
+        "password": "AdminPassword123!"
     })
+    db.session.query(User).filter_by(email="bob@analyst.local").update({"role": "analyst"})
+    db.session.query(User).filter_by(email="charlie@admin.local").update({"role": "admin"})
+    db.session.commit()
 
     # A. Test Unauthenticated Access
     client.post("/api/auth/logout")
@@ -178,6 +179,12 @@ def test_prediction_api_endpoint(client):
     # Malformed request
     res_malformed = client.post("/api/predict", json={"symptoms": []})
     assert res_malformed.status_code == 400
+
+    # Unauthenticated request rejected
+    client.post("/api/auth/logout")
+    res_unauth = client.post("/api/predict", json={"symptoms": ["headache", "dizziness"]})
+    assert res_unauth.status_code == 401
+    assert res_unauth.get_json()["success"] is False
 
 # ============================================================================
 # 4. RECOMMENDATIONS & FEEDBACK SYSTEM
@@ -279,9 +286,10 @@ def test_admin_governance_analytics(client):
     client.post("/api/auth/register", json={
         "name": "Charlie Admin",
         "email": "charlie@admin.local",
-        "password": "AdminPassword123!",
-        "role": "admin"
+        "password": "AdminPassword123!"
     })
+    db.session.query(User).filter_by(email="charlie@admin.local").update({"role": "admin"})
+    db.session.commit()
     client.post("/api/auth/login", json={"email": "charlie@admin.local", "password": "AdminPassword123!"})
 
     # 1. Dashboard analytics
@@ -315,9 +323,10 @@ def test_analyst_data_quality_and_sentiment(client):
     client.post("/api/auth/register", json={
         "name": "Bob Analyst",
         "email": "bob@analyst.local",
-        "password": "AnalystPassword123!",
-        "role": "analyst"
+        "password": "AnalystPassword123!"
     })
+    db.session.query(User).filter_by(email="bob@analyst.local").update({"role": "analyst"})
+    db.session.commit()
     client.post("/api/auth/login", json={"email": "bob@analyst.local", "password": "AnalystPassword123!"})
 
     # 1. Model performance

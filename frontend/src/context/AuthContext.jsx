@@ -3,42 +3,38 @@ import api from "../api/axios";
 
 const AuthContext = createContext(null);
 
-const DEFAULT_PATIENT = {
-  id: 1,
-  name: "sharanya",
-  email: "sharanyagummadavelli@gmail.com",
-  role: "user"
-};
-
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(() => {
-    const localUser = localStorage.getItem("currentUser");
-    if (localUser) {
-      try {
-        const parsed = JSON.parse(localUser);
-        if (parsed && parsed.id) return parsed;
-      } catch (e) {}
-    }
-    // Default active session to sharanya so user dashboard displays immediately
-    localStorage.setItem("currentUser", JSON.stringify(DEFAULT_PATIENT));
-    return DEFAULT_PATIENT;
-  });
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Check active session from backend
+  // Check active session from backend on mount
   useEffect(() => {
+    let isMounted = true;
+    
     api
       .get("/api/auth/me")
       .then((res) => {
-        if (res.data && res.data.logged_in && res.data.user) {
-          setUser(res.data.user);
-          localStorage.setItem("currentUser", JSON.stringify(res.data.user));
+        if (isMounted) {
+          if (res.data && res.data.logged_in && res.data.user) {
+            setUser(res.data.user);
+          } else {
+            setUser(null);
+          }
         }
       })
-      .catch(() => {
-        // Keep existing user session in client state if backend session check fails
+      .catch((err) => {
+        if (isMounted) {
+          console.warn("Auth check failed:", err);
+          setUser(null);
+        }
       })
-      .finally(() => setLoading(false));
+      .finally(() => {
+        if (isMounted) {
+          setLoading(false);
+        }
+      });
+      
+    return () => { isMounted = false; };
   }, []);
 
   async function login(email, password, remember = true) {
@@ -46,36 +42,27 @@ export function AuthProvider({ children }) {
       const res = await api.post("/api/auth/login", { email, password, remember });
       if (res.data && res.data.user) {
         setUser(res.data.user);
-        localStorage.setItem("currentUser", JSON.stringify(res.data.user));
         return res.data;
       }
+      return { success: false, error: "Login failed to return user data." };
     } catch (err) {
-      // If login fails or backend offline, fall back to local patient profile for sharanya
-      const patientUser = {
-        id: 1,
-        name: email.includes('@') ? email.split('@')[0] : "sharanya",
-        email: email || "sharanyagummadavelli@gmail.com",
-        role: "user"
-      };
-      setUser(patientUser);
-      localStorage.setItem("currentUser", JSON.stringify(patientUser));
-      return { success: true, user: patientUser };
+      const errorMsg = err.response?.data?.error || "Invalid credentials or network error.";
+      return { success: false, error: errorMsg };
     }
   }
 
   async function signup(name, email, password, role = "user") {
     try {
+      // Pass role only if necessary, though backend usually forces 'user' for public signup
       const res = await api.post("/api/auth/register", { name, email, password, role });
       if (res.data && res.data.user) {
         setUser(res.data.user);
-        localStorage.setItem("currentUser", JSON.stringify(res.data.user));
         return res.data;
       }
+      return { success: false, error: "Registration failed to return user data." };
     } catch (err) {
-      const newUser = { id: Date.now(), name: name || "sharanya", email, role };
-      setUser(newUser);
-      localStorage.setItem("currentUser", JSON.stringify(newUser));
-      return { success: true, user: newUser };
+      const errorMsg = err.response?.data?.error || "Registration failed. Please try again.";
+      return { success: false, error: errorMsg };
     }
   }
 
@@ -85,19 +72,12 @@ export function AuthProvider({ children }) {
     } catch (err) {
       console.warn("Logout API notice:", err);
     } finally {
-      localStorage.removeItem("currentUser");
       setUser(null);
     }
   }
 
   const setDirectUser = (userData) => {
-    if (userData) {
-      localStorage.setItem("currentUser", JSON.stringify(userData));
-      setUser(userData);
-    } else {
-      localStorage.removeItem("currentUser");
-      setUser(null);
-    }
+    setUser(userData);
   };
 
   return (

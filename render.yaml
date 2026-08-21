@@ -13,3 +13,18 @@ services:
         generateValue: true
       - key: PYTHON_VERSION
         value: 3.11.0
+      - key: FRONTEND_URL
+        value: https://healthai-frontend.onrender.com
+
+  - type: web
+    name: healthcare-frontend
+    env: node
+    plan: free
+    region: singapore
+    buildCommand: cd frontend && npm install && npm run build
+    startCommand: cd frontend && npm install -g serve && serve -s dist -l $PORT
+    envVars:
+      - key: NODE_VERSION
+        value: 18.17.0
+      - key: VITE_API_URL
+        value: https://healthcare-backend.onrender.com

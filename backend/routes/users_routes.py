@@ -25,7 +25,7 @@ def get_user_dashboard():
     hp = HealthProfile.query.filter_by(user_id=user.id).first()
     fields = [hp.age if hp else None, hp.gender if hp else None, hp.allergies if hp else None, hp.existing_conditions if hp else None, hp.current_medications if hp else None]
     filled = sum(1 for f in fields if f is not None and f != [] and f != "")
-    profile_completion = int((filled / 5.0) * 100) if filled > 0 else 40
+    profile_completion = int((filled / 5.0) * 100) if filled > 0 else 0
 
     # 2. Prediction History & KPI Counts
     predictions_query = PredictionHistory.query.filter_by(user_id=user.id).order_by(PredictionHistory.created_at.desc())

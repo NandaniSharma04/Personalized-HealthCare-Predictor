@@ -20,7 +20,7 @@ export default function Login() {
 
   // Selected login persona: 'user' | 'admin'
   const [activeRole, setActiveRole] = useState('user');
-  const [form, setForm] = useState({ email: "sharanyagummadavelli@gmail.com", password: "••••••••", remember: true });
+  const [form, setForm] = useState({ email: "", password: "", remember: true });
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
 

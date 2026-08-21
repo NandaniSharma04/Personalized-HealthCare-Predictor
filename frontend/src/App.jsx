@@ -8,7 +8,6 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import AdminDashboard from "./dashboards/admin/AdminDashboard";
-import AnalystDashboard from "./dashboards/analyst/AnalystDashboard";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Predictor from "./pages/Predictor";
@@ -39,23 +38,9 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
 
-            {/* Main Interactive & Protected Dashboard Routes */}
-            <Route
-              path="/predictor"
-              element={
-                <ProtectedRoute>
-                  <Predictor />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/prediction"
-              element={
-                <ProtectedRoute>
-                  <Predictor />
-                </ProtectedRoute>
-              }
-            />
+            {/* Disease Predictor — Public: accessible without login */}
+            <Route path="/predictor" element={<Predictor />} />
+            <Route path="/prediction" element={<Predictor />} />
             <Route
               path="/dashboard"
               element={
@@ -129,20 +114,12 @@ export default function App() {
               }
             />
 
-            {/* Role-Specific Admin & Analyst Dashboards */}
+            {/* Admin Dashboard — Admin only */}
             <Route
               path="/admin"
               element={
                 <ProtectedRoute allowedRoles={["admin"]}>
                   <AdminDashboard />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/analyst"
-              element={
-                <ProtectedRoute allowedRoles={["analyst", "admin"]}>
-                  <AnalystDashboard />
                 </ProtectedRoute>
               }
             />

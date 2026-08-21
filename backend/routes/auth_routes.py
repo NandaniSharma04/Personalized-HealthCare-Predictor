@@ -39,10 +39,10 @@ def register():
         # Public registration must never be allowed to choose a privileged role.
         # Administrator accounts are provisioned separately by a trusted operator.
         user = register_user(name, email, password, role="user")
-        login_user(user)
+        # Do NOT auto-login — user must explicitly log in after signup
         return jsonify({
             "success": True,
-            "message": "Registration successful",
+            "message": "Account created successfully. Please log in.",
             "user": user.to_dict()
         }), 201
     except ValueError as err:

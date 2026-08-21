@@ -369,7 +369,7 @@ export default function UserDashboard() {
 
   const kpis = dashboardData?.kpi_stats || {};
   const recentPred = dashboardData?.recent_prediction;
-  const profileComp = dashboardData?.profile_completion || 40;
+  const profileComp = dashboardData?.profile_completion || 0;
   const unreadCount = dashboardData?.unread_notifications_count || 0;
   const insights = dashboardData?.health_insights || {};
 
@@ -879,7 +879,7 @@ export default function UserDashboard() {
               <SymptomSelector
                 allSymptoms={allSymptoms}
                 selectedSymptoms={selectedSymptoms}
-                onChange={setSelectedSymptoms}
+                setSelectedSymptoms={setSelectedSymptoms}
               />
 
               <div className="mt-4 flex-between">
